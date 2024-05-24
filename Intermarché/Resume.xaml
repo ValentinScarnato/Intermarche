@@ -16,6 +16,10 @@
             Margin="10,10,570,365"
             Source="/img/logoIntermarche.png"
             Stretch="Fill" />
+        <Image Margin="10,10,571,359" Source="/img/logo-Reservation_Intermarche.png" Stretch="Fill"/>
+        <StackPanel Margin="150,50,150,30">
+            
+        </StackPanel>
 
     </Grid>
 </Window>

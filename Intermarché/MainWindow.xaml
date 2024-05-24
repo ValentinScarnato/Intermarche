@@ -10,15 +10,6 @@
     Height="450"
     mc:Ignorable="d">
     <Grid>
-        <Image
-            Width="358"
-            Margin="222,87,220,253"
-            Source="/intermarche-logo.png"
-            Stretch="Fill">
-            <Image.OpacityMask>
-                <ImageBrush ImageSource="/intermarche-logo.png" Stretch="Uniform" />
-            </Image.OpacityMask>
-        </Image>
         <StackPanel
             Margin="0,75,0,0"
             HorizontalAlignment="Center"
@@ -33,6 +24,7 @@
                 RenderTransformOrigin="0,1" />
 
         </StackPanel>
+        <Image Margin="191,83,191,247" Source="/img/intermarche-logo.png" Stretch="Fill"/>
 
 
     </Grid>

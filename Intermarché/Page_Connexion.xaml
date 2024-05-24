@@ -36,6 +36,7 @@
                 Margin="0,15,0,0"
                 Content="Valider" />
         </StackPanel>
+        <Image Margin="190,22,190,309" Source="/img/intermarche-logo.png" Stretch="Fill"/>
 
     </Grid>
 </Window>

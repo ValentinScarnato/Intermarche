@@ -98,10 +98,10 @@
 
             <Label
                 x:Name="lblBoite"
-                Width="86"
+                Width="200"
                 Margin="0,10,0,0"
                 HorizontalAlignment="Left"
-                Content="Type de boite de vitesse" />
+                Content="Filtrer (type de boite de vitesse)" />
 
             <ComboBox
                 x:Name="cbBoite"
@@ -123,5 +123,7 @@
             Margin="10,10,570,123"
             Source="/logo-Reservation_Intermarche.png"
             Stretch="Fill" />
+        <Button x:Name="butCreerCompte" Content="Créer un compte" HorizontalAlignment="Left" Margin="550,20,0,0" VerticalAlignment="Top" Background="White" BorderBrush="White"/>
+        <Button x:Name="butConnecter" Content="Se connecter" HorizontalAlignment="Left" Margin="670,20,0,0" VerticalAlignment="Top" BorderBrush="White" Background="White"/>
     </Grid>
 </Window>
