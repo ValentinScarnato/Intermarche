@@ -28,7 +28,7 @@
                 Content="Reservation véhicule"
                 FontSize="18"
                 FontWeight="Bold" />
-            <Label x:Name="lblMagasin" Content="Choisissez votre magasin" />
+            <Label x:Name="txtbx" Content="Choisissez votre magasin" />
             <TextBox
                 x:Name="txtboxMagasin"
                 Width="450"
