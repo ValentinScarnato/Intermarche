@@ -11,9 +11,23 @@
     mc:Ignorable="d">
     <Grid>
         <Image
-            Margin="244,40,204,300"
+            Width="358"
+            Margin="222,87,220,253"
             Source="/intermarche-logo.png"
-            Stretch="Fill" />
+            Stretch="Fill">
+            <Image.OpacityMask>
+                <ImageBrush ImageSource="/intermarche-logo.png" Stretch="Uniform" />
+            </Image.OpacityMask>
+        </Image>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button
+                x:Name="butConnexion"
+                Width="100"
+                Height="25"
+                HorizontalAlignment="Left"
+                Content="Connexion" />
+
+        </StackPanel>
 
 
     </Grid>
