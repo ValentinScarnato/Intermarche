@@ -121,8 +121,7 @@
         </StackPanel>
         <Image
             Margin="10,10,570,123"
-            Source="/img/logoIntermarche.png"
+            Source="/logo-Reservation_Intermarche.png"
             Stretch="Fill" />
-
     </Grid>
 </Window>

@@ -29,7 +29,8 @@
                 Height="35"
                 HorizontalAlignment="Left"
                 Content="Connexion"
-                FontSize="14" />
+                FontSize="14"
+                RenderTransformOrigin="0,1" />
 
         </StackPanel>
 

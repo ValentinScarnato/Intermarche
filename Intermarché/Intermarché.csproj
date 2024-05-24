@@ -9,17 +9,19 @@
 
   <ItemGroup>
     <None Remove="Image1.png" />
+    <None Remove="img\logo-Reservation_Intermarche.png" />
     <None Remove="intermarche-logo.png" />
+    <None Remove="logo-Reservation_Intermarche.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="img\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="intermarche-logo.png">
+    <Resource Include="img\intermarche-logo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="img\logo-Reservation_Intermarche.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="logo-Reservation_Intermarche.png" />
   </ItemGroup>
 
 </Project>
