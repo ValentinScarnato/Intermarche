@@ -19,13 +19,17 @@
                 <ImageBrush ImageSource="/intermarche-logo.png" Stretch="Uniform" />
             </Image.OpacityMask>
         </Image>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel
+            Margin="0,75,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center">
             <Button
                 x:Name="butConnexion"
-                Width="100"
-                Height="25"
+                Width="150"
+                Height="35"
                 HorizontalAlignment="Left"
-                Content="Connexion" />
+                Content="Connexion"
+                FontSize="14" />
 
         </StackPanel>
 
