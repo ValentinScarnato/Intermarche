@@ -17,7 +17,7 @@
             Source="/img/logoIntermarche.png"
             Stretch="Fill" />
         <Image Margin="10,10,571,359" Source="/img/logo-Reservation_Intermarche.png" Stretch="Fill"/>
-        <StackPanel Margin="150,80,150,30">
+        <StackPanel Margin="150,90,150,20">
             <Label Content="Résumé de la commande" HorizontalAlignment="Center" FontWeight="Bold" FontSize="14"/>
             <StackPanel Height="30" Orientation="Horizontal" Margin="0,10,0,0">
                 <Label Content="N° de commande :"/>
@@ -38,7 +38,11 @@
                 <Label Content="Catégorie du véhicule :"/>
                 <Label Content="BatMobile" FontWeight="Bold"/>
                 <Label Content="(Boite"/>
-                <Label Content="semi-manuelle)" Margin="-5,0,0,0" FontWeight="Bold"/>
+                <Label Content="manuelle)" Margin="-5,0,0,0" FontWeight="Bold"/>
+            </StackPanel>
+            <StackPanel Height="30" Orientation="Horizontal">
+                <Label Content="Immatriculation :"/>
+                <Label Content="BUT-1FO-690" FontWeight="Bold"/>
             </StackPanel>
             <StackPanel Height="30" Orientation="Horizontal">
                 <Label Content="Magasin de location :"/>
@@ -60,6 +64,7 @@
             </StackPanel.Resources>
 
         </StackPanel>
+        <Border BorderBrush="Black" BorderThickness="1" Margin="150,90,150,20"/>
 
     </Grid>
 </Window>

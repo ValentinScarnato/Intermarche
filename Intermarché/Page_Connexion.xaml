@@ -10,7 +10,7 @@
     Height="450"
     mc:Ignorable="d">
     <Grid>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,145,0,0">
             <Label
                 x:Name="labConnexion"
                 Margin="0,0,0,10"
@@ -31,12 +31,17 @@
                 Margin="0,5,0,0"
                 Text=""
                 TextWrapping="Wrap" />
+            
             <Button
                 x:Name="butValiderConnexion"
                 Margin="0,15,0,0"
                 Content="Valider" />
+            
+
+
         </StackPanel>
         <Image Margin="190,22,190,309" Source="/img/intermarche-logo.png" Stretch="Fill"/>
 
     </Grid>
+    
 </Window>
