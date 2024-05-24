@@ -9,5 +9,12 @@
     Width="800"
     Height="450"
     mc:Ignorable="d">
-    <Grid />
+    <Grid>
+        <Image
+            Margin="190,56,190,275"
+            Source="/intermarche-logo.png"
+            Stretch="Fill" />
+
+
+    </Grid>
 </Window>

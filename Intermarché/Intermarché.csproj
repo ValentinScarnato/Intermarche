@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <None Remove="Image1.png" />
+    <None Remove="intermarche-logo.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -16,7 +17,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Image1.png" />
+    <Resource Include="intermarche-logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>
