@@ -10,11 +10,7 @@
     Height="450"
     mc:Ignorable="d">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="96*" />
-            <RowDefinition Height="121*" />
-        </Grid.RowDefinitions>
-        <StackPanel Grid.RowSpan="2" Margin="150,70,150,0">
+        <StackPanel Margin="150,75,150,-22">
 
             <StackPanel.Resources>
 
@@ -119,11 +115,8 @@
 
 
         </StackPanel>
-        <Image
-            Margin="10,10,570,123"
-            Source="/logo-Reservation_Intermarche.png"
-            Stretch="Fill" />
-        <Button x:Name="butCreerCompte" Content="Créer un compte" HorizontalAlignment="Left" Margin="550,20,0,0" VerticalAlignment="Top" Background="White" BorderBrush="White"/>
-        <Button x:Name="butConnecter" Content="Se connecter" HorizontalAlignment="Left" Margin="670,20,0,0" VerticalAlignment="Top" BorderBrush="White" Background="White"/>
+        <Button x:Name="butCreerCompte" Content="Créer un compte" HorizontalAlignment="Left" Margin="550,20,0,0" VerticalAlignment="Top" Background="White" BorderBrush="White" Height="20" Grid.Row="1" Width="93"/>
+        <Button x:Name="butConnecter" Content="Se connecter" HorizontalAlignment="Left" Margin="670,20,0,0" VerticalAlignment="Top" BorderBrush="White" Background="White" Height="20" Grid.Row="1" Width="72"/>
+        <Image Margin="10,10,571,359" Source="/img/logo-Reservation_Intermarche.png" Stretch="Fill"/>
     </Grid>
 </Window>
