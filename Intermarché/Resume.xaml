@@ -17,8 +17,48 @@
             Source="/img/logoIntermarche.png"
             Stretch="Fill" />
         <Image Margin="10,10,571,359" Source="/img/logo-Reservation_Intermarche.png" Stretch="Fill"/>
-        <StackPanel Margin="150,50,150,30">
-            
+        <StackPanel Margin="150,80,150,30">
+            <Label Content="Résumé de la commande" HorizontalAlignment="Center" FontWeight="Bold" FontSize="14"/>
+            <StackPanel Height="30" Orientation="Horizontal" Margin="0,10,0,0">
+                <Label Content="N° de commande :"/>
+                <Label Content="013594" FontWeight="Bold"/>
+            </StackPanel>
+            <StackPanel Height="30" Orientation="Horizontal">
+                <Label Content="Nom Prénom du client :"/>
+                <Label Content="LOREM Ipsum" FontWeight="Bold"/>
+            </StackPanel>
+            <StackPanel Height="30" Orientation="Horizontal">
+                <Label Content="Date de réservation :"/>
+                <Label Content="Du"/>
+                <Label Content="01/01/2024" FontWeight="Bold"/>
+                <Label Content="au"/>
+                <Label Content="02/01/2024" FontWeight="Bold"/>
+            </StackPanel>
+            <StackPanel Height="30" Orientation="Horizontal">
+                <Label Content="Catégorie du véhicule :"/>
+                <Label Content="BatMobile" FontWeight="Bold"/>
+                <Label Content="(Boite"/>
+                <Label Content="semi-manuelle)" Margin="-5,0,0,0" FontWeight="Bold"/>
+            </StackPanel>
+            <StackPanel Height="30" Orientation="Horizontal">
+                <Label Content="Magasin de location :"/>
+                <Label Content="Lloret del mar" FontWeight="Bold"/>
+            </StackPanel>
+            <StackPanel Height="30" Orientation="Horizontal">
+                <Label Content="Type d'assurance :"/>
+                <Label Content="Aucune assurance" FontWeight="Bold"/>
+            </StackPanel>
+            <StackPanel Height="30" Orientation="Horizontal">
+                <Label Content="Forfait kilométrique :"/>
+                <Label Content="Lloret del mar" FontWeight="Bold"/>
+            </StackPanel>
+            <StackPanel.Resources>
+                <Style TargetType="Label">
+                    <Setter Property="FontSize" Value="14px"/>
+                </Style>
+
+            </StackPanel.Resources>
+
         </StackPanel>
 
     </Grid>
