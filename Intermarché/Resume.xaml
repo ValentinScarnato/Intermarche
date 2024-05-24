@@ -50,7 +50,7 @@
             </StackPanel>
             <StackPanel Height="30" Orientation="Horizontal">
                 <Label Content="Forfait kilométrique :"/>
-                <Label Content="Lloret del mar" FontWeight="Bold"/>
+                <Label Content="- de 100 km" FontWeight="Bold"/>
             </StackPanel>
             <StackPanel.Resources>
                 <Style TargetType="Label">
