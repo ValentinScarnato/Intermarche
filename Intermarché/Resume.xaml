@@ -18,7 +18,7 @@
             Stretch="Fill" />
         <Image Margin="10,10,571,359" Source="/img/logo-Reservation_Intermarche.png" Stretch="Fill"/>
         <StackPanel Margin="150,90,150,20">
-            <Label Content="Résumé de la commande" HorizontalAlignment="Center" FontWeight="Bold" FontSize="14"/>
+            <Label Content="Résumé de la réservation" HorizontalAlignment="Center" FontWeight="Bold" FontSize="14"/>
             <StackPanel Height="30" Orientation="Horizontal" Margin="0,10,0,0">
                 <Label Content="N° de commande :"/>
                 <Label Content="013594" FontWeight="Bold"/>

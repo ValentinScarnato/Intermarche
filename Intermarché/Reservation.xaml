@@ -86,7 +86,11 @@
                 <ComboBox
                     x:Name="cbType"
                     Width="200"
-                    Margin="10,0,0,0" />
+                    Margin="10,0,0,0" >
+                    <ComboBoxItem Content="Boite manuelle"/>
+                    <ComboBoxItem Content="Boite automatique"/>
+                    <ComboBoxItem Content="Electrique"/>
+                </ComboBox>
                 <TextBox
                     x:Name="txtboxNbKm"
                     Width="200"

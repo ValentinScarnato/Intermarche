@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Recherche" Height="450" Width="800">
     <Grid>
-        <StackPanel Margin="150,75,150,0">
+        <StackPanel Margin="150,100,150,-25">
 
             <StackPanel.Resources>
 
@@ -64,7 +64,7 @@
         x:Name="butRechercherResa"
         Width="100"
         Height="25"
-        Margin="0,30,20,0"
+        Margin="0,0,20,0"
         Background="#FFF5ADAF"
         Content="Rechercher" />
 

@@ -7,36 +7,48 @@
         mc:Ignorable="d"
         Title="Vehicules" Height="450" Width="800">
     <Grid>
-        <Image Margin="10,10,571,359" Source="/img/logo-Reservation_Intermarche.png" Stretch="Fill"/>
 
-        <StackPanel Margin="310,100,70,100">
+        <StackPanel Margin="310,100,50,100">
+            <StackPanel.Resources>
+                <Style TargetType="Image">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Focusable" Value="True" />
+                        </Trigger>
+
+                    </Style.Triggers>
+                </Style>
+            </StackPanel.Resources>
             <Label Content="Véhicules disponibles" HorizontalAlignment="Center" FontWeight="Bold"/>
-            <Label Content="Camion benne" FontWeight="Bold" HorizontalAlignment="Left"/>
+            <Label x:Name="lblVehicule1" Content="Camion benne" FontWeight="Bold" HorizontalAlignment="Left"/>
             <StackPanel Height="30" Orientation="Horizontal">
-                <Label Content="3" FontWeight="Bold"/>
+                <Label x:Name="lblNbPlaces1" Content="3" FontWeight="Bold"/>
                 <Label Content="places" Margin="-5,0,0,0"/>
                 <Label Content="Charge utile :" Margin="10,0,0,0"/>
-                <Label Content="900kg" Margin="-5,0,0,0" FontWeight="Bold"/>
+                <Label x:Name="lblChargeUtile" Content="900kg" Margin="-5,0,0,0" FontWeight="Bold"/>
                 <Label Content="Charge utile :" Margin="10,0,0,0"/>
-                <Label Content="L 5,9m x l 2,2m x h 2,2m" Margin="-5,0,0,0" FontWeight="Bold"/>
-                
-            </StackPanel>
-            <Label Content="Renault Mégane" Margin="0,40,0,0" FontWeight="Bold"/>
-            <StackPanel Height="30" Orientation="Horizontal">
-                <Label Content="3" FontWeight="Bold"/>
-                <Label Content="places" Margin="-5,0,0,0"/>
-                <Label Content="Charge utile :" Margin="10,0,0,0"/>
-                <Label Content="900kg" Margin="-5,0,0,0" FontWeight="Bold"/>
-                <Label Content="Charge utile :" Margin="10,0,0,0"/>
-                <Label Content="L 5,9m x l 2,2m x h 2,2m" Margin="-5,0,0,0" FontWeight="Bold"/>
+                <Label x:Name="lblDimensions" Content="L 5,9m x l 2,2m x h 2,2m" Margin="-5,0,0,0" FontWeight="Bold"/>
 
             </StackPanel>
+            <Button Content="Choisir ce véhicule" Background="#FFF6AFB0"/>
+            <Label x:Name="lblVehicule2" Content="Renault Mégane" Margin="0,50,0,0" FontWeight="Bold"/>
+            <StackPanel Height="30" Orientation="Horizontal">
+                <Label x:Name="lblNbPlaces2" Content="5" FontWeight="Bold"/>
+                <Label Content="places" Margin="-5,0,0,0"/>
+                <Label Content="Nombre portes :" Margin="10,0,0,0"/>
+                <Label x:Name="lblNbPortes" Content="5" Margin="-5,0,0,0" FontWeight="Bold"/>
+                <Label Content="Type boite :" Margin="10,0,0,0"/>
+                <Label x:Name="lblTypeBoite" Content="Boite manuelle" Margin="-5,0,0,0" FontWeight="Bold"/>
+
+            </StackPanel>
+            <Button Content="Choisir ce véhicule" Background="#FFF6AFB0"/>
 
         </StackPanel>
         <WrapPanel Margin="-275,100,495,100">
             <Image Height="117" Source="/img/camion_benne_Intermarche.jpg" Stretch="Fill" Width="215" Margin="370,0,0,0"/>
             <Image Height="117" Source="/img/megane_lrg.jpg" Stretch="Fill" Width="210" Margin="370,0,0,0"/>
         </WrapPanel>
+        <Image Margin="10,10,571,359" Source="/img/logo-Reservation_Intermarche.png" Stretch="Fill"/>
 
     </Grid>
 </Window>

@@ -68,7 +68,7 @@
 
             </StackPanel>
             <StackPanel Height="30" Orientation="Horizontal">
-                <Label Content="355€" FontSize="14" FontWeight="Bold" Margin="0,-5,0,0"/>
+                <Label x:Name="lblMontantTotal" Content="355€" FontSize="14" FontWeight="Bold" Margin="0,-5,0,0"/>
             </StackPanel>
             <Button
         x:Name="butRechercher"
