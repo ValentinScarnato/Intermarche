@@ -8,7 +8,7 @@
         Title="Assurances" Height="450" Width="800">
     <Grid>
         <Image Margin="10,10,571,359" Source="/img/logo-Reservation_Intermarche.png" Stretch="Fill"/>
-        <StackPanel Margin="150,65,150,-22">
+        <StackPanel Margin="150,100,150,-57">
 
             <StackPanel.Resources>
 
@@ -78,8 +78,6 @@
         Background="#FFF5ADAF"
         Content="Valider" />
         </StackPanel>
-        <Button x:Name="butCreerCompte" Content="Créer un compte" HorizontalAlignment="Left" Margin="550,20,0,0" VerticalAlignment="Top" Background="White" BorderBrush="White" Height="20" Grid.Row="1" Width="93"/>
-        <Button x:Name="butConnecter" Content="Se connecter" HorizontalAlignment="Left" Margin="670,20,0,0" VerticalAlignment="Top" BorderBrush="White" Background="White" Height="20" Grid.Row="1" Width="72"/>
 
 
     </Grid>

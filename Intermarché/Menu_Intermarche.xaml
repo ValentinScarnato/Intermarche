@@ -15,6 +15,7 @@
             <Label x:Name="lblMenuPrincipal" Content="Menu principal" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="16"/>
             <Button x:Name="butRechercherReservation" Content="Voir les réservations" FontSize="14" Margin="0,15,0,0"/>
             <Button x:Name="butCreerReservation" Content="Commencer une nouvelle réservation" FontSize="14" Margin="0,20,0,0"/>
+            <Label Content="Vous etes connectés sur la session "/>
 
         </StackPanel>
     </Grid>
