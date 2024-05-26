@@ -7,8 +7,9 @@
         mc:Ignorable="d"
         Title="Vehicules" Height="450" Width="800">
     <Grid>
+        <Image Margin="270,11,270,334" Source="/img/logo-Reservation_Intermarche.png" Stretch="Fill"/>
 
-        <StackPanel Margin="310,100,50,100">
+        <StackPanel Margin="288,118,72,62">
             <StackPanel.Resources>
                 <Style TargetType="Image">
                     <Style.Triggers>
@@ -19,7 +20,7 @@
                     </Style.Triggers>
                 </Style>
             </StackPanel.Resources>
-            <Label Content="Véhicules disponibles" HorizontalAlignment="Center" FontWeight="Bold"/>
+            <Label Content="Véhicules disponibles" HorizontalAlignment="Right" FontWeight="Bold"/>
             <Label x:Name="lblVehicule1" Content="Camion benne" FontWeight="Bold" HorizontalAlignment="Left"/>
             <StackPanel Height="30" Orientation="Horizontal">
                 <Label x:Name="lblNbPlaces1" Content="3" FontWeight="Bold"/>
@@ -44,11 +45,11 @@
             <Button Content="Choisir ce véhicule" Background="#FFF6AFB0"/>
 
         </StackPanel>
-        <WrapPanel Margin="-275,100,495,100">
-            <Image Height="117" Source="/img/camion_benne_Intermarche.jpg" Stretch="Fill" Width="215" Margin="370,0,0,0"/>
-            <Image Height="117" Source="/img/megane_lrg.jpg" Stretch="Fill" Width="210" Margin="370,0,0,0"/>
+        <WrapPanel Margin="-297,118,517,82">
+            <Image Height="117" Source="/img/camion_benne_Intermarche.jpg" Stretch="Fill" Width="215" Margin="360,0,0,0"/>
+            <Image Height="117" Source="/img/megane_lrg.jpg" Stretch="Fill" Width="210" Margin="360,0,0,0"/>
         </WrapPanel>
-        <Image Margin="10,10,571,359" Source="/img/logo-Reservation_Intermarche.png" Stretch="Fill"/>
+
 
     </Grid>
 </Window>

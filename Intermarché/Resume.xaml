@@ -36,7 +36,7 @@
             </StackPanel>
             <StackPanel Height="30" Orientation="Horizontal">
                 <Label Content="Catégorie du véhicule :"/>
-                <Label Content="BatMobile" FontWeight="Bold"/>
+                <Label Content="Megane 5" FontWeight="Bold"/>
                 <Label Content="(Boite"/>
                 <Label Content="manuelle)" Margin="-5,0,0,0" FontWeight="Bold"/>
             </StackPanel>
@@ -46,7 +46,7 @@
             </StackPanel>
             <StackPanel Height="30" Orientation="Horizontal">
                 <Label Content="Magasin de location :"/>
-                <Label Content="Lloret del mar" FontWeight="Bold"/>
+                <Label Content="Annecy" FontWeight="Bold"/>
             </StackPanel>
             <StackPanel Height="30" Orientation="Horizontal">
                 <Label Content="Type d'assurance :"/>

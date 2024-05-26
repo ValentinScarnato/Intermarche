@@ -10,7 +10,7 @@
     Height="450"
     mc:Ignorable="d">
     <Grid>
-        <StackPanel Margin="150,65,150,-22">
+        <StackPanel Margin="150,90,150,-47">
 
             <StackPanel.Resources>
 
