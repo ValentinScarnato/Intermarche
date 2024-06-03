@@ -14,22 +14,30 @@
             Margin="0,75,0,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Center">
-            <Button
-                x:Name="butConnexion"
-                Width="150"
-                Height="35"
+            <Label
+                x:Name="labConnexion"
+                Margin="0,0,0,10"
+                HorizontalAlignment="Center"
                 Content="Connexion"
-                FontSize="14"
-                RenderTransformOrigin="0,1" />
+                FontSize="16"
+                FontWeight="Bold" />
+            <Label x:Name="labIdentifiant" Content="Identifiant :" />
+            <TextBox
+                x:Name="txtboxIdentifiant"
+                Width="120"
+                Margin="0,5,0,0"
+                Text=""
+                TextWrapping="Wrap" />
+            <Label x:Name="labMdp" Content="Mot de passe :" />
+            <TextBox
+                Width="120"
+                Margin="0,5,0,0"
+                Text=""
+                TextWrapping="Wrap" />
             <Button
-                x:Name="butConnexion_Copy"
-                Width="150"
-                Height="35"
-                Margin="0,20,0,0"
-                Content="Créer un compte"
-                FontSize="14"
-                RenderTransformOrigin="0,1" />
-
+                x:Name="butValiderConnexion"
+                Margin="0,15,0,0"
+                Content="Valider" />
         </StackPanel>
         <Image
             Margin="191,20,191,310"

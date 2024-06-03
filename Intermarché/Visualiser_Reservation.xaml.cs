@@ -15,15 +15,13 @@ using System.Windows.Shapes;
 namespace Intermarché
 {
     /// <summary>
-    /// Logique d'interaction pour Recherche.xaml
+    /// Logique d'interaction pour Visualiser_Reservation.xaml
     /// </summary>
-    public partial class Recherche : Window
+    public partial class Visualiser_Reservation : Window
     {
-        public Recherche()
+        public Visualiser_Reservation()
         {
             InitializeComponent();
         }
-
-        
     }
 }

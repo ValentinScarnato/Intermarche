@@ -1,11 +1,11 @@
 ﻿<Window
-    x:Class="Intermarché.Recherche"
+    x:Class="Intermarché.Visualiser_Reservation"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:Intermarché"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="Recherche"
+    Title="Visualiser_Reservation"
     Width="800"
     Height="450"
     mc:Ignorable="d">
@@ -100,11 +100,6 @@
                 x:Name="cbFiltreTypeBoite"
                 Width="120"
                 Margin="0,10,0,0" />
-
-
         </StackPanel>
-
-
-
     </Grid>
 </Window>
