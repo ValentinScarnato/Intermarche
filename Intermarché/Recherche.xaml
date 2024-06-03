@@ -10,22 +10,21 @@
     Height="450"
     mc:Ignorable="d">
     <Grid>
-        <StackPanel Margin="150,90,150,-25">
-
+        <StackPanel Margin="88,63,101,236">
             <StackPanel.Resources>
 
                 <Style TargetType="TextBox" />
 
             </StackPanel.Resources>
-
             <Label
                 x:Name="lblRechercheReservation"
                 HorizontalAlignment="Center"
                 Content="Rechercher réservation"
                 FontSize="18"
                 FontWeight="Bold" />
-            <Label x:Name="lblInfoResa" Content="Informations sur la réservation" />
-            <TextBox
+            <Label x:Name="lblInfoResa" Content="Rechercher par n° de réservation / nom du client" />
+            <StackPanel Orientation="Horizontal">
+                <TextBox
                 x:Name="txtboxnumResa"
                 Width="450"
                 Height="25"
@@ -37,42 +36,12 @@
                 FontStyle="Italic"
                 Text="Entrez le n° de réservation"
                 TextWrapping="Wrap">
-                <TextBox.Background>
-                    <SolidColorBrush Opacity="0.7" Color="#FFFFF1F1" />
-                </TextBox.Background>
-            </TextBox>
-            <StackPanel
-                Height="25"
-                Margin="0,10,0,0"
-                Orientation="Horizontal">
-                <Label x:Name="lblNomClient" Content="Nom du client" />
+                    <TextBox.Background>
+                        <SolidColorBrush Opacity="0.7" Color="#FFFFF1F1" />
+                    </TextBox.Background>
+                </TextBox>
+                
             </StackPanel>
-            <StackPanel Height="30" Orientation="Horizontal">
-
-                <TextBox
-                    x:Name="txtboxNomClient"
-                    Width="450"
-                    Margin="10,0,0,0"
-                    Background="#FFFFF1F1"
-                    FontSize="14"
-                    FontStyle="Italic"
-                    Text="Entrez le nom du client"
-                    TextWrapping="Wrap" />
-            </StackPanel>
-            <StackPanel
-                Height="25"
-                Margin="0,10,0,0"
-                Orientation="Horizontal" />
-            <StackPanel Height="30" Orientation="Horizontal" />
-            <Button
-                x:Name="butRechercherResa"
-                Width="100"
-                Height="25"
-                Margin="0,0,20,0"
-                Background="#FFF5ADAF"
-                Content="Rechercher" />
-
-
         </StackPanel>
         <Image
             Margin="290,10,290,359"
@@ -86,6 +55,10 @@
             Background="White"
             BorderBrush="White"
             Content="Revenir à l'accueil" />
+        <Grid Width="536" Margin="76,162,188,57">
+            <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,108,-10,-108"/>
+        </Grid>
+
 
     </Grid>
 </Window>
