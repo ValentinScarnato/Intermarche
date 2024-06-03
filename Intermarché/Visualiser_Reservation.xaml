@@ -49,18 +49,11 @@
                     Content="Rechercher" />
             </StackPanel>
         </StackPanel>
-        <Image
-            Margin="290,10,290,359"
-            Source="/img/logo-Reservation_Intermarche.png"
-            Stretch="Fill" />
-        <Button
-            x:Name="butAccueil"
-            Margin="654,30,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Background="White"
-            BorderBrush="White"
-            Content="Revenir à l'accueil" />
+        <StackPanel Margin="0,0,0,359" Orientation="Horizontal" Background="#FF2F2323">
+            <Image Height="65" Source="/img/logo-Reservation_Intermarche.png" Stretch="Fill" Width="219" Margin="275,0,0,0"/>
+            <Button Content="Button" Height="43" Width="94" Margin="200,0,0,0"/>
+
+        </StackPanel>
         <Grid Margin="70,143,211,10">
             <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" />
         </Grid>
