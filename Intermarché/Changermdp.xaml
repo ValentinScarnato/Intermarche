@@ -1,5 +1,5 @@
 ﻿<Window
-    x:Class="Intermarché.Page_Connexion"
+    x:Class="Intermarché.Changermdp"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -18,19 +18,19 @@
                 x:Name="labConnexion"
                 Margin="0,0,0,10"
                 HorizontalAlignment="Center"
-                Content="Connexion"
+                Content="Réinitialiser mot de passe"
                 FontSize="16"
                 FontWeight="Bold" />
-            <Label x:Name="labIdentifiant" Content="Identifiant :" />
+            <Label x:Name="labIdentifiant" Content="Adresse mail :" />
             <TextBox
                 x:Name="txtboxIdentifiant"
-                Width="120"
+                Width="200"
                 Margin="0,5,0,0"
                 Text=""
                 TextWrapping="Wrap" />
-            <Label x:Name="labMdp" Content="Mot de passe :" />
+            <Label x:Name="labMdp" Content="Nouveau mot de passe :" />
             <TextBox
-                Width="120"
+                Width="200"
                 Margin="0,5,0,0"
                 Text=""
                 TextWrapping="Wrap" />
@@ -42,7 +42,7 @@
             <Label
                 Margin="0,10,0,0"
                 HorizontalAlignment="Center"
-                Content="Mot de passe oublié"
+                Content="Retour au menu"
                 FontSize="10"
                 Foreground="#FF0061FF" />
 

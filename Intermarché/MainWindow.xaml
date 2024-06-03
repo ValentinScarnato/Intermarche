@@ -18,13 +18,23 @@
                 x:Name="butConnexion"
                 Width="150"
                 Height="35"
-                HorizontalAlignment="Left"
                 Content="Connexion"
+                FontSize="14"
+                RenderTransformOrigin="0,1" />
+            <Button
+                x:Name="butConnexion_Copy"
+                Width="150"
+                Height="35"
+                Margin="0,20,0,0"
+                Content="Créer un compte"
                 FontSize="14"
                 RenderTransformOrigin="0,1" />
 
         </StackPanel>
-        <Image Margin="191,83,191,247" Source="/img/intermarche-logo.png" Stretch="Fill"/>
+        <Image
+            Margin="191,20,191,310"
+            Source="/img/intermarche-logo.png"
+            Stretch="Fill" />
 
 
     </Grid>

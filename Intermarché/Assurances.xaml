@@ -1,14 +1,20 @@
-﻿<Window x:Class="Intermarché.Assurances"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Intermarché"
-        mc:Ignorable="d"
-        Title="Assurances" Height="450" Width="800">
+﻿<Window
+    x:Class="Intermarché.Assurances"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Intermarché"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Assurances"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
     <Grid>
-        <Image Margin="10,10,571,359" Source="/img/logo-Reservation_Intermarche.png" Stretch="Fill"/>
-        <StackPanel Margin="150,100,150,-57">
+        <Image
+            Margin="290,10,290,359"
+            Source="/img/logo-Reservation_Intermarche.png"
+            Stretch="Fill" />
+        <StackPanel Margin="150,90,150,-37">
 
             <StackPanel.Resources>
 
@@ -23,60 +29,71 @@
                 </Style>
                 <Style x:Key="HoverButtonStyle" TargetType="Button">
                     <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True" />
                     </Style.Triggers>
                 </Style>
 
             </StackPanel.Resources>
 
             <Label
-        x:Name="lblReservationAssurance"
-        HorizontalAlignment="Center"
-        Content="Reservation assurance"
-        FontSize="18"
-        FontWeight="Bold" />
-            <Label x:Name="txtbx" Content="Choisissez votre assurance" Height="32" />
-            <StackPanel Height="33" Orientation="Horizontal" Margin="10,0,0,0">
-                <RadioButton
-            Content="dommage corporel"/>
-                <RadioButton
-            Content="vol" Margin="10,0,0,0"/>
-                <RadioButton
-            Content="dommage corporel et vol" Margin="10,0,0,0"/>
-                <RadioButton
-            Content="Aucune assurance" Margin="10,0,0,0"/>
-            </StackPanel>
+                x:Name="lblReservationAssurance"
+                HorizontalAlignment="Center"
+                Content="Reservation assurance"
+                FontSize="18"
+                FontWeight="Bold" />
+            <Label
+                x:Name="txtbx"
+                Height="32"
+                Content="Choisissez votre assurance" />
             <StackPanel
-        Height="28"
-        Orientation="Horizontal">
+                Height="33"
+                Margin="10,0,0,0"
+                Orientation="Horizontal">
+                <RadioButton Content="dommage corporel" />
+                <RadioButton Margin="10,0,0,0" Content="vol" />
+                <RadioButton Margin="10,0,0,0" Content="dommage corporel et vol" />
+                <RadioButton Margin="10,0,0,0" Content="Aucune assurance" />
+            </StackPanel>
+            <StackPanel Height="28" Orientation="Horizontal">
                 <Label x:Name="lblDebut" Content="Forfait kilométrique" />
             </StackPanel>
-            <StackPanel Height="23" Orientation="Horizontal" Margin="10,0,0,0">
-                <RadioButton
-                Content="- 100 km"/>
-                <RadioButton
-                Content="entre 100km et 250km" Margin="30,0,0,0"/>
-                <RadioButton
-                Content="+ de 250km" Margin="30,0,0,0"/>
+            <StackPanel
+                Height="23"
+                Margin="10,0,0,0"
+                Orientation="Horizontal">
+                <RadioButton Content="- 100 km" />
+                <RadioButton Margin="30,0,0,0" Content="entre 100km et 250km" />
+                <RadioButton Margin="30,0,0,0" Content="+ de 250km" />
             </StackPanel>
             <StackPanel
-        Height="25"
-        Margin="0,10,0,0"
-        Orientation="Horizontal">
+                Height="30"
+                Margin="0,10,0,0"
+                Orientation="Horizontal">
+                <Label Content="N° de réservation :" />
+                <Label Content="01234567" FontWeight="Bold" />
+            </StackPanel>
+            <StackPanel
+                Height="25"
+                Margin="0,10,0,0"
+                Orientation="Horizontal">
                 <Label x:Name="lblType" Content="Montant total :" />
 
             </StackPanel>
             <StackPanel Height="30" Orientation="Horizontal">
-                <Label x:Name="lblMontantTotal" Content="355€" FontSize="14" FontWeight="Bold" Margin="0,-5,0,0"/>
+                <Label
+                    x:Name="lblMontantTotal"
+                    Margin="0,-5,0,0"
+                    Content="355€"
+                    FontSize="14"
+                    FontWeight="Bold" />
             </StackPanel>
             <Button
-        x:Name="butRechercher"
-        Width="100"
-        Height="25"
-        Margin="0,20,20,0"
-        Background="#FFF5ADAF"
-        Content="Valider" />
+                x:Name="butRechercher"
+                Width="100"
+                Height="25"
+                Margin="0,20,20,0"
+                Background="#FFF5ADAF"
+                Content="Valider" />
         </StackPanel>
 
 

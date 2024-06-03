@@ -16,55 +16,73 @@
             Margin="10,10,570,365"
             Source="/img/logoIntermarche.png"
             Stretch="Fill" />
-        <Image Margin="10,10,571,359" Source="/img/logo-Reservation_Intermarche.png" Stretch="Fill"/>
-        <StackPanel Margin="150,90,150,20">
-            <Label Content="Résumé de la réservation" HorizontalAlignment="Center" FontWeight="Bold" FontSize="14"/>
-            <StackPanel Height="30" Orientation="Horizontal" Margin="0,10,0,0">
-                <Label Content="N° de commande :"/>
-                <Label Content="013594" FontWeight="Bold"/>
+        <Image
+            Margin="290,10,290,359"
+            Source="/img/logo-Reservation_Intermarche.png"
+            Stretch="Fill" />
+        <Label
+            Margin="0,91,0,-91"
+            HorizontalAlignment="Center"
+            Content="Résumé de la réservation"
+            FontSize="14"
+            FontWeight="Bold" />
+        <StackPanel Margin="150,140,150,0">
+
+            <StackPanel
+                Height="30"
+                Margin="0,10,0,0"
+                Orientation="Horizontal">
+                <Label Content="N° de commande :" />
+                <Label Content="013594" FontWeight="Bold" />
             </StackPanel>
             <StackPanel Height="30" Orientation="Horizontal">
-                <Label Content="Nom Prénom du client :"/>
-                <Label Content="LOREM Ipsum" FontWeight="Bold"/>
+                <Label Content="Nom Prénom du client :" />
+                <Label Content="LOREM Ipsum" FontWeight="Bold" />
             </StackPanel>
             <StackPanel Height="30" Orientation="Horizontal">
-                <Label Content="Date de réservation :"/>
-                <Label Content="Du"/>
-                <Label Content="01/01/2024" FontWeight="Bold"/>
-                <Label Content="au"/>
-                <Label Content="02/01/2024" FontWeight="Bold"/>
+                <Label Content="Date de réservation :" />
+                <Label Content="Du" />
+                <Label Content="01/01/2024" FontWeight="Bold" />
+                <Label Content="au" />
+                <Label Content="02/01/2024" FontWeight="Bold" />
             </StackPanel>
             <StackPanel Height="30" Orientation="Horizontal">
-                <Label Content="Catégorie du véhicule :"/>
-                <Label Content="Megane 5" FontWeight="Bold"/>
-                <Label Content="(Boite"/>
-                <Label Content="manuelle)" Margin="-5,0,0,0" FontWeight="Bold"/>
+                <Label Content="Catégorie du véhicule :" />
+                <Label Content="Megane 5" FontWeight="Bold" />
+                <Label Content="(Boite" />
+                <Label
+                    Margin="-5,0,0,0"
+                    Content="manuelle)"
+                    FontWeight="Bold" />
             </StackPanel>
             <StackPanel Height="30" Orientation="Horizontal">
-                <Label Content="Immatriculation :"/>
-                <Label Content="BUT-1FO-690" FontWeight="Bold"/>
+                <Label Content="Immatriculation :" />
+                <Label Content="BUT-1FO-690" FontWeight="Bold" />
             </StackPanel>
             <StackPanel Height="30" Orientation="Horizontal">
-                <Label Content="Magasin de location :"/>
-                <Label Content="Annecy" FontWeight="Bold"/>
+                <Label Content="Magasin de location :" />
+                <Label Content="Annecy" FontWeight="Bold" />
             </StackPanel>
             <StackPanel Height="30" Orientation="Horizontal">
-                <Label Content="Type d'assurance :"/>
-                <Label Content="Aucune assurance" FontWeight="Bold"/>
+                <Label Content="Type d'assurance :" />
+                <Label Content="Aucune assurance" FontWeight="Bold" />
             </StackPanel>
             <StackPanel Height="30" Orientation="Horizontal">
-                <Label Content="Forfait kilométrique :"/>
-                <Label Content="- de 100 km" FontWeight="Bold"/>
+                <Label Content="Forfait kilométrique :" />
+                <Label Content="- de 100 km" FontWeight="Bold" />
             </StackPanel>
             <StackPanel.Resources>
                 <Style TargetType="Label">
-                    <Setter Property="FontSize" Value="14px"/>
+                    <Setter Property="FontSize" Value="14px" />
                 </Style>
 
             </StackPanel.Resources>
 
         </StackPanel>
-        <Border BorderBrush="Black" BorderThickness="1" Margin="150,90,150,20"/>
+        <Border
+            Margin="150,137,150,17"
+            BorderBrush="Black"
+            BorderThickness="1" />
 
     </Grid>
 </Window>

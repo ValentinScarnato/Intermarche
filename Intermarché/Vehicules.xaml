@@ -1,13 +1,19 @@
-﻿<Window x:Class="Intermarché.Vehicules"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Intermarché"
-        mc:Ignorable="d"
-        Title="Vehicules" Height="450" Width="800">
+﻿<Window
+    x:Class="Intermarché.Vehicules"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Intermarché"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Vehicules"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
     <Grid>
-        <Image Margin="270,11,270,334" Source="/img/logo-Reservation_Intermarche.png" Stretch="Fill"/>
+        <Image
+            Margin="270,11,270,334"
+            Source="/img/logo-Reservation_Intermarche.png"
+            Stretch="Fill" />
 
         <StackPanel Margin="288,118,72,62">
             <StackPanel.Resources>
@@ -20,34 +26,77 @@
                     </Style.Triggers>
                 </Style>
             </StackPanel.Resources>
-            <Label Content="Véhicules disponibles" HorizontalAlignment="Right" FontWeight="Bold"/>
-            <Label x:Name="lblVehicule1" Content="Camion benne" FontWeight="Bold" HorizontalAlignment="Left"/>
+            <Label
+                HorizontalAlignment="Right"
+                Content="Véhicules disponibles"
+                FontWeight="Bold" />
+            <Label
+                x:Name="lblVehicule1"
+                HorizontalAlignment="Left"
+                Content="Camion benne"
+                FontWeight="Bold" />
             <StackPanel Height="30" Orientation="Horizontal">
-                <Label x:Name="lblNbPlaces1" Content="3" FontWeight="Bold"/>
-                <Label Content="places" Margin="-5,0,0,0"/>
-                <Label Content="Charge utile :" Margin="10,0,0,0"/>
-                <Label x:Name="lblChargeUtile" Content="900kg" Margin="-5,0,0,0" FontWeight="Bold"/>
-                <Label Content="Charge utile :" Margin="10,0,0,0"/>
-                <Label x:Name="lblDimensions" Content="L 5,9m x l 2,2m x h 2,2m" Margin="-5,0,0,0" FontWeight="Bold"/>
+                <Label
+                    x:Name="lblNbPlaces1"
+                    Content="3"
+                    FontWeight="Bold" />
+                <Label Margin="-5,0,0,0" Content="places" />
+                <Label Margin="10,0,0,0" Content="Charge utile :" />
+                <Label
+                    x:Name="lblChargeUtile"
+                    Margin="-5,0,0,0"
+                    Content="900kg"
+                    FontWeight="Bold" />
+                <Label Margin="10,0,0,0" Content="Charge utile :" />
+                <Label
+                    x:Name="lblDimensions"
+                    Margin="-5,0,0,0"
+                    Content="L 5,9m x l 2,2m x h 2,2m"
+                    FontWeight="Bold" />
 
             </StackPanel>
-            <Button Content="Choisir ce véhicule" Background="#FFF6AFB0"/>
-            <Label x:Name="lblVehicule2" Content="Renault Mégane" Margin="0,50,0,0" FontWeight="Bold"/>
+            <Button Background="#FFF6AFB0" Content="Choisir ce véhicule" />
+            <Label
+                x:Name="lblVehicule2"
+                Margin="0,50,0,0"
+                Content="Renault Mégane"
+                FontWeight="Bold" />
             <StackPanel Height="30" Orientation="Horizontal">
-                <Label x:Name="lblNbPlaces2" Content="5" FontWeight="Bold"/>
-                <Label Content="places" Margin="-5,0,0,0"/>
-                <Label Content="Nombre portes :" Margin="10,0,0,0"/>
-                <Label x:Name="lblNbPortes" Content="5" Margin="-5,0,0,0" FontWeight="Bold"/>
-                <Label Content="Type boite :" Margin="10,0,0,0"/>
-                <Label x:Name="lblTypeBoite" Content="Boite manuelle" Margin="-5,0,0,0" FontWeight="Bold"/>
+                <Label
+                    x:Name="lblNbPlaces2"
+                    Content="5"
+                    FontWeight="Bold" />
+                <Label Margin="-5,0,0,0" Content="places" />
+                <Label Margin="10,0,0,0" Content="Nombre portes :" />
+                <Label
+                    x:Name="lblNbPortes"
+                    Margin="-5,0,0,0"
+                    Content="5"
+                    FontWeight="Bold" />
+                <Label Margin="10,0,0,0" Content="Type boite :" />
+                <Label
+                    x:Name="lblTypeBoite"
+                    Margin="-5,0,0,0"
+                    Content="Boite manuelle"
+                    FontWeight="Bold" />
 
             </StackPanel>
-            <Button Content="Choisir ce véhicule" Background="#FFF6AFB0"/>
+            <Button Background="#FFF6AFB0" Content="Choisir ce véhicule" />
 
         </StackPanel>
-        <WrapPanel Margin="-297,118,517,82">
-            <Image Height="117" Source="/img/camion_benne_Intermarche.jpg" Stretch="Fill" Width="215" Margin="360,0,0,0"/>
-            <Image Height="117" Source="/img/megane_lrg.jpg" Stretch="Fill" Width="210" Margin="360,0,0,0"/>
+        <WrapPanel Margin="-297,124,517,75">
+            <Image
+                Width="215"
+                Height="117"
+                Margin="360,0,0,0"
+                Source="/img/camion_benne_Intermarche.jpg"
+                Stretch="Fill" />
+            <Image
+                Width="210"
+                Height="117"
+                Margin="360,0,0,0"
+                Source="/img/megane_lrg.jpg"
+                Stretch="Fill" />
         </WrapPanel>
 
 
