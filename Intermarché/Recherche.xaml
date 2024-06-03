@@ -19,7 +19,7 @@
             <Label
                 x:Name="lblRechercheReservation"
                 HorizontalAlignment="Center"
-                Content="Rechercher réservation"
+                Content="Visualiser réservation"
                 FontSize="18"
                 FontWeight="Bold" />
             <Label x:Name="lblInfoResa" Content="Rechercher par n° de réservation / nom du client" Margin="5,0,0,0" />
@@ -28,13 +28,13 @@
                 x:Name="txtboxnumResa"
                 Width="450"
                 Height="25"
-                Margin="10,0,10,0"
+                Margin="5,0,10,0"
                 HorizontalAlignment="Left"
                 BorderBrush="#FFB3ABAB"
                 CaretBrush="#FFCEA1A1"
                 FontSize="14"
                 FontStyle="Italic"
-                Text="Entrez le n° de réservation"
+                Text="Entrez le n° de réservation / nom client"
                 TextWrapping="Wrap">
                     <TextBox.Background>
                         <SolidColorBrush Opacity="0.7" Color="#FFFFF1F1" />

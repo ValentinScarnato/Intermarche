@@ -23,5 +23,10 @@ namespace Intermarché
         {
             InitializeComponent();
         }
+
+        private void txtboxnumResa_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
