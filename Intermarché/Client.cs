@@ -88,6 +88,23 @@ namespace Intermarché
                 this.mail_client = value;
             }
         }
+        public Client(int num_client)
+        {
+            this.Num_client = num_client;
+        }
+        public Client(int num_client,string nom_client,string mail_client,string telephone_client) : this(num_client)
+        {
+            this.Nom_client = nom_client;
+            this.Mail_client = mail_client;
+            this.Telephone_client = telephone_client;
+        }
+        public Client(int num_client, string nom_client, string adresse_rue_client, string adresse_cp_client, string adresse_ville_client,string telephone_client, string mail_client) : this(num_client,nom_client,mail_client,telephone_client)
+        {
+            this.Adresse_rue_client = adresse_rue_client;
+            this.Adresse_cp_client = adresse_cp_client;
+            this.Adresse_ville_client = adresse_ville_client;
+        }
+
 
 
 

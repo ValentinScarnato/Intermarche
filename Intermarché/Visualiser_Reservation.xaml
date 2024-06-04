@@ -59,14 +59,27 @@
                 Margin="7,0,0,0"
                 Source="/img/logo-Reservation_Intermarche.png"
                 Stretch="Fill" />
-            <Button x:Name="butCompte" Content="" Height="41" Width="40" Margin="450,0,0,10" BorderBrush="White" Foreground="Black">
+            <Button
+                x:Name="butCompte"
+                Width="40"
+                Height="41"
+                Margin="450,0,0,10"
+                BorderBrush="White"
+                Content=""
+                Foreground="Black">
                 <Button.Background>
-                    <ImageBrush ImageSource="/img/logo-compte-removebg-preview.png"/>
+                    <ImageBrush ImageSource="/img/logo-compte-removebg-preview.png" />
                 </Button.Background>
             </Button>
-            <Button x:Name="butRetour" Content="" Height="57" Width="73" Margin="20,0,0,0" BorderBrush="White">
+            <Button
+                x:Name="butRetour"
+                Width="73"
+                Height="57"
+                Margin="20,0,0,0"
+                BorderBrush="White"
+                Content="">
                 <Button.Background>
-                    <ImageBrush ImageSource="/img/logo-retour-removebg-preview.png" Stretch="UniformToFill"/>
+                    <ImageBrush ImageSource="/img/logo-retour-removebg-preview.png" Stretch="UniformToFill" />
                 </Button.Background>
             </Button>
 
