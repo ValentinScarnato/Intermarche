@@ -10,7 +10,7 @@
     Height="450"
     mc:Ignorable="d">
     <Grid>
-        <StackPanel Margin="59,75,-23,296">
+        <StackPanel Margin="18,75,18,296">
             <StackPanel.Resources>
 
                 <Style TargetType="TextBox" />
@@ -27,7 +27,7 @@
                 Orientation="Horizontal">
                 <TextBox
                     x:Name="txtboxnumResa"
-                    Width="520"
+                    Width="266"
                     Height="25"
                     BorderBrush="#FFB3ABAB"
                     CaretBrush="#FFCEA1A1"
@@ -49,15 +49,50 @@
                     Content="Rechercher" />
             </StackPanel>
         </StackPanel>
-        <StackPanel Margin="0,0,0,359" Orientation="Horizontal" Background="#FF2F2323">
-            <Image Height="65" Source="/img/logo-Reservation_Intermarche.png" Stretch="Fill" Width="219" Margin="275,0,0,0"/>
-            <Button Content="Button" Height="43" Width="94" Margin="200,0,0,0"/>
+        <StackPanel
+            Margin="0,0,0,359"
+            Background="White"
+            Orientation="Horizontal">
+            <Image
+                Width="219"
+                Height="65"
+                Margin="7,0,0,0"
+                Source="/img/logo-Reservation_Intermarche.png"
+                Stretch="Fill" />
+            <Button x:Name="butCompte" Content="" Height="41" Width="40" Margin="450,0,0,10" BorderBrush="White" Foreground="Black">
+                <Button.Background>
+                    <ImageBrush ImageSource="/img/logo-compte-removebg-preview.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="butRetour" Content="" Height="57" Width="73" Margin="20,0,0,0" BorderBrush="White">
+                <Button.Background>
+                    <ImageBrush ImageSource="/img/logo-retour-removebg-preview.png" Stretch="UniformToFill"/>
+                </Button.Background>
+            </Button>
+
 
         </StackPanel>
-        <Grid Margin="70,143,211,10">
+        <Label
+            x:Name="lbInfoConnexionSession"
+            Margin="310,14,305,396"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Content="Vous êtes connecté au magasin" />
+        <Label
+            Margin="0,39,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Content="Annecy"
+            FontWeight="Bold" />
+        <Button
+            Width="94"
+            Height="43"
+            Margin="200,0,0,0"
+            Content="Button" />
+        <Grid Margin="28,143,196,10">
             <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" />
         </Grid>
-        <StackPanel Margin="604,143,10,10">
+        <StackPanel x:Name="spFiltreTrier" Margin="604,143,10,10">
             <Label
                 Margin="20,0,0,0"
                 HorizontalAlignment="Left"

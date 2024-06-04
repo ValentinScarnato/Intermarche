@@ -1,155 +1,95 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Mail;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Intermarché
 {
-    public enum GenreClient { Neutre = 'N', Homme = 'H', Femme = 'F' };
-    public class Client : ICloneable
+    public class Client
     {
+		private int num_client;
 
-        private GenreClient genre;
-        private string nom;
-        private string prenom;
-        private string email;
-        private DateTime dateNaissance;
-        private string telephone;
-        public Client()
-        {
-            this.dateNaissance = DateTime.Today;
-        }
+		public int Num_client
+		{
+			get { return num_client; }
+			set { num_client = value; }
+		}
 
-        public Client(int id, string nom, string prenom, string email)
-        {
-            this.Nom = nom;
-            this.Prenom = prenom;
-            this.Email = email;
-            this.Id = id;
-        }
+		private string nom_client;
 
-        public Client(int id, string nom, string prenom, string email, DateTime dateNaissance, string telephone) : this(id, nom, prenom, email)
+		public string Nom_client
         {
-            this.DateNaissance = dateNaissance;
-            this.Telephone = telephone;
-        }
-
-        public Client(int id, string nom, string prenom, string email, DateTime dateNaissance, string telephone, GenreClient genre) : this(id, nom, prenom, email, dateNaissance, telephone)
-        {
-            this.Genre = genre;
-        }
-        private int id;
-
-        public int Id
-        {
-            get { return id; }
-            set { id = value; }
-        }
-
-        public string Nom
-        {
-            get
-            {
-                return this.nom;
+			get { return nom_client; }
+			set {
+                if (value.Length > 50)
+                    throw new ArgumentException("Le nom de client est trop long.");
+                this.nom_client = value;
             }
+		}
 
+		private string adresse_rue_client;
+
+		public string Adresse_rue_client
+        {
+			get { return adresse_rue_client; }
+			set {
+                if (value.Length > 200)
+                    throw new ArgumentException("La rue de l'adresse du client est trop longue.");
+                this.adresse_rue_client = value;
+            }
+		}
+
+        private string adresse_cp_client;
+
+        public string Adresse_cp_client
+        {
+            get { return adresse_cp_client; }
+            set {
+                if (value.Length > 5)
+                    throw new ArgumentException("Le code postal de l'adresse du client est trop long.");
+                this.adresse_cp_client  = value;
+            }
+        }
+
+        private string adresse_ville_client;
+
+        public string Adresse_ville_client
+        {
+            get { return adresse_ville_client; }
+            set {
+                if (value.Length > 50)
+                    throw new ArgumentException("La ville de l'adresse du client est trop longue.");
+                this.adresse_ville_client = value;
+            }
+        }
+
+        private string telephone_client;
+
+        public string Telephone_client
+        {
+            get { return telephone_client; }
             set
             {
-                if (String.IsNullOrEmpty(value))
-                    throw new ArgumentException("Le nom doit être renseigné");
-                this.nom = value;
+                if (value.Length > 10)
+                    throw new ArgumentException("Le téléphone du client est trop long.");
+                this.telephone_client = value;
             }
         }
 
-        public string Prenom
+        private string mail_client;
+
+        public string Mail_client
         {
-            get
-            {
-                return this.prenom;
-            }
-
-            set
-            {
-                if (String.IsNullOrEmpty(value))
-                    throw new ArgumentException("Le prénom doit être renseigné");
-                this.prenom = value;
+            get { return mail_client; }
+            set {
+                if (value.Length > 150)
+                    throw new ArgumentException("Le mail du client est trop long.");
+                this.mail_client = value;
             }
         }
 
-        public string Email
-        {
-            get
-            {
-                return this.email;
-            }
 
-            set
-            {
-                try
-                {
-                    MailAddress mail = new MailAddress(value);
-                    this.email = value;
-                }
-                catch (Exception e) { throw new ArgumentException("L'email est invalide."); }
-            }
-        }
 
-        public DateTime DateNaissance
-        {
-            get
-            {
-                return this.dateNaissance;
-            }
-
-            set
-            {
-                if (value == DateTime.Today)
-                    throw new ArgumentException("La date ne peut être aujourd'hui.");
-
-                this.dateNaissance = value;
-            }
-        }
-
-        public string Telephone
-        {
-            get
-            {
-                return this.telephone;
-            }
-
-            set
-            {
-                if (!Regex.IsMatch(value, "^[0-9]{10}$"))
-                    throw new ArgumentException("Le format du tel n'est pas correct. 10 chiffres attendus.");
-
-                this.telephone = value;
-            }
-        }
-
-        public GenreClient Genre
-        {
-            get
-            {
-                return this.genre;
-            }
-
-            set
-            {
-                this.genre = value;
-            }
-        }
-
-        public object Clone()
-        {
-            return new Client(this.id, this.nom, this.prenom, this.email, this.DateNaissance, this.telephone, this.genre);
-        }
-
-        public override string? ToString()
-        {
-            return Nom + " " + Prenom + " " + Email;
-        }
     }
 }

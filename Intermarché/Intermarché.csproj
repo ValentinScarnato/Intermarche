@@ -3,13 +3,12 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
     <UseWPF>true</UseWPF>
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Image1.png" />
     <None Remove="img\camion_benne_Intermarche.jpg" />
     <None Remove="img\logo-Reservation_Intermarche.png" />
     <None Remove="img\megane_lrg.jpg" />
