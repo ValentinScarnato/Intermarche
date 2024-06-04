@@ -58,9 +58,11 @@
                 Width="219"
                 Height="65"
                 Margin="7,0,0,0"
-                Source="/img/logo-Reservation_Intermarche.png"
-                Stretch="Fill" />
-            <Button x:Name="butCompte" Content="" Height="41" Width="40" Margin="450,0,0,10" BorderBrush="White" Foreground="Black">
+                Source="/img/logo-Reservation_Intermarche.png"/>
+            <Label
+            x:Name="lbTitreVisuResa"
+            Content="Visualiser réservation" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="50,0,0,0" FontWeight="Bold" FontSize="16" />
+            <Button x:Name="butCompte" Content="" Height="41" Width="40" Margin="225,0,0,10" BorderBrush="White" Foreground="Black">
                 <Button.Background>
                     <ImageBrush ImageSource="/img/logo-compte-removebg-preview.png"/>
                 </Button.Background>
@@ -70,21 +72,17 @@
                     <ImageBrush ImageSource="/img/logo-retour-removebg-preview.png" Stretch="UniformToFill"/>
                 </Button.Background>
             </Button>
-
-
         </StackPanel>
-        <Label
+        <StackPanel Margin="468,9,133,370">
+            <Label
             x:Name="lbInfoConnexionSession"
-            Margin="310,14,305,396"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            Content="Vous êtes connecté au magasin" />
+            Content="Vous êtes connecté au magasin" HorizontalAlignment="Center" VerticalAlignment="Center" />
         <Label
-            Margin="0,39,0,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
             Content="Annecy"
-            FontWeight="Bold" />
+            FontWeight="Bold" Margin="0,-1,0,0" />
+        </StackPanel>
         <Grid Margin="28,143,196,10">
             <DataGrid x:Name="datagridVisualiserReservation" d:ItemsSource="{d:SampleData ItemCount=5}" />
         </Grid>
