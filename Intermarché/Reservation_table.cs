@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Intermarché
 {
-    class Reservation_table
+    public class Reservation_table
     {
 		private int num_reservation;
 
@@ -56,9 +56,9 @@ namespace Intermarché
             set { date_fin_reservation = value; }
         }
 
-        private decimal montant_reservation;
+        private double montant_reservation;
 
-        public decimal Montant_reservation
+        public double Montant_reservation
         {
             get { return montant_reservation; }
             set { montant_reservation = value; }
@@ -72,6 +72,7 @@ namespace Intermarché
             set {
                 if (value.Length > 10)
                     throw new ArgumentException("Le forfait kilométirque à une valeur trop longue");
+                this.forfait_km = value;
             }
         }
 
