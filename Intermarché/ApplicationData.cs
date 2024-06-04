@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Npgsql;
 
 namespace Intermarché
 {
@@ -12,7 +13,7 @@ namespace Intermarché
     {
 
         private ObservableCollection<Client> lesClients;
-        private SqlConnection connexion = null;   // futur lien à la BD
+        private NpgsqlConnection connexion = null;   // futur lien à la BD
 
 
         public ObservableCollection<Client> LesClients
@@ -28,7 +29,7 @@ namespace Intermarché
             }
         }
 
-        public SqlConnection Connexion
+        public NpgsqlConnection Connexion
         {
             get
             {
@@ -47,8 +48,10 @@ namespace Intermarché
             this.Read();
             try
             {
-                Connexion = new SqlConnection();
-                Connexion.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=P:\S2\R2.02_IHM_WPF\TD3_Binding_BD\P1_BD_Locale\BD_Clients.mdf;Integrated Security=True";
+                Connexion = new NpgsqlConnection();
+                Connexion.ConnectionString = "Server=srv-peda-new;" + "port=5433;" + "Database=votreBase;" + "Search Path = votreSchemaPostGresql;" +
+                    "uid=votreLogin;" +"password=votrePassword";
+
                 // à compléter dans les "" 
                 // @ sert à enlever tout pb avec les caractères 
                 Connexion.Open();
@@ -65,26 +68,26 @@ namespace Intermarché
         }
         public int Read()
         {
-            String sql = "SELECT id, nom,prenom,email,genre,telephone, dateNaissance FROM Client";
+            String sql = "SELECT num_client, nom_client,adresse_rue_client,adresse_cp_client,adresse_ville_client,telephone_client, mail_client FROM Client";
             try
             {
-                SqlDataAdapter dataAdapter = new SqlDataAdapter(sql, Connexion);
+                NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter(sql, Connexion);
                 DataTable dataTable = new DataTable();
                 dataAdapter.Fill(dataTable);
                 foreach (DataRow res in dataTable.Rows)
                 {
-                    Client nouveau = new Client(int.Parse(res["id"].ToString()),
-                    res["nom"].ToString(), res["prenom"].ToString(),
-                    res["email"].ToString(), DateTime.Parse(res["dateNaissance"].ToString()),
-                    res["telephone"].ToString(),
-                    (GenreClient)char.Parse(res["genre"].ToString()));
+                    Client nouveau = new Client(int.Parse(res["num_client"].ToString()),
+                    res["nom_client"].ToString(), res["adresse_rue_client"].ToString(),
+                    res["adresse_cp_client"].ToString(),(res["adresse_ville_client"].ToString()),
+                    res["telephone_client"].ToString(), res["mail_client"].ToString());
                     LesClients.Add(nouveau);
                 }
                 return dataTable.Rows.Count;
             }
-            catch (SqlException e)
+            catch (NpgsqlException e)
             { Console.WriteLine("pb de requete : " + e); return 0; }
         }
+        /*
         public int Create(Client c)
         {
             String sql = $"insert into client (nom,prenom,email,genre,telephone, dateNaissance)"
@@ -93,7 +96,7 @@ namespace Intermarché
             + $"'{c.DateNaissance.Year}-{c.DateNaissance.Month}-{c.DateNaissance.Day}'); ";
             try
             {
-                SqlCommand cmd = new SqlCommand(sql, Connexion);
+                NpgsqlCommand cmd = new NpgsqlCommand(sql, Connexion);
                 int nb = cmd.ExecuteNonQuery();
                 return nb;
                 //nb permet de connaître le nb de lignes affectées par un insert, update, delete
@@ -110,7 +113,7 @@ namespace Intermarché
             String sql = "delete from client where idClient = @idClient;";
             try
             {
-                SqlCommand cmd = new SqlCommand(sql, Connexion);
+                NpgsqlCommand cmd = new NpgsqlCommand(sql, Connexion);
                 cmd.Parameters.AddWithValue("@idClient", idClient);
                 int nb = cmd.ExecuteNonQuery();
                 return nb;
@@ -129,7 +132,7 @@ namespace Intermarché
             + $"'{c.DateNaissance.Year}-{c.DateNaissance.Month}-{c.DateNaissance.Day}'); ";
             try
             {
-                SqlCommand cmd = new SqlCommand(sql, Connexion);
+                NpgsqlCommand cmd = new NpgsqlCommand(sql, Connexion);
                 int nb = cmd.ExecuteNonQuery();
                 return nb;
                 //nb permet de connaître le nb de lignes affectées par un insert, update, delete
@@ -140,7 +143,7 @@ namespace Intermarché
                 // juste pour le debug : à transformer en MsgBox 
                 return 0;
             }
-        }
+        }*/
 
 
     }
