@@ -21,17 +21,19 @@
                 Content="Connexion"
                 FontSize="16"
                 FontWeight="Bold" />
-            <Label x:Name="labIdentifiant" Content="Identifiant :" />
+            <Label x:Name="labIdentifiant" Content="Login :" />
             <TextBox
                 x:Name="txtboxIdentifiant"
                 Width="120"
                 Margin="0,5,0,0"
+                MaxLength="6"
                 Text=""
                 TextWrapping="Wrap" />
             <Label x:Name="labMdp" Content="Mot de passe :" />
             <TextBox
                 Width="120"
                 Margin="0,5,0,0"
+                MaxLength="10"
                 Text=""
                 TextWrapping="Wrap" />
             <Button
