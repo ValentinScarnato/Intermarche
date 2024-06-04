@@ -13,7 +13,6 @@
     <None Remove="img\logo-Reservation_Intermarche.png" />
     <None Remove="img\megane_lrg.jpg" />
     <None Remove="intermarche-logo.png" />
-    <None Remove="logo-Reservation_Intermarche.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -33,7 +32,6 @@
     <Resource Include="img\megane_lrg.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="logo-Reservation_Intermarche.png" />
   </ItemGroup>
 
 </Project>

@@ -15,18 +15,13 @@ using System.Windows.Shapes;
 namespace Intermarché
 {
     /// <summary>
-    /// Logique d'interaction pour Reservation.xaml
+    /// Logique d'interaction pour Reserver_vehicules.xaml
     /// </summary>
-    public partial class Reservation : Window
+    public partial class Reserver_vehicules : Window
     {
-        public Reservation()
+        public Reserver_vehicules()
         {
             InitializeComponent();
-        }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
     }
 }

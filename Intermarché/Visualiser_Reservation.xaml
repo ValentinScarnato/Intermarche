@@ -26,14 +26,15 @@
                 HorizontalAlignment="Left"
                 Orientation="Horizontal">
                 <TextBox
-                    x:Name="txtboxnumResa"
+                    x:Name="txtboxEntrerRechercheVisu"
                     Width="266"
                     Height="25"
                     BorderBrush="#FFB3ABAB"
                     CaretBrush="#FFCEA1A1"
                     FontSize="14"
                     FontStyle="Italic"
-                    Text="Entrez le n° de réservation / nom client"
+                    Text=""
+                    MaxLength="50"
                     TextWrapping="Wrap">
                     <TextBox.Background>
                         <SolidColorBrush Opacity="0.7" Color="#FFFFF1F1" />
@@ -84,13 +85,8 @@
             VerticalAlignment="Top"
             Content="Annecy"
             FontWeight="Bold" />
-        <Button
-            Width="94"
-            Height="43"
-            Margin="200,0,0,0"
-            Content="Button" />
         <Grid Margin="28,143,196,10">
-            <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" />
+            <DataGrid x:Name="datagridVisualiserReservation" d:ItemsSource="{d:SampleData ItemCount=5}" />
         </Grid>
         <StackPanel x:Name="spFiltreTrier" Margin="604,143,10,10">
             <Label
