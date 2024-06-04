@@ -21,7 +21,11 @@ namespace Intermarché
 		public string Description_assurance
         {
 			get { return description_assurance; }
-			set { description_assurance = value; }
+			set {
+				if (value.Length > 30)
+					throw new ArgumentException("La description d'assurance est trop longue.");
+				this.description_assurance = value;
+			}
 		}
 
 		private int prix_assurance;
@@ -31,6 +35,8 @@ namespace Intermarché
 			get { return prix_assurance; }
 			set { prix_assurance = value; }
 		}
+
+
 
 
 	}

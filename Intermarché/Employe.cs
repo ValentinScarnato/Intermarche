@@ -29,7 +29,11 @@ namespace Intermarché
         public string Login
         {
             get { return login; }
-            set { login = value; }
+            set {
+                if (value.Length > 6)
+                    throw new ArgumentException("Le login est trop long.");
+                this.login = value;
+            }
         }
 
         private string mdp;
@@ -37,7 +41,11 @@ namespace Intermarché
         public string Mdp
         {
             get { return mdp; }
-            set { mdp = value; }
+            set {
+                if (value.Length > 10)
+                    throw new ArgumentException("Le mot de passe est trop long.");
+                this.mdp = value;
+            }
         }
 
 

@@ -13,7 +13,13 @@ namespace Intermarché
 		public string Immatriculation
         {
 			get { return immatriculation; }
-			set { immatriculation = value; }
+			set {
+                if (value.Length > 7)
+                    throw new ArgumentException("L'immatriculation est trop longue.");
+                if (String.IsNullOrEmpty(value))
+                    throw new ArgumentException("L'immatriculation ne peut pas être vide");
+				this.immatriculation = value;
+            }
 		}
 
 		private int num_reservation;

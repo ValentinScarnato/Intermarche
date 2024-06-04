@@ -13,7 +13,13 @@ namespace Intermarché
 		public string Immatriculation
         {
 			get { return immatriculation; }
-			set { immatriculation = value; }
+			set {
+                if (value.Length > 7)
+                    throw new ArgumentException("L'immatriculation est trop longue.");
+				if (String.IsNullOrEmpty(value)) 
+					throw new ArgumentException("L'immatriculation ne peut pas être vide");
+				this.immatriculation = value;
+            }
 		}
 
 		private int num_caracteristique;
@@ -29,7 +35,11 @@ namespace Intermarché
 		public string Valeur_caracteristique
         {
 			get { return valeur_caracteristique; }
-			set { valeur_caracteristique = value; }
+			set {
+                if (value.Length > 20)
+                    throw new ArgumentException("La valeur est trop longue.");
+				this.valeur_caracteristique = value;
+            }
 		}
 
 

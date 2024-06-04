@@ -13,7 +13,13 @@ namespace Intermarché
 		public string Nom_categorie
         {
 			get { return nom_categorie; }
-			set { nom_categorie = value; }
+			set {
+				if (value.Length > 30)
+					throw new ArgumentException("Le nom de la catégorie est trop long.");
+				if (String.IsNullOrEmpty(value))
+					throw new ArgumentException("Le nom de catégorie ne peut pas être vide");
+				this.nom_categorie = value;
+			}
 		}
 
 

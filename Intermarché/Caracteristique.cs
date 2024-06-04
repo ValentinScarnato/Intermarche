@@ -21,7 +21,11 @@ namespace Intermarché
 		public string Nom_caracteristique
         {
 			get { return nom_caracteristique; }
-			set { nom_caracteristique = value; }
+			set {
+				if (value.Length > 30)
+					throw new ArgumentException("Le caracteristique est trop long.");
+				this.nom_caracteristique = value;
+			}
 		}
 
 	}
