@@ -9,7 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Image1.png" />
     <None Remove="img\camion_benne_Intermarche.jpg" />
     <None Remove="img\logo-Reservation_Intermarche.png" />
     <None Remove="img\megane_lrg.jpg" />
