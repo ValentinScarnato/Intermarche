@@ -56,9 +56,21 @@
             <Image
                 Width="219"
                 Height="65"
-                Margin="10,0,0,0"
+                Margin="7,0,0,0"
                 Source="/img/logo-Reservation_Intermarche.png"
                 Stretch="Fill" />
+            <Button x:Name="butCompte" Content="" Height="41" Width="40" Margin="450,0,0,10" BorderBrush="White" Foreground="Black">
+                <Button.Background>
+                    <ImageBrush ImageSource="/img/logo-compte-removebg-preview.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="butRetour" Content="" Height="57" Width="73" Margin="20,0,0,0" BorderBrush="White">
+                <Button.Background>
+                    <ImageBrush ImageSource="/img/logo-retour-removebg-preview.png" Stretch="UniformToFill"/>
+                </Button.Background>
+            </Button>
+
+
         </StackPanel>
         <Label
             x:Name="lbInfoConnexionSession"
@@ -117,10 +129,5 @@
                 Width="120"
                 Margin="0,10,0,0" />
         </StackPanel>
-        <Image
-            Margin="402,107,274,248"
-            Source="/Image1.png"
-            Stretch="Fill" />
-
     </Grid>
 </Window>
