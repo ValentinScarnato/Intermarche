@@ -16,12 +16,12 @@ namespace Intermarché
 			set { immatriculation = value; }
 		}
 
-		private int num_immatriculation;
+		private int num_reservation;
 
-		public int num_immatriculation 
+		public int Num_reservation 
 		{
-			get { return myVar; }
-			set { myVar = value; }
+			get { return num_reservation; }
+			set { num_reservation = value; }
 		}
 
 
