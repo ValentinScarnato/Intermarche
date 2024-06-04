@@ -21,7 +21,7 @@
                 Margin="5,0,0,0"
                 Content="Rechercher par n° de réservation / nom du client" />
             <StackPanel
-                Width="723"
+                Width="754"
                 Margin="10,0,0,0"
                 HorizontalAlignment="Left"
                 Orientation="Horizontal">
@@ -48,6 +48,8 @@
                     HorizontalAlignment="Center"
                     Background="#FFF5ADAF"
                     Content="Rechercher" />
+                <Button Content="Ajouter réservation" Margin="165,0,0,0" Width="120"
+                    Height="25"/>
             </StackPanel>
         </StackPanel>
         <StackPanel
@@ -73,7 +75,7 @@
                 </Button.Background>
             </Button>
         </StackPanel>
-        <StackPanel Margin="468,9,133,370">
+        <StackPanel Margin="459,14,142,365">
             <Label
             x:Name="lbInfoConnexionSession"
             Content="Vous êtes connecté au magasin" HorizontalAlignment="Center" VerticalAlignment="Center" />
@@ -86,7 +88,7 @@
         <Grid Margin="28,143,196,10">
             <DataGrid x:Name="datagridVisualiserReservation" d:ItemsSource="{d:SampleData ItemCount=5}" />
         </Grid>
-        <StackPanel x:Name="spFiltreTrier" Margin="604,143,10,10">
+        <StackPanel x:Name="spFiltreTrier" Margin="604,143,0,10">
             <Label
                 Margin="20,0,0,0"
                 HorizontalAlignment="Left"
