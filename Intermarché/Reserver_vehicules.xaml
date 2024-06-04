@@ -7,6 +7,120 @@
         mc:Ignorable="d"
         Title="Reserver_vehicules" Height="450" Width="800">
     <Grid>
-        
+        <StackPanel Margin="18,75,18,296">
+            <StackPanel.Resources>
+
+                <Style TargetType="TextBox" />
+
+            </StackPanel.Resources>
+            <Label
+                x:Name="lblInfoResa"
+                Margin="5,0,0,0"
+                Content="Rechercher par n° de réservation / nom du client" />
+            <StackPanel
+                Width="723"
+                Margin="10,0,0,0"
+                HorizontalAlignment="Left"
+                Orientation="Horizontal">
+                <TextBox
+                    x:Name="txtboxEntrerRechercheVisu"
+                    Width="266"
+                    Height="25"
+                    BorderBrush="#FFB3ABAB"
+                    CaretBrush="#FFCEA1A1"
+                    FontSize="14"
+                    FontStyle="Italic"
+                    Text=""
+                    MaxLength="50"
+                    TextWrapping="Wrap">
+                    <TextBox.Background>
+                        <SolidColorBrush Opacity="0.7" Color="#FFFFF1F1" />
+                    </TextBox.Background>
+                </TextBox>
+                <Button
+                    x:Name="butRechercherResa"
+                    Width="80"
+                    Height="25"
+                    Margin="70,0,35,0"
+                    HorizontalAlignment="Center"
+                    Background="#FFF5ADAF"
+                    Content="Rechercher" />
+            </StackPanel>
+        </StackPanel>
+        <StackPanel
+            Margin="0,0,0,359"
+            Background="White"
+            Orientation="Horizontal">
+            <Image
+                Width="219"
+                Height="65"
+                Margin="7,0,0,0"
+                Source="/img/logo-Reservation_Intermarche.png"
+                Stretch="Fill" />
+            <Button x:Name="butCompte" Content="" Height="41" Width="40" Margin="450,0,0,10" BorderBrush="White" Foreground="Black">
+                <Button.Background>
+                    <ImageBrush ImageSource="/img/logo-compte-removebg-preview.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="butRetour" Content="" Height="57" Width="73" Margin="20,0,0,0" BorderBrush="White">
+                <Button.Background>
+                    <ImageBrush ImageSource="/img/logo-retour-removebg-preview.png" Stretch="UniformToFill"/>
+                </Button.Background>
+            </Button>
+
+
+        </StackPanel>
+        <Label
+            x:Name="lbInfoConnexionSession"
+            Margin="310,14,305,396"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Content="Vous êtes connecté au magasin" />
+        <Label
+            Margin="0,39,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Content="Annecy"
+            FontWeight="Bold" />
+        <Grid Margin="28,143,196,10">
+            <DataGrid x:Name="datagridVisualiserReservation" d:ItemsSource="{d:SampleData ItemCount=5}" />
+        </Grid>
+        <StackPanel x:Name="spFiltreTrier" Margin="604,143,10,10">
+            <Label
+                Margin="20,0,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Content="Trier par :" />
+            <Label
+                x:Name="labFiltreDate"
+                Margin="20,0,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Content="Date de réservation" />
+            <DatePicker
+                x:Name="dbFiltreDateResa"
+                Width="120"
+                Margin="0,10,0,0" />
+            <Label
+                x:Name="labFiltreVehicule"
+                Margin="20,10,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Content="Véhicules" />
+            <ComboBox
+                x:Name="cbFiltreVehicule"
+                Width="120"
+                Margin="0,10,0,0" />
+            <Label
+                x:Name="labFiltreTypeBoite"
+                Margin="20,10,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Content="Type de boîtes :" />
+            <ComboBox
+                x:Name="cbFiltreTypeBoite"
+                Width="120"
+                Margin="0,10,0,0" />
+        </StackPanel>
     </Grid>
 </Window>
