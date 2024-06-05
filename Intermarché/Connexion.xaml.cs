@@ -21,8 +21,6 @@ namespace Intermarché
     /// </summary>
     public partial class Connexion : Window
     {
-
-        
         public Connexion()
         {
             InitializeComponent();
