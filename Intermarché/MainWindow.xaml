@@ -8,79 +8,55 @@
     Title="Acceuil"
     Width="1280"
     Height="700"
-    mc:Ignorable="d" WindowState="Maximized" WindowStartupLocation="CenterScreen">
+    WindowStartupLocation="CenterScreen"
+    WindowState="Maximized"
+    mc:Ignorable="d">
     <Window.Resources>
         <local:Employe x:Key="employe" />
     </Window.Resources>
     <Grid>
         <StackPanel Margin="0,-1,0,577" Background="#FF4C4A4A">
-            <Image Height="71" Source="/img/intermarche-logo.png" Stretch="Fill" Width="291"/>
+            <Image
+                Width="291"
+                Height="71"
+                Source="/img/intermarche-logo.png"
+                Stretch="Fill" />
 
         </StackPanel>
         <TabControl Margin="0,74,0,0">
             <TabItem>
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Effectuer une Réservation" Foreground="Black" />
+                        <TextBlock Foreground="Black" Text="Effectuer une Réservation" />
                     </StackPanel>
                 </TabItem.Header>
                 <StackPanel x:Name="spEffectuerResa">
-                    <Label Content="Rechercher par N° Client / N° Réservation" Margin="50,20,0,0" FontSize="16" FontWeight="Bold"/>
-                    <StackPanel x:Name="spRecherche" Height="36" Orientation="Horizontal" Margin="50,20,50,20">
-                        <TextBox x:Name="tbRecherche" TextWrapping="Wrap" Text="" Width="670" Background="#FFFFA4A4" />
-                        <Button x:Name="butRecherche" Content="" Width="42" BorderBrush="{x:Null}" Margin="20,0,0,0" FontSize="14">
-                            <Button.Background>
-                                <ImageBrush ImageSource="/rechercher.png" Stretch="Fill"/>
-                            </Button.Background>
-                        </Button>
-                    </StackPanel>
-                    <StackPanel Width="480">
-                        <Label
+                    <Label
+                        Margin="50,20,0,0"
+                        Content="Rechercher par N° Client / N° Réservation"
+                        FontSize="16"
+                        FontWeight="Bold" />
+                    <StackPanel
+                        x:Name="spRecherche"
+                        Height="36"
+                        Margin="50,20,50,20"
+                        Orientation="Horizontal">
+                        <TextBox
+                            x:Name="tbRecherche"
+                            Width="670"
+                            Background="#FFFFA4A4"
+                            Text=""
+                            TextWrapping="Wrap" />
+                        <Button
+                            x:Name="butRecherche"
+                            Width="42"
                             Margin="20,0,0,0"
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Center"
-                            Content="Trier par :" />
-                        <Label
-                            x:Name="labFiltreDate"
-                            Margin="20,0,0,0"
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Center"
-                            Content="Date de réservation" />
-                        <DatePicker
-                            x:Name="dbFiltreDateResa"
-                            Width="153"
-                            Margin="0,10,0,0" />
-                        <Label
-                            x:Name="labFiltreVehicule"
-                            Margin="20,10,0,0"
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Center"
-                            Content="Véhicules" />
-                        <ComboBox
-                            x:Name="cbFiltreVehicule"
-                            Width="146"
-                            Margin="0,10,0,0" />
-                        <Label
-                            x:Name="labFiltreTypeBoite"
-                            Margin="20,10,0,0"
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Center"
-                            Content="Type de boîtes :" />
-                        <ComboBox
-                            x:Name="cbFiltreTypeBoite"
-                            Width="120"
-                            Margin="0,10,0,0" />
+                            BorderBrush="{x:Null}"
+                            Content=""
+                            FontSize="14" />
                     </StackPanel>
                 </StackPanel>
             </TabItem>
-            <TabItem>
-                <TabItem.Header>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Consulter un Réservation" Foreground="Red" />
-                    </StackPanel>
-                </TabItem.Header>
-            </TabItem>
-
         </TabControl>
     </Grid>
 </Window>

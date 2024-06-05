@@ -28,6 +28,41 @@ namespace Intermarché
             InitializeComponent();
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            FentreAOuvrir = "Connexion";
+            OuvertureFenetre();
+        }
+
+        public void OuvertureFenetre()
+        {
+            resa = false;
+            while (!quitter && !resa)
+            {
+                switch (fentreAOuvrir)
+                {
+                    case "Connexion":
+                        {
+                            Connexion connexion = new Connexion();
+                            connexion.ShowDialog();
+                            break;
+                        }
+                    case "Résa":
+                        {
+                            resa = true;
+                            break;
+                        }
+                    case "Quitter":
+                        {
+                            quitter = true;
+                            break;
+                        }
+
+                }
+            }
+
+            Console.WriteLine(fentreAOuvrir + " est ouvert");
+
             if (quitter)
             {
                 Console.WriteLine(fentreAOuvrir + "pour quitter application");
@@ -36,6 +71,8 @@ namespace Intermarché
         }
 
         
+=======
+>>>>>>> 638c2b0a32afe9cdfbbef85e68be909b9bf270b2
         private bool VerifierLogin(string login, string mdp)
         {
             bool isValid = false;
