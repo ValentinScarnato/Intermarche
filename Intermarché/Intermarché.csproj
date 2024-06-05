@@ -17,7 +17,6 @@
     <None Remove="img\logo-retour-removebg-preview.png" />
     <None Remove="img\megane_lrg.jpg" />
     <None Remove="img\rechercher.png" />
-    <None Remove="intermarche-logo.png" />
     <None Remove="rechercher.png" />
   </ItemGroup>
 
@@ -50,7 +49,6 @@
     <Resource Include="img\rechercher.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="intermarche-logo.png" />
     <Resource Include="rechercher.png" />
   </ItemGroup>
 
