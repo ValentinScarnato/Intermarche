@@ -30,7 +30,7 @@ namespace Intermarché
         private void butValiderConnexion_Click(object sender, RoutedEventArgs e)
         {
             string login = txtboxIdentifiant.Text;
-            string mdp = txtboxMdp.Text;
+            string mdp = txtboxMdp.Password;
             ApplicationData appData = new ApplicationData();
             if (appData.VerifierLogin())
             {

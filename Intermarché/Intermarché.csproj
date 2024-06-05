@@ -50,6 +50,7 @@
     <Resource Include="img\rechercher.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="intermarche-logo.png" />
     <Resource Include="rechercher.png" />
   </ItemGroup>
 

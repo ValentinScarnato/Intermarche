@@ -200,7 +200,7 @@ namespace Intermarché
         {
             Connexion connexion = new Connexion();
             string login = connexion.txtboxIdentifiant.Text;
-            string mdp = connexion.txtboxMdp.Text;
+            string mdp = connexion.txtboxMdp.Password;
             bool isValid = false;
             login = lesEmployes.Last().Login;
             string connectionString = "Server=srv-peda-new;" + "port=5433;" +
