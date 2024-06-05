@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace Intermarché
 {
     /// <summary>
-    /// Logique d'interaction pour Vehicules.xaml
+    /// Logique d'interaction pour Connexion.xaml
     /// </summary>
-    public partial class Vehicules : Window
+    public partial class Connexion : Window
     {
-        public Vehicules()
+        public Connexion()
         {
             InitializeComponent();
         }

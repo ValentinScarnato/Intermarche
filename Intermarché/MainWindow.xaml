@@ -10,42 +10,149 @@
     Height="450"
     mc:Ignorable="d">
     <Grid>
-        <StackPanel
-            Margin="0,75,0,0"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center">
-            <Label
-                x:Name="labConnexion"
-                Margin="0,0,0,10"
-                HorizontalAlignment="Center"
-                Content="Connexion"
-                FontSize="16"
-                FontWeight="Bold" />
-            <Label x:Name="labIdentifiant" Content="Login :" />
-            <TextBox
-                x:Name="txtboxIdentifiant"
-                Width="120"
-                Margin="0,5,0,0"
-                MaxLength="6"
-                Text=""
-                TextWrapping="Wrap" />
-            <Label x:Name="labMdp" Content="Mot de passe :" />
-            <TextBox
-                Width="120"
-                Margin="0,5,0,0"
-                MaxLength="10"
-                Text=""
-                TextWrapping="Wrap" />
-            <Button
-                x:Name="butValiderConnexion"
-                Margin="0,15,0,0"
-                Content="Valider" />
-        </StackPanel>
-        <Image
-            Margin="191,20,191,310"
-            Source="/img/intermarche-logo.png"
-            Stretch="Fill" />
+        <TabControl>
+            <TabItem Header="Effectuer réservation">
+                <Grid>
+                    <StackPanel Margin="18,75,18,296">
+                        <StackPanel.Resources>
 
+                            <Style TargetType="TextBox" />
+
+                        </StackPanel.Resources>
+                        <Label
+                            x:Name="lblInfoResa"
+                            Margin="5,0,0,0"
+                            Content="Rechercher par n° de réservation / nom du client" />
+                        <StackPanel
+                            Width="723"
+                            Margin="10,0,0,0"
+                            HorizontalAlignment="Left"
+                            Orientation="Horizontal">
+                            <TextBox
+                                x:Name="txtboxEntrerRechercheVisu"
+                                Width="266"
+                                Height="25"
+                                BorderBrush="#FFB3ABAB"
+                                CaretBrush="#FFCEA1A1"
+                                FontSize="14"
+                                FontStyle="Italic"
+                                MaxLength="50"
+                                Text=""
+                                TextWrapping="Wrap">
+                                <TextBox.Background>
+                                    <SolidColorBrush Opacity="0.7" Color="#FFFFF1F1" />
+                                </TextBox.Background>
+                            </TextBox>
+                            <Button
+                                x:Name="butRechercherResa"
+                                Width="80"
+                                Height="25"
+                                Margin="70,0,35,0"
+                                HorizontalAlignment="Center"
+                                Background="#FFF5ADAF"
+                                Content="Rechercher" />
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel
+                        Margin="0,0,0,359"
+                        Background="White"
+                        Orientation="Horizontal">
+                        <Image
+                            Width="219"
+                            Height="65"
+                            Margin="7,0,0,0"
+                            Source="/img/logo-Reservation_Intermarche.png" />
+                        <Label
+                            x:Name="lbTitreVisuResa"
+                            Margin="50,0,0,0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Content="Visualiser réservation"
+                            FontSize="16"
+                            FontWeight="Bold" />
+                        <Button
+                            x:Name="butCompte"
+                            Width="40"
+                            Height="41"
+                            Margin="225,0,0,10"
+                            BorderBrush="White"
+                            Content=""
+                            Foreground="Black">
+                            <Button.Background>
+                                <ImageBrush ImageSource="/img/logo-compte-removebg-preview.png" />
+                            </Button.Background>
+                        </Button>
+                        <Button
+                            x:Name="butRetour"
+                            Width="73"
+                            Height="57"
+                            Margin="20,0,0,0"
+                            BorderBrush="White"
+                            Content="">
+                            <Button.Background>
+                                <ImageBrush ImageSource="/img/logo-retour-removebg-preview.png" Stretch="UniformToFill" />
+                            </Button.Background>
+                        </Button>
+                    </StackPanel>
+                    <StackPanel Margin="468,9,133,370">
+                        <Label
+                            x:Name="lbInfoConnexionSession"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Content="Vous êtes connecté au magasin" />
+                        <Label
+                            Margin="0,-1,0,0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Top"
+                            Content="Annecy"
+                            FontWeight="Bold" />
+                    </StackPanel>
+                    <Grid Margin="28,143,196,10">
+                        <DataGrid x:Name="datagridVisualiserReservation" d:ItemsSource="{d:SampleData ItemCount=5}" />
+                    </Grid>
+                    <StackPanel x:Name="spFiltreTrier" Margin="604,93,0,0">
+                        <Label
+                            Margin="20,0,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            Content="Trier par :" />
+                        <Label
+                            x:Name="labFiltreDate"
+                            Margin="20,0,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            Content="Date de réservation" />
+                        <DatePicker
+                            x:Name="dbFiltreDateResa"
+                            Width="120"
+                            Margin="0,10,0,0" />
+                        <Label
+                            x:Name="labFiltreVehicule"
+                            Margin="20,10,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            Content="Véhicules" />
+                        <ComboBox
+                            x:Name="cbFiltreVehicule"
+                            Width="120"
+                            Margin="0,10,0,0" />
+                        <Label
+                            x:Name="labFiltreTypeBoite"
+                            Margin="20,10,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            Content="Type de boîtes :" />
+                        <ComboBox
+                            x:Name="cbFiltreTypeBoite"
+                            Width="120"
+                            Margin="0,10,0,0" />
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Visualiser réservation">
+                <Grid Background="#FFE5E5E5" />
+            </TabItem>
+        </TabControl>
 
     </Grid>
 </Window>
