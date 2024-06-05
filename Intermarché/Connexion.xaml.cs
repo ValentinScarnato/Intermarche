@@ -27,7 +27,6 @@ namespace Intermarché
         {
             InitializeComponent();
         }
-
         private void butValiderConnexion_Click(object sender, RoutedEventArgs e)
         {
             string login = txtboxIdentifiant.Text;
@@ -36,13 +35,16 @@ namespace Intermarché
             if (appData.VerifierLogin())
             {
                 MessageBox.Show("Connexion réussie!");
-                //FINIR ET OUVRIR NVLLE PAGE
+
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+                this.Close();
             }
             else
             {
                 MessageBox.Show("Login ou mot de passe incorrect.");
             }
-            
         }
     }
 }
+

@@ -27,20 +27,6 @@ namespace Intermarché
         {
             InitializeComponent();
         }
-        private String fentreAOuvrir;
-        public String FentreAOuvrir
-        {
-            get { return fentreAOuvrir; }
-            set
-            {
-                if (value != "Connexion" && value != "Réservation")
-                    throw new ArgumentException("Error");
-                fentreAOuvrir = value;
-            }
-        }
-        public bool quitter = false;
-        public bool resa = false;
-
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -85,5 +71,45 @@ namespace Intermarché
         }
 
         
+=======
+>>>>>>> 638c2b0a32afe9cdfbbef85e68be909b9bf270b2
+        private bool VerifierLogin(string login, string mdp)
+        {
+            bool isValid = false;
+
+            // Remplacez par votre chaîne de connexion à la base de données
+            string connectionString = "Server=srv-peda-new;" + "port=5433;" +
+                "Database=votreBase;" + "Search Path = votreSchemaPostGresql;" + "uid=votreLogin;" +
+                "password=votrePassword;";
+
+            using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
+            {
+                string query = "SELECT COUNT(1) FROM Employe WHERE Login = @Login AND Mdp = @Mdp";
+
+                using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Login", login);
+                    command.Parameters.AddWithValue("@Mdp", mdp);
+
+                    connection.Open();
+
+                    int count = (int)(command.ExecuteScalar());
+
+                    if (count == 1)
+                    {
+                        isValid = true;
+                    }
+
+                    connection.Close();
+                }
+            }
+
+            return isValid;
+        }
+
+        private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
