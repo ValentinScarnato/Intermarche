@@ -26,7 +26,7 @@ namespace Intermarché
 
         private void butValiderConnexion_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
     }
 }

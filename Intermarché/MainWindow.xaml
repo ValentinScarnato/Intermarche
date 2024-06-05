@@ -6,140 +6,35 @@
     xmlns:local="clr-namespace:Intermarché"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="Acceuil"
-    Width="800"
-    Height="450"
-    mc:Ignorable="d">
+    Width="1280"
+    Height="700"
+    mc:Ignorable="d" WindowState="Maximized" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <local:Employe x:Key="employe" />
     </Window.Resources>
-
     <Grid>
-        <StackPanel
-            Margin="0,75,0,0"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center">
-            <Label
-                x:Name="labConnexion"
-                Margin="0,0,0,10"
-                HorizontalAlignment="Center"
-                Content="Connexion"
-                FontSize="16"
-                FontWeight="Bold" />
-            <Label x:Name="labIdentifiant" Content="Login :" />
-            <TextBox
-                x:Name="txtboxIdentifiant"
-                Width="120"
-                Margin="0,5,0,0"
-                MaxLength="6"
-                Text="{Binding Login}"
-                TextWrapping="Wrap" />
-            <Label x:Name="labMdp" Content="Mot de passe :" />
-            <TextBox
-                x:Name="txtboxMdp"
-                Width="120"
-                Margin="0,5,0,0"
-                MaxLength="10"
-                Text="{Binding Mdp}"
-                TextWrapping="Wrap" />
-            <Button
-                x:Name="butValiderConnexion"
-                Margin="0,15,0,0"
-                Click="butValiderConnexion_Click"
-                Content="Valider" />
+        <StackPanel Margin="0,-1,0,577" Background="#FF4C4A4A">
+            <Image Height="71" Source="/img/intermarche-logo.png" Stretch="Fill" Width="291"/>
+
         </StackPanel>
-        <Image
-            Margin="191,20,191,310"
-            Source="/img/intermarche-logo.png"
-            Stretch="Fill" />
-        <TabControl>
-            <TabItem Header="Visualiser réservation">
-                <Grid>
-                    <StackPanel Margin="18,75,18,279">
-                        <StackPanel.Resources>
-
-                            <Style TargetType="TextBox" />
-
-                        </StackPanel.Resources>
-                        <Label
-                            x:Name="lblInfoResa"
-                            Margin="5,0,0,0"
-                            Content="Rechercher par n° de réservation / nom du client" />
-                        <StackPanel
-                            Width="723"
-                            Margin="10,0,0,0"
-                            HorizontalAlignment="Left"
-                            Orientation="Horizontal">
-                            <TextBox
-                                x:Name="txtboxEntrerRechercheVisu"
-                                Width="266"
-                                Height="25"
-                                BorderBrush="#FFB3ABAB"
-                                CaretBrush="#FFCEA1A1"
-                                FontSize="14"
-                                FontStyle="Italic"
-                                MaxLength="50"
-                                Text=""
-                                TextWrapping="Wrap">
-                                <TextBox.Background>
-                                    <SolidColorBrush Opacity="0.7" Color="#FFFFF1F1" />
-                                </TextBox.Background>
-                            </TextBox>
-                            <Button
-                                x:Name="butRechercherResa"
-                                Width="80"
-                                Height="25"
-                                Margin="70,0,35,0"
-                                HorizontalAlignment="Center"
-                                Background="#FFF5ADAF"
-                                Content="Rechercher" />
-                        </StackPanel>
+        <TabControl Margin="0,74,0,0">
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Effectuer une Réservation" Foreground="Black" />
                     </StackPanel>
-                    <StackPanel
-                        Margin="0,0,0,346"
-                        Background="White"
-                        Orientation="Horizontal">
-                        <Image
-                            Width="219"
-                            Height="65"
-                            Margin="7,0,0,0"
-                            Source="/img/logo-Reservation_Intermarche.png" />
-                        <Label
-                            x:Name="lbTitreVisuResa"
-                            Margin="50,0,0,0"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"
-                            Content="Visualiser réservation"
-                            FontSize="16"
-                            FontWeight="Bold" />
-                        <Label x:Name="lbInfoConnexionSession" Content="Vous êtes connecté au magasin" Height="59" Margin="20,0,0,0"/>
-                        <Button
-                            x:Name="butCompte"
-                            Width="40"
-                            Height="41"
-                            Margin="20,0,0,10"
-                            BorderBrush="White"
-                            Content=""
-                            Foreground="Black">
+                </TabItem.Header>
+                <StackPanel x:Name="spEffectuerResa">
+                    <Label Content="Recher" Margin="50,0,0,0"/>
+                    <StackPanel x:Name="spRecherche" Height="36" Orientation="Horizontal" Margin="50,20,50,20">
+                        <TextBox x:Name="tbRecherche" TextWrapping="Wrap" Text="" Width="670" Background="#FFFFA4A4" />
+                        <Button x:Name="butRecherche" Content="" Width="42" BorderBrush="{x:Null}" Margin="20,0,0,0">
                             <Button.Background>
-                                <ImageBrush ImageSource="/img/logo-compte-removebg-preview.png" />
-                            </Button.Background>
-                        </Button>
-                        <Button
-                            x:Name="butRetour"
-                            Width="73"
-                            Height="57"
-                            Margin="20,0,0,0"
-                            BorderBrush="White"
-                            Content="">
-                            <Button.Background>
-                                <ImageBrush ImageSource="/img/logo-retour-removebg-preview.png" Stretch="UniformToFill" />
+                                <ImageBrush ImageSource="/rechercher.png"/>
                             </Button.Background>
                         </Button>
                     </StackPanel>
-                    <Grid Margin="28,143,196,10">
-                        <DataGrid x:Name="datagridVisualiserReservation" d:ItemsSource="{d:SampleData ItemCount=5}" />
-                    </Grid>
-                    <StackPanel x:Name="spFiltreTrier" Margin="604,93,0,0">
+                    <StackPanel Width="480">
                         <Label
                             Margin="20,0,0,0"
                             HorizontalAlignment="Left"
@@ -176,57 +71,16 @@
                             Width="120"
                             Margin="0,10,0,0" />
                     </StackPanel>
-                </Grid>
+                </StackPanel>
             </TabItem>
-
-            <TabItem Header="Effectuer réservation">
-                <Grid>
-                    <StackPanel
-                        Margin="0,0,0,346"
-                        Background="White"
-                        Orientation="Horizontal">
-                        <Image
-                            Width="219"
-                            Height="65"
-                            Margin="7,0,0,0"
-                            Source="/img/logo-Reservation_Intermarche.png" />
-                        <Label
-                            x:Name="lbTitreVisuResa2"
-                            Margin="50,0,0,0"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"
-                            Content="Effectuer réservation"
-                            FontSize="16"
-                            FontWeight="Bold" />
-                        <Label x:Name="lbInfoConnexionSession2" Content="Vous êtes connecté au magasin" />
-                        <Button
-                            x:Name="butCompte2"
-                            Width="40"
-                            Height="41"
-                            Margin="52,0,0,10"
-                            BorderBrush="White"
-                            Content=""
-                            Foreground="Black">
-                            <Button.Background>
-                                <ImageBrush ImageSource="/img/logo-compte-removebg-preview.png" />
-                            </Button.Background>
-                        </Button>
-                        <Button
-                            x:Name="butRetour2"
-                            Width="73"
-                            Height="57"
-                            Margin="20,0,0,0"
-                            BorderBrush="White"
-                            Content="">
-                            <Button.Background>
-                                <ImageBrush ImageSource="/img/logo-retour-removebg-preview.png" Stretch="UniformToFill" />
-                            </Button.Background>
-                        </Button>
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Consulter un Réservation" Foreground="Red" />
                     </StackPanel>
-                </Grid>
+                </TabItem.Header>
             </TabItem>
 
         </TabControl>
-
     </Grid>
 </Window>

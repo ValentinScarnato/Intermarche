@@ -98,21 +98,7 @@ namespace Intermarché
             }
         }
 
-        private void butValiderConnexion_Click(object sender, RoutedEventArgs e)
-        {
-            string login = txtboxIdentifiant.Text;
-            string mdp = txtboxMdp.Text; 
-
-            if (VerifierLogin(login, mdp))
-            {
-                MessageBox.Show("Connexion réussie!");
-                //FINIR ET OUVRIR NVLLE PAGE
-            }
-            else
-            {
-                MessageBox.Show("Login ou mot de passe incorrect.");
-            }
-        }
+        
         private bool VerifierLogin(string login, string mdp)
         {
             bool isValid = false;

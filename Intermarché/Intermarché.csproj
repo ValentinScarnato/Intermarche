@@ -11,11 +11,14 @@
   <ItemGroup>
     <None Remove="Image1.png" />
     <None Remove="img\camion_benne_Intermarche.jpg" />
+    <None Remove="img\intermaché-black-logo-removebg-preview.png" />
     <None Remove="img\logo-compte-removebg-preview.png" />
     <None Remove="img\logo-Reservation_Intermarche.png" />
     <None Remove="img\logo-retour-removebg-preview.png" />
     <None Remove="img\megane_lrg.jpg" />
+    <None Remove="img\rechercher.png" />
     <None Remove="intermarche-logo.png" />
+    <None Remove="rechercher.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,6 +27,9 @@
 
   <ItemGroup>
     <Resource Include="img\camion_benne_Intermarche.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\intermaché-black-logo-removebg-preview.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="img\intermarche-logo.png">
@@ -41,6 +47,10 @@
     <Resource Include="img\megane_lrg.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="img\rechercher.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="rechercher.png" />
   </ItemGroup>
 
 </Project>
