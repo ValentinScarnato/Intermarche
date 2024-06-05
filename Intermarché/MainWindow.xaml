@@ -11,10 +11,7 @@
     WindowStartupLocation="CenterScreen"
     WindowState="Maximized"
     mc:Ignorable="d">
-    <Window.Resources>
-        <local:Employe x:Key="employe" />
-    </Window.Resources>
-
+    <Grid>
         <StackPanel Margin="0,-1,0,577" Background="#FF4C4A4A">
             <Image
                 Width="291"
@@ -25,15 +22,13 @@
         <TabControl Margin="0,74,0,0">
             <TabItem>
                 <TabItem.Header>
-                    <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal" />
                 </TabItem.Header>
                 <StackPanel x:Name="spEffectuerResa">
                     <Label
                         Margin="50,20,0,0"
                         Content="Rechercher par N° Client / N° Réservation"
                         FontSize="16"
-                        FontWeight="Bold" />
-                <Grid>
                         FontWeight="Bold" />
                     <StackPanel
                         x:Name="spRecherche"
@@ -52,9 +47,9 @@
                             Margin="20,0,0,0"
                             BorderBrush="{x:Null}"
                             Content=""
-                            FontSize="14" >
+                            FontSize="14">
                             <Button.Background>
-                                <ImageBrush/>
+                                <ImageBrush />
                             </Button.Background>
                         </Button>
                     </StackPanel>
