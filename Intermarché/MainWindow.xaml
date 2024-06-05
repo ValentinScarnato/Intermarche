@@ -9,7 +9,48 @@
     Width="800"
     Height="450"
     mc:Ignorable="d">
+    <Window.Resources>
+        <local:Employe x:Key="employe" />
+    </Window.Resources>
+
     <Grid>
+        <StackPanel
+            Margin="0,75,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center">
+            <Label
+                x:Name="labConnexion"
+                Margin="0,0,0,10"
+                HorizontalAlignment="Center"
+                Content="Connexion"
+                FontSize="16"
+                FontWeight="Bold" />
+            <Label x:Name="labIdentifiant" Content="Login :" />
+            <TextBox
+                x:Name="txtboxIdentifiant"
+                Width="120"
+                Margin="0,5,0,0"
+                MaxLength="6"
+                Text="{Binding Login}"
+                TextWrapping="Wrap" />
+            <Label x:Name="labMdp" Content="Mot de passe :" />
+            <TextBox
+                x:Name="txtboxMdp"
+                Width="120"
+                Margin="0,5,0,0"
+                MaxLength="10"
+                Text="{Binding Mdp}"
+                TextWrapping="Wrap" />
+            <Button
+                x:Name="butValiderConnexion"
+                Margin="0,15,0,0"
+                Click="butValiderConnexion_Click"
+                Content="Valider" />
+        </StackPanel>
+        <Image
+            Margin="191,20,191,310"
+            Source="/img/intermarche-logo.png"
+            Stretch="Fill" />
         <TabControl>
             <TabItem Header="Visualiser réservation">
                 <Grid>
