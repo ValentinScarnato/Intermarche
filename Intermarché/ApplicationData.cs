@@ -49,8 +49,8 @@ namespace Intermarché
             try
             {
                 Connexion = new NpgsqlConnection();
-                Connexion.ConnectionString = "Server=srv-peda-new;" + "port=5433;" + "Database=votreBase;" + "Search Path = votreSchemaPostGresql;" +
-                    "uid=votreLogin;" +"password=votrePassword";
+                Connexion.ConnectionString = "Server=srv-peda-new;" + "port=5433;" + "Database=Intermarchewpf;" + "Search Path = Intermarche;" +
+                    "uid=scarnatv;" + "password=Z9O5sQ";
 
                 // à compléter dans les "" 
                 // @ sert à enlever tout pb avec les caractères 
@@ -87,13 +87,12 @@ namespace Intermarché
             catch (NpgsqlException e)
             { Console.WriteLine("pb de requete : " + e); return 0; }
         }
-        /*
         public int Create(Client c)
         {
-            String sql = $"insert into client (nom,prenom,email,genre,telephone, dateNaissance)"
-            + $" values ('{c.Nom}','{c.Prenom}','{c.Email}'"
-            + $",'{(char)c.Genre}','{c.Telephone}', "
-            + $"'{c.DateNaissance.Year}-{c.DateNaissance.Month}-{c.DateNaissance.Day}'); ";
+            String sql = $"insert into client (num_client, nom_client,adresse_rue_client,adresse_cp_client,adresse_ville_client,telephone_client, mail_client)"
+            + $" values ('{c.Num_client}','{c.Nom_client}','{c.Adresse_rue_client}'"
+            + $",'{c.Adresse_cp_client}','{c.Adresse_ville_client}', "
+            + $"'{c.Telephone_client}-{c.Mail_client}'); ";
             try
             {
                 NpgsqlCommand cmd = new NpgsqlCommand(sql, Connexion);
@@ -126,10 +125,10 @@ namespace Intermarché
         }
         public int Update(Client c)
         {
-            String sql = $"insert into client (nom,prenom,email,genre,telephone, dateNaissance)"
-            + $" values ('{c.Nom}','{c.Prenom}','{c.Email}'"
-            + $",'{(char)c.Genre}','{c.Telephone}', "
-            + $"'{c.DateNaissance.Year}-{c.DateNaissance.Month}-{c.DateNaissance.Day}'); ";
+            String sql = $"insert into client (num_client, nom_client,adresse_rue_client,adresse_cp_client,adresse_ville_client,telephone_client, mail_client)"
+            + $" values ('{c.Num_client}','{c.Nom_client}','{c.Adresse_rue_client}'"
+            + $",'{c.Adresse_cp_client}','{c.Adresse_ville_client}', "
+            + $"'{c.Telephone_client}-{c.Mail_client}'); ";
             try
             {
                 NpgsqlCommand cmd = new NpgsqlCommand(sql, Connexion);
@@ -143,7 +142,7 @@ namespace Intermarché
                 // juste pour le debug : à transformer en MsgBox 
                 return 0;
             }
-        }*/
+        }
 
 
     }
