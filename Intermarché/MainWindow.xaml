@@ -62,6 +62,7 @@
                             Height="65"
                             Margin="7,0,0,0"
                             Source="/img/logo-Reservation_Intermarche.png" />
+                        <Label x:Name="lbInfoConnexionSession" Content="Vous êtes connecté au magasin" />
                         <Label
                             x:Name="lbTitreVisuResa"
                             Margin="50,0,0,0"
@@ -95,11 +96,6 @@
                         </Button>
                     </StackPanel>
                     <StackPanel Margin="468,9,133,370">
-                        <Label
-                            x:Name="lbInfoConnexionSession"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"
-                            Content="Vous êtes connecté au magasin" />
                         <Label
                             Margin="0,-1,0,0"
                             HorizontalAlignment="Center"
@@ -149,13 +145,54 @@
                     </StackPanel>
                 </Grid>
             </TabItem>
-            
+
             <TabItem Header="Effectuer réservation">
                 <Grid>
-                
+                    <StackPanel
+                        Margin="0,0,0,346"
+                        Background="White"
+                        Orientation="Horizontal">
+                        <Image
+                            Width="219"
+                            Height="65"
+                            Margin="7,0,0,0"
+                            Source="/img/logo-Reservation_Intermarche.png" />
+                        <Label
+                            x:Name="lbTitreVisuResa2"
+                            Margin="50,0,0,0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Content="Effectuer réservation"
+                            FontSize="16"
+                            FontWeight="Bold" />
+                        <Label x:Name="lbInfoConnexionSession2" Content="Vous êtes connecté au magasin" />
+                        <Button
+                            x:Name="butCompte2"
+                            Width="40"
+                            Height="41"
+                            Margin="52,0,0,10"
+                            BorderBrush="White"
+                            Content=""
+                            Foreground="Black">
+                            <Button.Background>
+                                <ImageBrush ImageSource="/img/logo-compte-removebg-preview.png" />
+                            </Button.Background>
+                        </Button>
+                        <Button
+                            x:Name="butRetour2"
+                            Width="73"
+                            Height="57"
+                            Margin="20,0,0,0"
+                            BorderBrush="White"
+                            Content="">
+                            <Button.Background>
+                                <ImageBrush ImageSource="/img/logo-retour-removebg-preview.png" Stretch="UniformToFill" />
+                            </Button.Background>
+                        </Button>
+                    </StackPanel>
                 </Grid>
             </TabItem>
-            
+
         </TabControl>
 
     </Grid>
