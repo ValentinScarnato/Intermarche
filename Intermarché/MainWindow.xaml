@@ -25,12 +25,12 @@
                     </StackPanel>
                 </TabItem.Header>
                 <StackPanel x:Name="spEffectuerResa">
-                    <Label Content="Recher" Margin="50,0,0,0"/>
+                    <Label Content="Rechercher par N° Client / N° Réservation" Margin="50,20,0,0" FontSize="16" FontWeight="Bold"/>
                     <StackPanel x:Name="spRecherche" Height="36" Orientation="Horizontal" Margin="50,20,50,20">
                         <TextBox x:Name="tbRecherche" TextWrapping="Wrap" Text="" Width="670" Background="#FFFFA4A4" />
-                        <Button x:Name="butRecherche" Content="" Width="42" BorderBrush="{x:Null}" Margin="20,0,0,0">
+                        <Button x:Name="butRecherche" Content="" Width="42" BorderBrush="{x:Null}" Margin="20,0,0,0" FontSize="14">
                             <Button.Background>
-                                <ImageBrush ImageSource="/rechercher.png"/>
+                                <ImageBrush ImageSource="/rechercher.png" Stretch="Fill"/>
                             </Button.Background>
                         </Button>
                     </StackPanel>
