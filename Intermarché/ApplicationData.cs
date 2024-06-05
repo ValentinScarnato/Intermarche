@@ -41,6 +41,112 @@ namespace Intermarché
                 this.lesEmployes = value;
             }
         }
+        private ObservableCollection<Assurance> lesAssurances;
+
+        public ObservableCollection<Assurance> LesAssurances
+        {
+            get
+            {
+                return lesAssurances;
+            }
+            set
+            {
+                this.lesAssurances = value;
+            }
+        }
+        private ObservableCollection<Caracteristique> lesCaracteristiques;
+
+        public ObservableCollection<Caracteristique> LesCaracteristiques
+        {
+            get
+            {
+                return lesCaracteristiques;
+            }
+            set
+            {
+                this.lesCaracteristiques = value;
+            }
+        }
+        private ObservableCollection<Categorie_vehicule> lesCategorieVehicule;
+
+        public ObservableCollection<Categorie_vehicule> LesCategorieVehicule
+        {
+            get
+            {
+                return lesCategorieVehicule;
+            }
+            set
+            {
+                this.lesCategorieVehicule = value;
+            }
+        }
+        private ObservableCollection<Detail_caracteristique> lesDetailCaracteristique;
+
+        public ObservableCollection<Detail_caracteristique> LesDetailCaracteristique
+        {
+            get
+            {
+                return lesDetailCaracteristique;
+            }
+            set
+            {
+                this.lesDetailCaracteristique = value;
+            }
+        }
+        private ObservableCollection<Detail_reservation> lesDetailReservation;
+
+        public ObservableCollection<Detail_reservation> LesDetailReservation
+        {
+            get
+            {
+                return lesDetailReservation;
+            }
+            set
+            {
+                this.lesDetailReservation = value;
+            }
+        }
+        private ObservableCollection<Magasin> lesMagasin;
+
+        public ObservableCollection<Magasin> LesMagasin
+        {
+            get
+            {
+                return lesMagasin;
+            }
+            set
+            {
+                this.lesMagasin = value;
+            }
+        }
+        private ObservableCollection<Reservation_table> lesReservations;
+
+        public ObservableCollection<Reservation_table> LesReservations
+        {
+            get
+            {
+                return lesReservation;
+            }
+            set
+            {
+                this.lesReservation = value;
+            }
+        }
+        private ObservableCollection<Vehicule_table> lesVehicules;
+
+        public ObservableCollection<Vehicule_table> LesVehicules
+        {
+            get
+            {
+                return lesVehicules;
+            }
+            set
+            {
+                this.lesVehicules = value;
+            }
+        }
+
+
 
         public NpgsqlConnection Connexion
         {
@@ -59,6 +165,7 @@ namespace Intermarché
         {
             this.ConnexionBD();
             this.ReadAll();
+            this.VerifierLogin();
             try
             {
                 Connexion = new NpgsqlConnection();
@@ -77,8 +184,16 @@ namespace Intermarché
         }
         public void ReadAll()
         {
+            ReadAssurance();
+            ReadCaracteristiques();
+            ReadCategorieVehicules();
             ReadClient();
+            ReadDetailCaracteristiques();
+            ReadDetailReservation();
             ReadEmploye();
+            ReadEVehicule();
+            ReadMagasin();
+            ReadReservation();
         }
         public void ConnexionBD()
         {
@@ -98,6 +213,27 @@ namespace Intermarché
                 // juste pour le debug : à transformer en MsgBox 
             }
 
+        }
+
+        public bool VerifierLogin()
+        {
+            Employe employe;
+            Connexion connexion = new Connexion();
+            string loging = connexion.txtboxIdentifiant.Text;
+            string mdp = connexion.txtboxMdp.Password;
+            bool isValid = false;
+            string connectionString = "Server=srv-peda-new;" + "port=5433;" +
+                "Database=Intermarchewpf;" + "Search Path = Intermarche;" + "uid=scarnatv;" +
+                "password=Z9O5sQ;";
+            foreach (Employe e in lesEmployes)
+            {
+                if (loging == e.Login || mdp == e.Mdp)
+                {
+                    isValid = true;
+                }
+                else isValid = false;
+            }
+            return isValid;
         }
         public int ReadClient()
         {
@@ -196,22 +332,160 @@ namespace Intermarché
             catch (NpgsqlException e)
             { Console.WriteLine("pb de requete : " + e); return 0; }
         }
-        public bool VerifierLogin()
+        public int ReadAssurance()
         {
-            Connexion connexion = new Connexion();
-            string login = connexion.txtboxIdentifiant.Text;
-            string mdp = connexion.txtboxMdp.Password;
-            bool isValid = false;
-            login = lesEmployes.Last().Login;
-            string connectionString = "Server=srv-peda-new;" + "port=5433;" +
-                "Database=Intermarchewpf;" + "Search Path = Intermarche;" + "uid=scarnatv;" +
-                "password=Z9O5sQ;";
-            if (login != null)
+            String sql = "SELECT num_assurance, description_assurance,prix_assurance FROM Assurance";
+            try
             {
-
+                NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter(sql, Connexion);
+                DataTable dataTable = new DataTable();
+                dataAdapter.Fill(dataTable);
+                foreach (DataRow res in dataTable.Rows)
+                {
+                    Assurance nouveau = new Assurance(int.Parse(res["num_assurance"].ToString()),
+                    res["description_assurance"].ToString(), int.Parse(res["prix_assurance"].ToString()));
+                    LesAssurances.Add(nouveau);
+                }
+                return dataTable.Rows.Count;
             }
-
-            return isValid;
+            catch (NpgsqlException e)
+            { Console.WriteLine("pb de requete : " + e); return 0; }
+        }
+        public int ReadCaracteristiques()
+        {
+            String sql = "SELECT num_caracteristique, nom_caracteristiques FROM Caracteristique";
+            try
+            {
+                NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter(sql, Connexion);
+                DataTable dataTable = new DataTable();
+                dataAdapter.Fill(dataTable);
+                foreach (DataRow res in dataTable.Rows)
+                {
+                    Caracteristique nouveau = new Caracteristique(int.Parse(res["num_caracteriqtique"].ToString()),
+                    res["nom_caracteristique"].ToString());
+                    LesCaracteristiques.Add(nouveau);
+                }
+                return dataTable.Rows.Count;
+            }
+            catch (NpgsqlException e)
+            { Console.WriteLine("pb de requete : " + e); return 0; }
+        }
+        public int ReadCategorieVehicules()
+        {
+            String sql = "SELECT nom_categorie FROM Categorie_vehicule";
+            try
+            {
+                NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter(sql, Connexion);
+                DataTable dataTable = new DataTable();
+                dataAdapter.Fill(dataTable);
+                foreach (DataRow res in dataTable.Rows)
+                {
+                    Categorie_vehicule nouveau = new Categorie_vehicule(res["nom_categorie"].ToString());
+                     LesCategorieVehicule.Add(nouveau);
+                }
+                return dataTable.Rows.Count;
+            }
+            catch (NpgsqlException e)
+            { Console.WriteLine("pb de requete : " + e); return 0; }
+        }
+        public int ReadDetailCaracteristiques()
+        {
+            String sql = "SELECT immatriculation, num_caracteristique,valeur_caracteristique FROM Detail_caracteristique";
+            try
+            {
+                NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter(sql, Connexion);
+                DataTable dataTable = new DataTable();
+                dataAdapter.Fill(dataTable);
+                foreach (DataRow res in dataTable.Rows)
+                {
+                    Detail_caracteristique nouveau = new Detail_caracteristique(res["num_employe"].ToString(),
+                    int.Parse(res["num_magasin"].ToString()), res["valeur_caracteristique"].ToString());
+                    LesDetailCaracteristique.Add(nouveau);
+                }
+                return dataTable.Rows.Count;
+            }
+            catch (NpgsqlException e)
+            { Console.WriteLine("pb de requete : " + e); return 0; }
+        }
+        public int ReadDetailReservation()
+        {
+            String sql = "SELECT immatriculation, num_reservation FROM Detail_reservation";
+            try
+            {
+                NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter(sql, Connexion);
+                DataTable dataTable = new DataTable();
+                dataAdapter.Fill(dataTable);
+                foreach (DataRow res in dataTable.Rows)
+                {
+                    Detail_reservation nouveau = new Detail_reservation(res["num_employe"].ToString(),
+                    int.Parse(res["num_magasin"].ToString()));
+                    LesDetailReservation.Add(nouveau);
+                }
+                return dataTable.Rows.Count;
+            }
+            catch (NpgsqlException e)
+            { Console.WriteLine("pb de requete : " + e); return 0; }
+        }
+        public int ReadMagasin()
+        {
+            String sql = "SELECT num_magasin,nom_magasin,adresse_rue_magasin,adresse_cp_magasin, adresse_ville_magasin,horaire_magasin FROM Magasin";
+            try
+            {
+                NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter(sql, Connexion);
+                DataTable dataTable = new DataTable();
+                dataAdapter.Fill(dataTable);
+                foreach (DataRow res in dataTable.Rows)
+                {
+                    Magasin nouveau = new Magasin(int.Parse(res["num_magasin"].ToString()),
+                    res["nom_magasin"].ToString(), res["adresse_rue_magasin"].ToString(),
+                    res["adresse_cp_magasin"].ToString(), res["adresse_ville_magasin"].ToString(), res["horaire_magasin"].ToString());
+                    LesMagasin.Add(nouveau);
+                }
+                return dataTable.Rows.Count;
+            }
+            catch (NpgsqlException e)
+            { Console.WriteLine("pb de requete : " + e); return 0; }
+        }
+        public int ReadReservation()
+        {
+            String sql = "SELECT num_reservation, num_assurance,num_client,date_reservation,date_debut_reservation, date_fin_reservation, montant_reservation, forfait_km FROM Reservation";
+            try
+            {
+                NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter(sql, Connexion);
+                DataTable dataTable = new DataTable();
+                dataAdapter.Fill(dataTable);
+                foreach (DataRow res in dataTable.Rows)
+                {
+                    Reservation_table nouveau = new Reservation_table(int.Parse(res["num_reservation"].ToString()),
+                    int.Parse(res["num_assurance"].ToString()), int.Parse(res["num_client"].ToString()), DateTime.Parse(res["date_reservation"].ToString()),
+                    DateTime.Parse(res["date_debut_reservation"].ToString()), DateTime.Parse(res["date_fin_reservation"].ToString()), int.Parse(res["montant_reservation"].ToString()),
+                    res["forfait_km"].ToString());
+                    LesReservations.Add(nouveau);
+                }
+                return dataTable.Rows.Count;
+            }
+            catch (NpgsqlException e)
+            { Console.WriteLine("pb de requete : " + e); return 0; }
+        }
+        public int ReadEVehicule()
+        {
+            String sql = "SELECT immatriculation, type_boite,num_magasin,nom_categorie, nom_vehicule, description_vehicule, nombre_places, prix_location, climatisation, lien_photo_url FROM Vehicule";
+            try
+            {
+                NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter(sql, Connexion);
+                DataTable dataTable = new DataTable();
+                dataAdapter.Fill(dataTable);
+                foreach (DataRow res in dataTable.Rows)
+                {
+                    Vehicule_table nouveau = new Vehicule_table(res["immatriculation"].ToString(),res["type_boite"].ToString(), int.Parse(res["num_magasin"].ToString()),
+                    res["nom_categorie"].ToString(),res["nom_vehicule"].ToString(), res["description_vehicule"].ToString(), int.Parse(res["nombre_places"].ToString()),
+                    int.Parse(res["prix_location"].ToString()), bool.Parse(res["climatisation"].ToString()), res["lien_photo_url"].ToString());
+                    LesVehicules.Add(nouveau);
+                }
+                return dataTable.Rows.Count;
+            }
+            catch (NpgsqlException e)
+            { Console.WriteLine("pb de requete : " + e); return 0; }
         }
 
 
