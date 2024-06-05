@@ -51,7 +51,190 @@
             Margin="191,20,191,310"
             Source="/img/intermarche-logo.png"
             Stretch="Fill" />
+        <TabControl>
+            <TabItem Header="Visualiser réservation">
+                <Grid>
+                    <StackPanel Margin="18,75,18,279">
+                        <StackPanel.Resources>
 
+                            <Style TargetType="TextBox" />
+
+                        </StackPanel.Resources>
+                        <Label
+                            x:Name="lblInfoResa"
+                            Margin="5,0,0,0"
+                            Content="Rechercher par n° de réservation / nom du client" />
+                        <StackPanel
+                            Width="723"
+                            Margin="10,0,0,0"
+                            HorizontalAlignment="Left"
+                            Orientation="Horizontal">
+                            <TextBox
+                                x:Name="txtboxEntrerRechercheVisu"
+                                Width="266"
+                                Height="25"
+                                BorderBrush="#FFB3ABAB"
+                                CaretBrush="#FFCEA1A1"
+                                FontSize="14"
+                                FontStyle="Italic"
+                                MaxLength="50"
+                                Text=""
+                                TextWrapping="Wrap">
+                                <TextBox.Background>
+                                    <SolidColorBrush Opacity="0.7" Color="#FFFFF1F1" />
+                                </TextBox.Background>
+                            </TextBox>
+                            <Button
+                                x:Name="butRechercherResa"
+                                Width="80"
+                                Height="25"
+                                Margin="70,0,35,0"
+                                HorizontalAlignment="Center"
+                                Background="#FFF5ADAF"
+                                Content="Rechercher" />
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel
+                        Margin="0,0,0,346"
+                        Background="White"
+                        Orientation="Horizontal">
+                        <Image
+                            Width="219"
+                            Height="65"
+                            Margin="7,0,0,0"
+                            Source="/img/logo-Reservation_Intermarche.png" />
+                        <Label x:Name="lbInfoConnexionSession" Content="Vous êtes connecté au magasin" />
+                        <Label
+                            x:Name="lbTitreVisuResa"
+                            Margin="50,0,0,0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Content="Visualiser réservation"
+                            FontSize="16"
+                            FontWeight="Bold" />
+                        <Button
+                            x:Name="butCompte"
+                            Width="40"
+                            Height="41"
+                            Margin="225,0,0,10"
+                            BorderBrush="White"
+                            Content=""
+                            Foreground="Black">
+                            <Button.Background>
+                                <ImageBrush ImageSource="/img/logo-compte-removebg-preview.png" />
+                            </Button.Background>
+                        </Button>
+                        <Button
+                            x:Name="butRetour"
+                            Width="73"
+                            Height="57"
+                            Margin="20,0,0,0"
+                            BorderBrush="White"
+                            Content="">
+                            <Button.Background>
+                                <ImageBrush ImageSource="/img/logo-retour-removebg-preview.png" Stretch="UniformToFill" />
+                            </Button.Background>
+                        </Button>
+                    </StackPanel>
+                    <StackPanel Margin="468,9,133,370">
+                        <Label
+                            Margin="0,-1,0,0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Top"
+                            Content="Annecy"
+                            FontWeight="Bold" />
+                    </StackPanel>
+                    <Grid Margin="28,143,196,10">
+                        <DataGrid x:Name="datagridVisualiserReservation" d:ItemsSource="{d:SampleData ItemCount=5}" />
+                    </Grid>
+                    <StackPanel x:Name="spFiltreTrier" Margin="604,93,0,0">
+                        <Label
+                            Margin="20,0,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            Content="Trier par :" />
+                        <Label
+                            x:Name="labFiltreDate"
+                            Margin="20,0,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            Content="Date de réservation" />
+                        <DatePicker
+                            x:Name="dbFiltreDateResa"
+                            Width="120"
+                            Margin="0,10,0,0" />
+                        <Label
+                            x:Name="labFiltreVehicule"
+                            Margin="20,10,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            Content="Véhicules" />
+                        <ComboBox
+                            x:Name="cbFiltreVehicule"
+                            Width="120"
+                            Margin="0,10,0,0" />
+                        <Label
+                            x:Name="labFiltreTypeBoite"
+                            Margin="20,10,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            Content="Type de boîtes :" />
+                        <ComboBox
+                            x:Name="cbFiltreTypeBoite"
+                            Width="120"
+                            Margin="0,10,0,0" />
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Effectuer réservation">
+                <Grid>
+                    <StackPanel
+                        Margin="0,0,0,346"
+                        Background="White"
+                        Orientation="Horizontal">
+                        <Image
+                            Width="219"
+                            Height="65"
+                            Margin="7,0,0,0"
+                            Source="/img/logo-Reservation_Intermarche.png" />
+                        <Label
+                            x:Name="lbTitreVisuResa2"
+                            Margin="50,0,0,0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Content="Effectuer réservation"
+                            FontSize="16"
+                            FontWeight="Bold" />
+                        <Label x:Name="lbInfoConnexionSession2" Content="Vous êtes connecté au magasin" />
+                        <Button
+                            x:Name="butCompte2"
+                            Width="40"
+                            Height="41"
+                            Margin="52,0,0,10"
+                            BorderBrush="White"
+                            Content=""
+                            Foreground="Black">
+                            <Button.Background>
+                                <ImageBrush ImageSource="/img/logo-compte-removebg-preview.png" />
+                            </Button.Background>
+                        </Button>
+                        <Button
+                            x:Name="butRetour2"
+                            Width="73"
+                            Height="57"
+                            Margin="20,0,0,0"
+                            BorderBrush="White"
+                            Content="">
+                            <Button.Background>
+                                <ImageBrush ImageSource="/img/logo-retour-removebg-preview.png" Stretch="UniformToFill" />
+                            </Button.Background>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+
+        </TabControl>
 
     </Grid>
 </Window>
