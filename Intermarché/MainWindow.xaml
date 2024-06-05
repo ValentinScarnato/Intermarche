@@ -62,7 +62,6 @@
                             Height="65"
                             Margin="7,0,0,0"
                             Source="/img/logo-Reservation_Intermarche.png" />
-                        <Label x:Name="lbInfoConnexionSession" Content="Vous êtes connecté au magasin" />
                         <Label
                             x:Name="lbTitreVisuResa"
                             Margin="50,0,0,0"
@@ -71,11 +70,12 @@
                             Content="Visualiser réservation"
                             FontSize="16"
                             FontWeight="Bold" />
+                        <Label x:Name="lbInfoConnexionSession" Content="Vous êtes connecté au magasin" Height="59" Margin="20,0,0,0"/>
                         <Button
                             x:Name="butCompte"
                             Width="40"
                             Height="41"
-                            Margin="225,0,0,10"
+                            Margin="20,0,0,10"
                             BorderBrush="White"
                             Content=""
                             Foreground="Black">
@@ -95,14 +95,6 @@
                             </Button.Background>
                         </Button>
                     </StackPanel>
-                    <StackPanel Margin="468,9,133,370">
-                        <Label
-                            Margin="0,-1,0,0"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Top"
-                            Content="Annecy"
-                            FontWeight="Bold" />
-                    </StackPanel>
                     <Grid Margin="28,143,196,10">
                         <DataGrid x:Name="datagridVisualiserReservation" d:ItemsSource="{d:SampleData ItemCount=5}" />
                     </Grid>
@@ -120,7 +112,7 @@
                             Content="Date de réservation" />
                         <DatePicker
                             x:Name="dbFiltreDateResa"
-                            Width="120"
+                            Width="153"
                             Margin="0,10,0,0" />
                         <Label
                             x:Name="labFiltreVehicule"
