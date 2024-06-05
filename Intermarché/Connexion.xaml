@@ -39,7 +39,7 @@
             <Button
                 x:Name="butValiderConnexion"
                 Margin="0,15,0,0"
-                Content="Valider" />
+                Content="Valider" Click="butValiderConnexion_Click" />
         </StackPanel>
         <Image
             Margin="191,20,191,310"
