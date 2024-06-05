@@ -21,9 +21,6 @@
                 Height="71"
                 Source="/img/intermarche-logo.png"
                 Stretch="Fill" />
-                        <StackPanel.Resources>
-                Stretch="Fill" />
-
         </StackPanel>
         <TabControl Margin="0,74,0,0">
             <TabItem>
@@ -55,7 +52,11 @@
                             Margin="20,0,0,0"
                             BorderBrush="{x:Null}"
                             Content=""
-                            FontSize="14" />
+                            FontSize="14" >
+                            <Button.Background>
+                                <ImageBrush/>
+                            </Button.Background>
+                        </Button>
                     </StackPanel>
                 </StackPanel>
             </TabItem>
