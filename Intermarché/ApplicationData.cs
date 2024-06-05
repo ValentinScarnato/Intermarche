@@ -125,11 +125,11 @@ namespace Intermarché
         {
             get
             {
-                return lesReservation;
+                return lesReservations;
             }
             set
             {
-                this.lesReservation = value;
+                this.lesReservations = value;
             }
         }
         private ObservableCollection<Vehicule_table> lesVehicules;
