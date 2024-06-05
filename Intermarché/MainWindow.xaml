@@ -52,7 +52,7 @@
             Source="/img/intermarche-logo.png"
             Stretch="Fill" />
         <TabControl>
-            <TabItem Header="Visualiser réservation">
+            <TabItem Header="Visualiser réservation" HorizontalAlignment="Left" Margin="-2,-2,0,0" Width="128">
                 <Grid>
                     <StackPanel Margin="18,75,18,279">
                         <StackPanel.Resources>
@@ -111,7 +111,11 @@
                             Content="Visualiser réservation"
                             FontSize="16"
                             FontWeight="Bold" />
-                        <Label x:Name="lbInfoConnexionSession" Content="Vous êtes connecté au magasin" Height="59" Margin="20,0,0,0"/>
+                        <Label
+                            x:Name="lbInfoConnexionSession"
+                            Height="59"
+                            Margin="20,0,0,0"
+                            Content="Vous êtes connecté au magasin" />
                         <Button
                             x:Name="butCompte"
                             Width="40"
