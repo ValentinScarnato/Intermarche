@@ -41,78 +41,7 @@ namespace Intermarché
         {
             InitializeComponent();
         }
-        private String fentreAOuvrir;
-        public String FentreAOuvrir
-        {
-            get { return fentreAOuvrir; }
-            set
-            {
-                if (value != "Connexion" && value != "Réservation")
-                    throw new ArgumentException("Error");
-                fentreAOuvrir = value;
-            }
-        }
-        public bool quitter = false;
-        public bool resa = false;
 
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            FentreAOuvrir = "Connexion";
-            OuvertureFenetre();
-        }
-
-        public void OuvertureFenetre()
-        {
-            resa = false;
-            while (!quitter && !resa)
-            {
-                switch (fentreAOuvrir)
-                {
-                    case "Connexion":
-                        {
-                            Connexion connexion = new Connexion();
-                            connexion.ShowDialog();
-                            break;
-                        }
-                    case "Résa":
-                        {
-                            resa = true;
-                            break;
-                        }
-                    case "Quitter":
-                        {
-                            quitter = true;
-                            break;
-                        }
-
-                }
-            }
-
-            Console.WriteLine(fentreAOuvrir + " est ouvert");
-
-            if (quitter)
-            {
-                Console.WriteLine(fentreAOuvrir + "pour quitter application");
-                Application.Current.Shutdown();
-            }
-        }
-
-        private void butValiderConnexion_Click(object sender, RoutedEventArgs e)
-        {
-            string login = txtboxIdentifiant.Text;
-            string mdp = txtboxMdp.Text; 
-
-            if (VerifierLogin(login, mdp))
-            {
-                MessageBox.Show("Connexion réussie!");
-                //FINIR ET OUVRIR NVLLE PAGE
-            }
-            else
-            {
-                MessageBox.Show("Login ou mot de passe incorrect.");
-            }
-        }
         private bool VerifierLogin(string login, string mdp)
         {
             bool isValid = false;
