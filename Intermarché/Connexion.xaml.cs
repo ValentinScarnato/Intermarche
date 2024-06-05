@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Npgsql;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +21,8 @@ namespace Intermarché
     /// </summary>
     public partial class Connexion : Window
     {
+
+        
         public Connexion()
         {
             InitializeComponent();

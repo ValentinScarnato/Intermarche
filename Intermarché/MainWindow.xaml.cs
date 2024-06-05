@@ -22,20 +22,6 @@ namespace Intermarché
     /// </summary>
     public partial class MainWindow : Window
     {
-        private ObservableCollection<Employe> lesEmployes;
-        private NpgsqlConnection connexion = null;   // futur lien à la BD
-
-        public ObservableCollection<Employe> LesEmployes
-        {
-            get
-            {
-                return lesEmployes;
-            }
-            set
-            {
-                this.lesEmployes = value;
-            }
-        }
         
         public MainWindow()
         {
