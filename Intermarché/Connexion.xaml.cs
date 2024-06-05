@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Npgsql;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,14 +21,30 @@ namespace Intermarché
     /// </summary>
     public partial class Connexion : Window
     {
+
+        
         public Connexion()
         {
             InitializeComponent();
         }
-
         private void butValiderConnexion_Click(object sender, RoutedEventArgs e)
         {
-            
+            string login = txtboxIdentifiant.Text;
+            string mdp = txtboxMdp.Text;
+
+            if (VerifierLogin(login, mdp))
+            {
+                MessageBox.Show("Connexion réussie!");
+
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Login ou mot de passe incorrect.");
+            }
         }
     }
 }
+

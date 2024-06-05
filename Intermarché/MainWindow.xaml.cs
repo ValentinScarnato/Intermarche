@@ -22,74 +22,11 @@ namespace Intermarché
     /// </summary>
     public partial class MainWindow : Window
     {
-        private ObservableCollection<Employe> lesEmployes;
-        private NpgsqlConnection connexion = null;   // futur lien à la BD
-
-        public ObservableCollection<Employe> LesEmployes
-        {
-            get
-            {
-                return lesEmployes;
-            }
-            set
-            {
-                this.lesEmployes = value;
-            }
-        }
         
         public MainWindow()
         {
             InitializeComponent();
         }
-        private String fentreAOuvrir;
-        public String FentreAOuvrir
-        {
-            get { return fentreAOuvrir; }
-            set
-            {
-                if (value != "Connexion" && value != "Réservation")
-                    throw new ArgumentException("Error");
-                fentreAOuvrir = value;
-            }
-        }
-        public bool quitter = false;
-        public bool resa = false;
-
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            FentreAOuvrir = "Connexion";
-            OuvertureFenetre();
-        }
-
-        public void OuvertureFenetre()
-        {
-            resa = false;
-            while (!quitter && !resa)
-            {
-                switch (fentreAOuvrir)
-                {
-                    case "Connexion":
-                        {
-                            Connexion connexion = new Connexion();
-                            connexion.ShowDialog();
-                            break;
-                        }
-                    case "Résa":
-                        {
-                            resa = true;
-                            break;
-                        }
-                    case "Quitter":
-                        {
-                            quitter = true;
-                            break;
-                        }
-
-                }
-            }
-
-            Console.WriteLine(fentreAOuvrir + " est ouvert");
 
             if (quitter)
             {
@@ -131,6 +68,11 @@ namespace Intermarché
             }
 
             return isValid;
+        }
+
+        private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }
