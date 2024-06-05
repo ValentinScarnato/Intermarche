@@ -44,7 +44,6 @@
             <Button
                 x:Name="butValiderConnexion"
                 Margin="0,15,0,0"
-                Click="butValiderConnexion_Click"
                 Content="Valider" />
         </StackPanel>
         <Image

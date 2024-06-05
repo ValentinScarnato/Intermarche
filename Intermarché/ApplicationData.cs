@@ -28,6 +28,19 @@ namespace Intermarché
                 this.lesClients = value;
             }
         }
+        private ObservableCollection<Employe> lesEmployes;
+
+        public ObservableCollection<Employe> LesEmployes
+        {
+            get
+            {
+                return lesEmployes;
+            }
+            set
+            {
+                this.lesEmployes = value;
+            }
+        }
 
         public NpgsqlConnection Connexion
         {
@@ -64,6 +77,21 @@ namespace Intermarché
         }
         public void ConnexionBD()
         {
+
+            try
+            {
+                Connexion = new NpgsqlConnection();
+                Connexion.ConnectionString = "Server=srv-peda-new;" + "port=5433;" + "Database=Intermarchewpf;" + "Search Path = Intermarche;" +
+                    "uid=scarnatv;" + "password=Z9O5sQ";
+                // à compléter dans les "" 
+                // @ sert à enlever tout pb avec les caractères 
+                Connexion.Open();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("pb de connexion : " + e);
+                // juste pour le debug : à transformer en MsgBox 
+            }
 
         }
         public int Read()
@@ -142,6 +170,36 @@ namespace Intermarché
                 // juste pour le debug : à transformer en MsgBox 
                 return 0;
             }
+        }
+        public int Read()
+        {
+            String sql = "SELECT num_employe, num_magasin,login,mdp FROM Employe";
+            try
+            {
+                NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter(sql, Connexion);
+                DataTable dataTable = new DataTable();
+                dataAdapter.Fill(dataTable);
+                foreach (DataRow res in dataTable.Rows)
+                {
+                    Client nouveau = new Client(int.Parse(res["num_client"].ToString()),
+                    res["nom_client"].ToString(), res["adresse_rue_client"].ToString(),
+                    res["adresse_cp_client"].ToString(), (res["adresse_ville_client"].ToString()),
+                    res["telephone_client"].ToString(), res["mail_client"].ToString());
+                    LesClients.Add(nouveau);
+                }
+                return dataTable.Rows.Count;
+            }
+            catch (NpgsqlException e)
+            { Console.WriteLine("pb de requete : " + e); return 0; }
+        }
+        public bool VerifierLogin(string login, string mdp)
+        {
+            bool isValid = false;
+            string connectionString = "Server=srv-peda-new;" + "port=5433;" +
+                "Database=Intermarchewpf;" + "Search Path = Intermarche;" + "uid=scarnatv;" +
+                "password=Z9O5sQ;";
+
+            return isValid;
         }
 
 

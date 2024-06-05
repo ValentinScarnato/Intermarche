@@ -22,20 +22,6 @@ namespace Intermarché
     /// </summary>
     public partial class MainWindow : Window
     {
-        private ObservableCollection<Employe> lesEmployes;
-        private NpgsqlConnection connexion = null;   // futur lien à la BD
-
-        public ObservableCollection<Employe> LesEmployes
-        {
-            get
-            {
-                return lesEmployes;
-            }
-            set
-            {
-                this.lesEmployes = value;
-            }
-        }
         
         public MainWindow()
         {
@@ -98,53 +84,6 @@ namespace Intermarché
             }
         }
 
-        private void butValiderConnexion_Click(object sender, RoutedEventArgs e)
-        {
-            string login = txtboxIdentifiant.Text;
-            string mdp = txtboxMdp.Text; 
-
-            if (VerifierLogin(login, mdp))
-            {
-                MessageBox.Show("Connexion réussie!");
-                //FINIR ET OUVRIR NVLLE PAGE
-            }
-            else
-            {
-                MessageBox.Show("Login ou mot de passe incorrect.");
-            }
-        }
-        private bool VerifierLogin(string login, string mdp)
-        {
-            bool isValid = false;
-
-            // Remplacez par votre chaîne de connexion à la base de données
-            string connectionString = "Server=srv-peda-new;" + "port=5433;" +
-                "Database=votreBase;" + "Search Path = votreSchemaPostGresql;" + "uid=votreLogin;" +
-                "password=votrePassword;";
-
-            using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
-            {
-                string query = "SELECT COUNT(1) FROM Employe WHERE Login = @Login AND Mdp = @Mdp";
-
-                using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@Login", login);
-                    command.Parameters.AddWithValue("@Mdp", mdp);
-
-                    connection.Open();
-
-                    int count = (int)(command.ExecuteScalar());
-
-                    if (count == 1)
-                    {
-                        isValid = true;
-                    }
-
-                    connection.Close();
-                }
-            }
-
-            return isValid;
-        }
+        
     }
 }
