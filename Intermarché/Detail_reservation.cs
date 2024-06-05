@@ -22,12 +22,18 @@ namespace Intermarché
             }
 		}
 
-		private int num_reservation;
+		private int numReservation;
 
-		public int Num_reservation 
-		{
-			get { return num_reservation; }
-			set { num_reservation = value; }
+        public Detail_reservation(string immatriculation, int numReservation)
+        {
+            this.Immatriculation = immatriculation;
+            this.NumReservation = numReservation;
+        }
+
+        public int NumReservation
+        {
+			get { return numReservation; }
+			set { numReservation = value; }
 		}
 
 

@@ -8,71 +8,83 @@ namespace Intermarché
 {
     public class Reservation_table
     {
-		private int num_reservation;
+		private int numReservation;
 
-		public int Num_reservation
+		public int NumReservation
         {
-			get { return num_reservation; }
-			set { num_reservation = value; }
+			get { return numReservation; }
+			set { numReservation = value; }
 		}
 
-		private int num_assurance;
+		private int numAssurance;
 
-		public int Num_assurance
+		public int NumAssurance
         {
-			get { return num_assurance; }
-			set { num_assurance = value; }
+			get { return numAssurance; }
+			set { numAssurance = value; }
 		}
 
-        private int num_client;
+        private int numClient;
 
-        public int Num_client
+        public int NumClient
         {
-            get { return num_client; }
-            set { num_client = value; }
+            get { return numClient; }
+            set { numClient = value; }
         }
 
-		private DateTime date_reservation;
+		private DateTime dateReservation;
 
-		public DateTime Date_reservation
+		public DateTime DateReservation
         {
-			get { return date_reservation; }
-			set { date_reservation = value; }
+			get { return dateReservation; }
+			set { dateReservation = value; }
 		}
 
-        private DateTime date_debut_reservation;
+        private DateTime dateDebutReservation;
 
-        public DateTime Date_debut_reservation
+        public DateTime DateDebutReservation
         {
-            get { return date_debut_reservation; }
-            set { date_debut_reservation = value; }
+            get { return dateDebutReservation; }
+            set { dateDebutReservation = value; }
         }
 
-        private DateTime date_fin_reservation;
+        private DateTime dateFinReservation;
 
-        public DateTime Date_fin_reservation
+        public DateTime DateFinReservation
         {
-            get { return date_fin_reservation; }
-            set { date_fin_reservation = value; }
+            get { return dateFinReservation; }
+            set { dateFinReservation = value; }
         }
 
-        private double montant_reservation;
+        private double montantReservation;
 
-        public double Montant_reservation
+        public double MontantReservation
         {
-            get { return montant_reservation; }
-            set { montant_reservation = value; }
+            get { return montantReservation; }
+            set { montantReservation = value; }
         }
 
-        private string forfait_km;
+        private string forfaitKm;
 
-        public string Forfait_km
+        public Reservation_table(int numReservation, int numAssurance, int numClient, DateTime dateReservation, DateTime dateDebutReservation, DateTime dateFinReservation, double montantReservation, string forfaitKm)
         {
-            get { return forfait_km; }
+            this.NumReservation = numReservation;
+            this.NumAssurance = numAssurance;
+            this.NumClient = numClient;
+            this.DateReservation = dateReservation;
+            this.DateDebutReservation = dateDebutReservation;
+            this.DateFinReservation = dateFinReservation;
+            this.MontantReservation = montantReservation;
+            this.ForfaitKm = forfaitKm;
+        }
+
+        public string ForfaitKm
+        {
+            get { return forfaitKm; }
             set {
                 if (value.Length > 10)
                     throw new ArgumentException("Le forfait kilométirque à une valeur trop longue");
-                this.forfait_km = value;
+                this.forfaitKm = value;
             }
         }
 

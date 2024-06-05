@@ -22,85 +22,85 @@ namespace Intermarché
             }
 		}
 
-        private string type_boite;
+        private string typeBoite;
 
-        public string Type_boite
+        public string TypeBoite
         {
-            get { return type_boite; }
+            get { return typeBoite; }
             set {
                 if (value.Length > 30)
                     throw new ArgumentException("Le type de boite à une valeur trop longue.");
                 if (String.IsNullOrEmpty(value))
                     throw new ArgumentException("Le type de boite ne peut pas être null.");
-                this.type_boite = value;    
+                this.typeBoite = value;    
             }
         }
 
-        private int num_magasin;
+        private int numMagasin;
 
-        public int Num_magasin
+        public int NumMagasin
         {
-            get { return num_magasin; }
-            set { num_magasin = value; }
+            get { return numMagasin; }
+            set { numMagasin = value; }
         }
 
-        private string nom_categorie;
+        private string nomCategorie;
 
-        public string Nom_categorie
+        public string NomCategorie
         {
-            get { return nom_categorie; }
+            get { return nomCategorie; }
             set
             {
                 if (value.Length > 30)
                     throw new ArgumentException("La catégorie du véhicule est trop longue.");
                 if (String.IsNullOrEmpty(value))
                     throw new ArgumentException("La catégorie du véhicule ne peut pas être null.");
-                this.nom_categorie = value;
+                this.nomCategorie = value;
             }
         }
 
-        private string nom_vehicule;
+        private string nomVehicule;
 
-        public string Nom_vehicule
+        public string NomVehicule
         {
-            get { return nom_vehicule; }
+            get { return nomVehicule; }
             set
             {
                 if (value.Length > 50)
                     throw new ArgumentException("Le nom du véhicule est trop long.");
                 if (String.IsNullOrEmpty(value))
                     throw new ArgumentException("Le nom du véhicule ne peut pas être null.");
-                this.nom_vehicule = value;
+                this.nomVehicule = value;
             }
         }
 
-        private string description_vehicule;
+        private string descriptionVehicule;
 
-        public string Description_vehicule
+        public string DescriptionVehicule
         {
-            get { return description_vehicule; }
+            get { return descriptionVehicule; }
             set
             {
                 if (value.Length > 300)
                     throw new ArgumentException("La description du véhicule est trop longue.");
-                this.description_vehicule = value;
+                this.descriptionVehicule = value;
             }
         }
 
-        private int nombre_places;
+        private int nombrePlaces;
 
-        public int Nombre_places
+        public int NombrePlaces
         {
-            get { return nombre_places; }
-            set { nombre_places = value; }
+            get { return nombrePlaces; }
+            set { nombrePlaces = value; }
         }
 
-        private double prix_location;
+        private double prixLocation;
 
-        public double Prix_location
+        public double PrixLocation
         {
-            get { return prix_location; }
-            set { prix_location = value; }
+            get { return prixLocation; }
+            set { prixLocation = value; }
         }
 
         private bool climatisation;
@@ -111,16 +111,30 @@ namespace Intermarché
             set { climatisation = value; }
         }
 
-        private string lien_photo_url;
+        private string lienPhotoUrl;
 
-        public string Lien_photo_url
+        public Vehicule_table(string immatriculation, string typeBoite, int numMagasin, string nomCategorie, string nomVehicule, string descriptionVehicule, int nombrePlaces, double prixLocation, bool climatisation, string lienPhotoUrl)
         {
-            get { return lien_photo_url; }
+            this.Immatriculation = immatriculation;
+            this.TypeBoite = typeBoite;
+            this.NumMagasin = numMagasin;
+            this.NomCategorie = nomCategorie;
+            this.NomVehicule = nomVehicule;
+            this.DescriptionVehicule = descriptionVehicule;
+            this.NombrePlaces = nombrePlaces;
+            this.PrixLocation = prixLocation;
+            this.Climatisation = climatisation;
+            this.LienPhotoUrl = lienPhotoUrl;
+        }
+
+        public string LienPhotoUrl
+        {
+            get { return lienPhotoUrl; }
             set
             {
                 if (value.Length > 100)
                     throw new ArgumentException("Le lien photo du véhicule est trop long.");
-                this.lien_photo_url = value;
+                this.lienPhotoUrl = value;
             }
         }
 
