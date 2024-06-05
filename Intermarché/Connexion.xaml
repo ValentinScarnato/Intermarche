@@ -9,6 +9,10 @@
     Width="800"
     Height="450"
     mc:Ignorable="d">
+    <Window.Resources>
+        <local:ApplicationData x:Key="appdata" />
+    </Window.Resources>
+
     <Grid>
         <StackPanel
             Margin="0,75,0,0"
@@ -27,7 +31,7 @@
                 Width="120"
                 Margin="0,5,0,0"
                 MaxLength="6"
-                Text=""
+                Text="{Binding login}"
                 TextWrapping="Wrap" />
             <Label x:Name="labMdp" Content="Mot de passe :" />
             <TextBox
@@ -35,7 +39,7 @@
                 Width="120"
                 Margin="0,5,0,0"
                 MaxLength="10"
-                Text=""
+                Text="{Binding mdp}"
                 TextWrapping="Wrap" />
             <Button
                 x:Name="butValiderConnexion"

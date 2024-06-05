@@ -38,6 +38,14 @@ namespace Intermarché
 
         private string mdp;
 
+        public Employe(int num_employe, int num_magasin, string login, string mdp)
+        {
+            Num_employe = num_employe;
+            Num_magasin = num_magasin;
+            Login = login;
+            Mdp = mdp;
+        }
+
         public string Mdp
         {
             get { return mdp; }
@@ -47,6 +55,7 @@ namespace Intermarché
                 this.mdp = value;
             }
         }
+
 
 
     }

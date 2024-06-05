@@ -33,7 +33,7 @@ namespace Intermarché
             string login = txtboxIdentifiant.Text;
             string mdp = txtboxMdp.Text;
             ApplicationData appData = new ApplicationData();
-            if (appData.VerifierLogin(login, mdp))
+            if (appData.VerifierLogin())
             {
                 MessageBox.Show("Connexion réussie!");
                 //FINIR ET OUVRIR NVLLE PAGE

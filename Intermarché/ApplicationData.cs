@@ -58,7 +58,7 @@ namespace Intermarché
         public ApplicationData()
         {
             this.ConnexionBD();
-            this.Read();
+            this.ReadAll();
             try
             {
                 Connexion = new NpgsqlConnection();
@@ -74,6 +74,11 @@ namespace Intermarché
                 Console.WriteLine("pb de connexion : " + e);
                 // juste pour le debug : à transformer en MsgBox 
             }
+        }
+        public void ReadAll()
+        {
+            ReadClient();
+            ReadEmploye();
         }
         public void ConnexionBD()
         {
@@ -94,7 +99,7 @@ namespace Intermarché
             }
 
         }
-        public int Read()
+        public int ReadClient()
         {
             String sql = "SELECT num_client, nom_client,adresse_rue_client,adresse_cp_client,adresse_ville_client,telephone_client, mail_client FROM Client";
             try
@@ -171,7 +176,7 @@ namespace Intermarché
                 return 0;
             }
         }
-        public int Read()
+        public int ReadEmploye()
         {
             String sql = "SELECT num_employe, num_magasin,login,mdp FROM Employe";
             try
@@ -181,23 +186,30 @@ namespace Intermarché
                 dataAdapter.Fill(dataTable);
                 foreach (DataRow res in dataTable.Rows)
                 {
-                    Client nouveau = new Client(int.Parse(res["num_client"].ToString()),
-                    res["nom_client"].ToString(), res["adresse_rue_client"].ToString(),
-                    res["adresse_cp_client"].ToString(), (res["adresse_ville_client"].ToString()),
-                    res["telephone_client"].ToString(), res["mail_client"].ToString());
-                    LesClients.Add(nouveau);
+                    Employe nouveau = new Employe(int.Parse(res["num_employe"].ToString()),
+                    int.Parse(res["num_magasin"].ToString()), res["login"].ToString(),
+                    res["mdp"].ToString());
+                    LesEmployes.Add(nouveau);
                 }
                 return dataTable.Rows.Count;
             }
             catch (NpgsqlException e)
             { Console.WriteLine("pb de requete : " + e); return 0; }
         }
-        public bool VerifierLogin(string login, string mdp)
+        public bool VerifierLogin()
         {
+            Connexion connexion = new Connexion();
+            string login = connexion.txtboxIdentifiant.Text;
+            string mdp = connexion.txtboxMdp.Text;
             bool isValid = false;
+            login = lesEmployes.Last().Login;
             string connectionString = "Server=srv-peda-new;" + "port=5433;" +
                 "Database=Intermarchewpf;" + "Search Path = Intermarche;" + "uid=scarnatv;" +
                 "password=Z9O5sQ;";
+            if (login != null)
+            {
+
+            }
 
             return isValid;
         }

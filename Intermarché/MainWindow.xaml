@@ -9,10 +9,6 @@
     Width="800"
     Height="450"
     mc:Ignorable="d">
-    <Window.Resources>
-        <local:Employe x:Key="employe" />
-    </Window.Resources>
-
     <Grid>
         <StackPanel
             Margin="0,75,0,0"
@@ -27,7 +23,7 @@
                 FontWeight="Bold" />
             <Label x:Name="labIdentifiant" Content="Login :" />
             <TextBox
-                x:Name="txtboxIdentifiant"
+                x:Name=""
                 Width="120"
                 Margin="0,5,0,0"
                 MaxLength="6"
@@ -110,7 +106,11 @@
                             Content="Visualiser réservation"
                             FontSize="16"
                             FontWeight="Bold" />
-                        <Label x:Name="lbInfoConnexionSession" Content="Vous êtes connecté au magasin" Height="59" Margin="20,0,0,0"/>
+                        <Label
+                            x:Name="lbInfoConnexionSession"
+                            Height="59"
+                            Margin="20,0,0,0"
+                            Content="Vous êtes connecté au magasin" />
                         <Button
                             x:Name="butCompte"
                             Width="40"
