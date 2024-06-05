@@ -36,41 +36,56 @@
                     </StackPanel>
                 </TabItem.Header>
                 <StackPanel>
-                    <StackPanel x:Name="spEffectuerResa" Height="142" Width="990" HorizontalAlignment="Left">
+                    <StackPanel x:Name="spEffectuerResa" Height="142" Width="851" HorizontalAlignment="Left" VerticalAlignment="Center">
                         <Label
-                Margin="50,20,0,0"
-                Content="Rechercher par N° Client / N° Réservation"
-                FontSize="16"
-                FontWeight="Bold" />
+                            Margin="50,20,0,0"
+                            Content="Rechercher par N° Client / N° Réservation"
+                            FontSize="16"
+                            FontWeight="Bold" />
                         <StackPanel
-                x:Name="spRecherche"
-                Height="36"
-                Margin="50,20,50,20"
-                Orientation="Horizontal">
+                            x:Name="spRecherche"
+                            Height="36"
+                            Margin="50,20,50,20"
+                            Orientation="Horizontal" Width="793">
                             <TextBox
-                    x:Name="tbRecherche"
-                    Width="670"
-                    Text=""
-                    TextWrapping="Wrap" Background="#FFC8C8C8" />
+                            x:Name="tbRecherche"
+                            Width="670"
+                            Text=""
+                            TextWrapping="Wrap" Background="#FFC8C8C8" />
                             <Button
-                    x:Name="butRecherche"
-                    Width="42"
-                    Margin="20,0,0,0"
-                    BorderBrush="{x:Null}"
-                    Content=""
-                    FontSize="14">
+                            x:Name="butRecherche"
+                            Width="42"
+                            Margin="20,0,0,0"
+                            BorderBrush="{x:Null}"
+                            Content=""
+                            FontSize="14">
                                 <Button.Background>
                                     <ImageBrush ImageSource="/rechercher.png"/>
                                 </Button.Background>
                             </Button>
                         </StackPanel>
-                        <StackPanel Height="442" Width="990" Margin="0,15,0,0">
-                            <Grid Width="990" Height="440" Background="White">
-                                <DataGrid x:Name="dataGridReservations" AutoGenerateColumns="True" Margin="50,46,77,46" Foreground="Black" Grid.Row="1" Grid.Column="1" />
-                            </Grid>
+                    </StackPanel>
+                    <StackPanel Height="502" Width="1224" Background="#FFBBBBBB" HorizontalAlignment="Right" Orientation="Horizontal">
+                        <Grid Width="909">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="7*"/>
+                                <ColumnDefinition Width="855*"/>
+                            </Grid.ColumnDefinitions>
+                            <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="7,7,24,7" Grid.Column="1"/>
+                        </Grid>
+                        <StackPanel Width="315">
+                            <Label Content="Filtrer la recherche par :" FontSize="16" Margin="0,15,0,0" FontWeight="Bold"/>
+                            <Label Content="Date de réservation" FontSize="16" Margin="0,25,0,0" HorizontalAlignment="Center"/>
+                            <DatePicker FontSize="14" Width="240" Height="30" Margin="0,10,0,0"/>
+                            <Label Content="Catégorie  de véhicule" FontSize="16" Margin="0,20,0,0" HorizontalAlignment="Center"/>
+                            <ComboBox Width="240" Margin="0,10,0,0"/>
+                            <Label Content="Disponibilité magasin" FontSize="16" Margin="0,20,0,0" HorizontalAlignment="Center"/>
+                            <ComboBox Width="240" Margin="0,10,0,0"/>
+                            <Label Content="Type de boîte" FontSize="16" Margin="0,20,0,0" HorizontalAlignment="Center"/>
+                            <ComboBox Width="240" Margin="0,10,0,0"/>
+
                         </StackPanel>
                     </StackPanel>
-                    <StackPanel Height="440" Width="282" Background="#FFBBBBBB" HorizontalAlignment="Right"/>
                 </StackPanel>
             </TabItem>
         </TabControl>
