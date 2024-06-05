@@ -103,7 +103,7 @@ namespace Intermarché
             string login = txtboxIdentifiant.Text;
             string mdp = txtboxMdp.Text; 
 
-            if (VerifyLogin(login, mdp))
+            if (VerifierLogin(login, mdp))
             {
                 MessageBox.Show("Connexion réussie!");
                 //FINIR ET OUVRIR NVLLE PAGE
@@ -113,7 +113,7 @@ namespace Intermarché
                 MessageBox.Show("Login ou mot de passe incorrect.");
             }
         }
-        private bool VerifyLogin(string login, string mdp)
+        private bool VerifierLogin(string login, string mdp)
         {
             bool isValid = false;
 
