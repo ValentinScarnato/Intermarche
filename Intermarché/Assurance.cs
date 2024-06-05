@@ -8,36 +8,45 @@ namespace Intermarché
 {
     public class Assurance
     {
-		private int num_assurance;
+		private int numAssurance;
 
-		public int Num_assurance
+		public int NumAssurance
         {
-			get { return num_assurance; }
-			set { num_assurance = value; }
+			get { return numAssurance; }
+			set { numAssurance = value; }
 		}
 
-		private string description_assurance;
+		private string descriptionAssurance;
 
-		public string Description_assurance
+		public string DescriptionAssurance
         {
-			get { return description_assurance; }
+			get { return descriptionAssurance; }
 			set {
 				if (value.Length > 30)
 					throw new ArgumentException("La description d'assurance est trop longue.");
-				this.description_assurance = value;
+				this.descriptionAssurance = value;
 			}
 		}
 
-		private int prix_assurance;
+		private int prixAssurance;
 
-		public int Prix_assurance
+        public int PrixAssurance
         {
-			get { return prix_assurance; }
-			set { prix_assurance = value; }
+			get { return prixAssurance; }
+			set { prixAssurance = value; }
 		}
 
+        public Assurance(int numAssurance, string descriptionAssurance, int prixAssurance)
+        {
+            NumAssurance = numAssurance;
+            DescriptionAssurance = descriptionAssurance;
+            PrixAssurance = prixAssurance;
+        }
 
 
 
-	}
+
+
+
+    }
 }

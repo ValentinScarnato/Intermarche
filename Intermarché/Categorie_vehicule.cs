@@ -8,20 +8,24 @@ namespace Intermarché
 {
     public class Categorie_vehicule
     {
-		private string nom_categorie;
+		private string nomCategorie;
 
-		public string Nom_categorie
+        public Categorie_vehicule(string nomCategorie)
         {
-			get { return nom_categorie; }
+            NomCategorie = nomCategorie;
+        }
+
+        public string NomCategorie
+        {
+			get { return nomCategorie; }
 			set {
 				if (value.Length > 30)
 					throw new ArgumentException("Le nom de la catégorie est trop long.");
 				if (String.IsNullOrEmpty(value))
 					throw new ArgumentException("Le nom de catégorie ne peut pas être vide");
-				this.nom_categorie = value;
+				this.nomCategorie = value;
 			}
 		}
-
 
 	}
 }

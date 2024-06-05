@@ -123,9 +123,9 @@ namespace Intermarché
         public int Create(Client c)
         {
             String sql = $"insert into client (num_client, nom_client,adresse_rue_client,adresse_cp_client,adresse_ville_client,telephone_client, mail_client)"
-            + $" values ('{c.Num_client}','{c.Nom_client}','{c.Adresse_rue_client}'"
-            + $",'{c.Adresse_cp_client}','{c.Adresse_ville_client}', "
-            + $"'{c.Telephone_client}-{c.Mail_client}'); ";
+            + $" values ('{c.NumClient}','{c.NomClient}','{c.AdresseRueClient}'"
+            + $",'{c.AdresseCpClient}','{c.AdresseVilleClient}', "
+            + $"'{c.TelephoneClient}-{c.MailClient}'); ";
             try
             {
                 NpgsqlCommand cmd = new NpgsqlCommand(sql, Connexion);
@@ -159,9 +159,9 @@ namespace Intermarché
         public int Update(Client c)
         {
             String sql = $"insert into client (num_client, nom_client,adresse_rue_client,adresse_cp_client,adresse_ville_client,telephone_client, mail_client)"
-            + $" values ('{c.Num_client}','{c.Nom_client}','{c.Adresse_rue_client}'"
-            + $",'{c.Adresse_cp_client}','{c.Adresse_ville_client}', "
-            + $"'{c.Telephone_client}-{c.Mail_client}'); ";
+            + $" values ('{c.NumClient}','{c.NomClient}','{c.AdresseRueClient}'"
+            + $",'{c.AdresseCpClient}','{c.AdresseVilleClient}', "
+            + $"'{c.TelephoneClient}-{c.MailClient}'); ";
             try
             {
                 NpgsqlCommand cmd = new NpgsqlCommand(sql, Connexion);
