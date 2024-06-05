@@ -28,22 +28,5 @@ namespace Intermarché
             InitializeComponent();
         }
 
-       
-        private bool VerifierLogin()
-        {
-            bool isValid = false;
-
-            // Remplacez par votre chaîne de connexion à la base de données
-            string connectionString = "Server=srv-peda-new;" + "port=5433;" +
-                "Database=votreBase;" + "Search Path = votreSchemaPostGresql;" + "uid=votreLogin;" +
-                "password=votrePassword;";
-
-            return isValid;
-        }
-
-        private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
     }
 }
