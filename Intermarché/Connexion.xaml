@@ -15,43 +15,44 @@
         <local:ApplicationData x:Key="appdata" />
     </Window.Resources>
     <Grid>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Height="141" Width="475" Margin="0,44,0,0">
-            <StackPanel.Background>
-                <ImageBrush ImageSource="/intermarche-logo.png"/>
-            </StackPanel.Background>
-
-        </StackPanel>
-        <StackPanel
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center" Height="319" Width="238" Margin="0,70,0,0">
-            <Label
-                x:Name="labConnexion"
-                Margin="0,0,0,10"
+        <StackPanel>
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Height="195" Width="748" Margin="0,50,0,0">
+                <StackPanel.Background>
+                    <ImageBrush ImageSource="/intermarche-logo.png"/>
+                </StackPanel.Background>
+            </StackPanel>
+            <StackPanel
                 HorizontalAlignment="Center"
-                Content="Connexion"
-                FontSize="24"
-                FontWeight="Bold" />
-            <Label x:Name="labIdentifiant" Content="Login :" FontSize="20" />
-            <TextBox
-                x:Name="txtboxIdentifiant"
-                Width="200"
-                Margin="0,15,0,15"
-                MaxLength="6"
-                Text="{Binding login}"
-                TextWrapping="Wrap" Height="25" FontSize="18" />
-            <Label x:Name="labMdp" Content="Mot de passe :" FontSize="20" />
-            <PasswordBox
-                x:Name="txtboxMdp"
-                Width="200"
-                Margin="0,15,0,15"
-                MaxLength="10"
-                Height="25" 
-                FontSize="18" />
-            <Button
-                x:Name="butValiderConnexion"
-                Margin="0,15,0,0"
-                Click="butValiderConnexion_Click"
-                Content="Valider" FontSize="18" Width="180" Height="30" />
+                VerticalAlignment="Top" Height="337" Width="274" Margin="0,80,0,0">
+                <Label
+                     x:Name="labConnexion"
+                     Margin="0,0,0,10"
+                     HorizontalAlignment="Center"
+                     Content="Connexion"
+                     FontSize="24"
+                    FontWeight="Bold" />
+                <Label x:Name="labIdentifiant" Content="Login :" FontSize="20" />
+                <TextBox
+                    x:Name="txtboxIdentifiant"
+                    Width="200"
+                    Margin="0,15,0,15"
+                    MaxLength="6"
+                    Text="{Binding login}"
+                    TextWrapping="Wrap" Height="25" FontSize="18" />
+                <Label x:Name="labMdp" Content="Mot de passe :" FontSize="20" />
+                <PasswordBox
+                    x:Name="txtboxMdp"
+                    Width="200"
+                    Margin="0,15,0,15"
+                    MaxLength="10"
+                    Height="25" 
+                    FontSize="18" />
+                <Button
+                    x:Name="butValiderConnexion"
+                    Margin="0,15,0,0"
+                    Click="butValiderConnexion_Click"
+                    Content="Valider" FontSize="18" Width="180" Height="30" />
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Window>
