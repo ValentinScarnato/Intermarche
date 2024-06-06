@@ -110,6 +110,12 @@
                                 Margin="7,7,24,7" />
                         </Grid>
                     </StackPanel>
+                    <StackPanel Height="49">
+                        <Button 
+                            x:Name="butReserver"
+                            Content="Reserver" Width="152"
+                            Click="butReserver_Click"/>
+                    </StackPanel>
                 </StackPanel>
             </TabItem>
             <TabItem>
