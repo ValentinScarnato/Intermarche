@@ -25,6 +25,8 @@ namespace Intermarché
 
         public MainWindow()
         {
+            Connexion connect = new Connexion();
+            connect.ShowDialog();
             InitializeComponent();
         }
 
@@ -42,11 +44,6 @@ namespace Intermarché
             Application.Current.Shutdown();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            ClientFormWindow clientFormWindow = new ClientFormWindow();
-            clientFormWindow.ShowDialog();
-        }
 
         private void butReserver_Click(object sender, RoutedEventArgs e)
         {
@@ -66,6 +63,12 @@ namespace Intermarché
 
             Random random = new Random();
             return random.Next(1, 10); // Génère un numéro entre 1000 et 9999
+        }
+
+        private void butCreateClent_Click(object sender, RoutedEventArgs e)
+        {
+            ClientFormWindow clientFormWindow = new ClientFormWindow();
+            clientFormWindow.ShowDialog();
         }
     }
 }
