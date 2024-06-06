@@ -198,20 +198,24 @@ namespace Intermarché
         }
         public bool VerifierLogin()
         {
+            Employe employe;
             Connexion connexion = new Connexion();
-            string login = connexion.txtboxIdentifiant.Text;
+            string loging = connexion.txtboxIdentifiant.Text;
             string mdp = connexion.txtboxMdp.Text;
             bool isValid = false;
-            login = lesEmployes.Last().Login;
             string connectionString = "Server=srv-peda-new;" + "port=5433;" +
                 "Database=Intermarchewpf;" + "Search Path = Intermarche;" + "uid=scarnatv;" +
                 "password=Z9O5sQ;";
-            if (login != null)
+            foreach(Employe e in lesEmployes)
             {
-
+                if (loging == e.Login || mdp == e.Mdp)
+                {
+                    isValid = true;
+                }
+                else isValid = false;
             }
-
             return isValid;
+            
         }
 
 
