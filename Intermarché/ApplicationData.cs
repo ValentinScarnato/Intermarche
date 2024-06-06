@@ -164,12 +164,13 @@ namespace Intermarché
 
         public ApplicationData()
         {
-            this.ConnexionBD();
-            //this.ReadAll();
+            //ConnexionBD();
+            this.ReadAll();
             this.ReadMagasin();
             this.ReadEmploye();
             this.VerifierLogin();
         }
+        /*
         public void ConnexionBD()
         {
             try
@@ -183,7 +184,7 @@ namespace Intermarché
                 Console.WriteLine("pb de connexion : " + e);
                 // juste pour le debug : à transformer en MsgBox  
             }
-        }
+        }*/
         public void ReadAll()
         {
             ReadAssurance();

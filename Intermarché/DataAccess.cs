@@ -8,12 +8,13 @@ using System.Threading.Tasks;
 
 namespace Intermarché
 {
-    class DataAccess
+    public class DataAccess
     {
         private static DataAccess instance;
-        private static string strConnexion = "Server=srv-peda-new.iut-acy.local;" + "port=5433;" +
+        private static string strConnexion = "Server=srv-peda-new;" + "port=5433;" +
                 "Database=Intermarchewpf;" + "Search Path = Intermarche;" + "uid=scarnatv;" +
                 "password=Z9O5sQ;";
+
         private DataAccess()
         {
             ConnexionBD();
