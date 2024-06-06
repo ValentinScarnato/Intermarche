@@ -81,15 +81,14 @@
                             VerticalAlignment="Center"
                             Content="Rechercher"
                             FontSize="14" />
-                        <Button
+                        <Button x:Name="butCreateClent"
                             Width="140"
                             Height="30"
                             Margin="50,0,0,0"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
-                            Click="Button_Click"
                             Content="Créer client"
-                            FontSize="14" />
+                            FontSize="14" Click="butCreateClent_Click" />
                     </StackPanel>
                     <StackPanel>
                         <Label

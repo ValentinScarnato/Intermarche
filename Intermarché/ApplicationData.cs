@@ -164,13 +164,13 @@ namespace Intermarché
 
         public ApplicationData()
         {
-            //ConnexionBD();
-            this.ReadAll();
+            ConnexionBD();
+            //this.ReadAll();
             this.ReadMagasin();
-            ReadEmploye();
-            this.VerifierLogin();
+            this.ReadEmploye();
+            
         }
-        /*
+        
         public void ConnexionBD()
         {
             try
@@ -184,7 +184,7 @@ namespace Intermarché
                 Console.WriteLine("pb de connexion : " + e);
                 // juste pour le debug : à transformer en MsgBox  
             }
-        }*/
+        }
         public void ReadAll()
         {
             ReadAssurance();
@@ -200,12 +200,11 @@ namespace Intermarché
         }
         
 
-        public bool VerifierLogin()
+        public bool VerifierLogin(string loging, string mdp)
         {
             Employe employe;
             Connexion connexion = new Connexion();
-            string loging = connexion.txtboxIdentifiant.Text;
-            string mdp = connexion.txtboxMdp.Password;
+            
             bool isValid = false;
             string connectionString = strconnexion;
             foreach (Employe e in lesEmployes)
