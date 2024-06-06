@@ -12,14 +12,13 @@ namespace Intermarché
     {
         private static DataAccess instance;
         private static string strConnexion = "Server=srv-peda-new;" + "port=5433;" +
-                "Database=Intermarchewpf;" + "Search Path = Intermarche;" + "uid=scarnatv;" +
+                "Database=Intermarchewpf;" + "Search Path = intermarche;" + "uid=scarnatv;" +
                 "password=Z9O5sQ;";
 
         private DataAccess()
         {
             ConnexionBD();
         }
-
 
         public static DataAccess Instance
         {
