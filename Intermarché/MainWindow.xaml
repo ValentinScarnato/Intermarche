@@ -86,7 +86,7 @@
                     </StackPanel>
                     <StackPanel Height="502" Width="1224" Background="#FFBBBBBB" HorizontalAlignment="Right" Orientation="Horizontal">
                         <Grid Width="909">
-                            <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="7,7,24,7" Grid.Column="1"/>
+                            <DataGrid x:Name="reservationsDataGrid" ItemsSource="{Binding LesReservations}" AutoGenerateColumns="True" Margin="7,7,24,7" Grid.Column="1"/>
                         </Grid>
                         <StackPanel Width="315">
                             <Label Content="Filtrer la recherche par :" FontSize="16" Margin="0,15,0,0" FontWeight="Bold"/>
