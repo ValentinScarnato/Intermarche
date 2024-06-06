@@ -69,8 +69,6 @@ namespace Intermarché
             set { montantReservation = value; }
         }
 
-        private string forfaitKm;
-
         public Reservation_table(int numReservation, int numAssurance, int numClient, DateTime dateReservation, DateTime dateDebutReservation, DateTime dateFinReservation, double montantReservation, string forfaitKm)
         {
             this.NumReservation = numReservation;
@@ -83,6 +81,7 @@ namespace Intermarché
             this.ForfaitKm = forfaitKm;
         }
 
+        private string forfaitKm;
         public string ForfaitKm
         {
             get { return forfaitKm; }

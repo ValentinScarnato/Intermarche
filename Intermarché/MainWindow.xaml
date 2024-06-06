@@ -28,10 +28,7 @@
                     </StackPanel>
                 </TabItem.Header>
                 <StackPanel>
-                    <StackPanel
-                        Width="1278"
-                        Height="685"
-                        Background="#FF8C8C8C" />
+
                 </StackPanel>
             </TabItem>
             <TabItem>
