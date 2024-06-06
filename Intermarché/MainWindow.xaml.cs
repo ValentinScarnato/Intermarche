@@ -36,5 +36,16 @@ namespace Intermarché
                 MessageBox.Show("Veuillez saisir un numéro supérieur à zéro.", "Erreur de saisie");
             }
         }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ClientFormWindow clientFormWindow = new ClientFormWindow();
+            clientFormWindow.ShowDialog();
+        }
     }
 }
