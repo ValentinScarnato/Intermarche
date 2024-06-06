@@ -167,7 +167,7 @@ namespace Intermarché
             //ConnexionBD();
             this.ReadAll();
             this.ReadMagasin();
-            this.ReadEmploye();
+            ReadEmploye();
             this.VerifierLogin();
         }
         /*
@@ -296,26 +296,19 @@ namespace Intermarché
                 return 0;
             }
         }
-        public int ReadEmploye()
+        public static ObservableCollection<Employe> ReadEmploye()
         {
-            this.LesEmployes = new ObservableCollection<Employe>();
+            ObservableCollection<Employe> lesEmployes = new ObservableCollection<Employe>();
             String sql = "SELECT num_employe, num_magasin,login,mdp FROM employe";
-            try
+            DataTable dt = DataAccess.Instance.GetData(sql);
+            foreach (DataRow res in dt.Rows)
             {
-                NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter(sql, Connexion);
-                DataTable dataTable = new DataTable();
-                dataAdapter.Fill(dataTable);
-                foreach (DataRow res in dataTable.Rows)
-                {
-                    Employe nouveau = new Employe(int.Parse(res["num_employe"].ToString()),
-                    int.Parse(res["num_magasin"].ToString()), res["login"].ToString(),
-                    res["mdp"].ToString());
-                    LesEmployes.Add(nouveau);
-                }
-                return dataTable.Rows.Count;
+                Employe nouveau = new Employe(int.Parse(res["num_employe"].ToString()),
+                int.Parse(res["num_magasin"].ToString()), res["login"].ToString(),
+                res["mdp"].ToString());
+                lesEmployes.Add(nouveau);
             }
-            catch (NpgsqlException e)
-            { Console.WriteLine("pb de requete : " + e); return 0; }
+            return lesEmployes;
         }
         public int ReadAssurance()
         {
@@ -411,26 +404,19 @@ namespace Intermarché
             catch (NpgsqlException e)
             { Console.WriteLine("pb de requete : " + e); return 0; }
         }
-        public int ReadMagasin()
+        public static ObservableCollection<Magasin> ReadMagasin()
         {
-            this.LesMagasin = new ObservableCollection<Magasin>();
+            ObservableCollection<Magasin> lesMagasins = new ObservableCollection<Magasin>();
             String sql = "SELECT num_magasin,nom_magasin,adresse_rue_magasin,adresse_cp_magasin, adresse_ville_magasin,horaire_magasin FROM Intermarche.magasin";
-            try
+            DataTable dt = DataAccess.Instance.GetData(sql);
+            foreach (DataRow res in dt.Rows)
             {
-                NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter(sql, Connexion);
-                DataTable dataTable = new DataTable();
-                dataAdapter.Fill(dataTable);
-                foreach (DataRow res in dataTable.Rows)
-                {
-                    Magasin nouveau = new Magasin(int.Parse(res["num_magasin"].ToString()),
-                    res["nom_magasin"].ToString(), res["adresse_rue_magasin"].ToString(),
-                    res["adresse_cp_magasin"].ToString(), res["adresse_ville_magasin"].ToString(), res["horaire_magasin"].ToString());
-                    LesMagasin.Add(nouveau);
-                }
-                return dataTable.Rows.Count;
+                Magasin nouveau = new Magasin(int.Parse(res["num_magasin"].ToString()),
+                res["nom_magasin"].ToString(), res["adresse_rue_magasin"].ToString(),
+                res["adresse_cp_magasin"].ToString(), res["adresse_ville_magasin"].ToString(), res["horaire_magasin"].ToString());
+                lesMagasins.Add(nouveau);
             }
-            catch (NpgsqlException e)
-            { Console.WriteLine("pb de requete : " + e); return 0; }
+            return lesMagasins;
         }
         public int ReadReservation()
         {
