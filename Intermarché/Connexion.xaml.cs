@@ -27,20 +27,28 @@ namespace Intermarché
         }
         private void butValiderConnexion_Click(object sender, RoutedEventArgs e)
         {
-            string login = txtboxIdentifiant.Text;
-            string mdp = txtboxMdp.Password;
-            ApplicationData appData = new ApplicationData();
-            if (appData.VerifierLogin())
+            // Vérification des champs de login et de mot de passe
+            if (string.IsNullOrWhiteSpace(txtboxIdentifiant.Text) || string.IsNullOrWhiteSpace(txtboxMdp.Password))
             {
+                MessageBox.Show("Veuillez saisir un identifiant et un mot de passe.", "Champs vides");
+            }
+            else
+            {
+                string login = txtboxIdentifiant.Text;
+                string mdp = txtboxMdp.Password;
+                ApplicationData appData = new ApplicationData();
+                //if (appData.VerifierLogin())
+                //{
                 MessageBox.Show("Connexion réussie!");
 
                 MainWindow mainWindow = new MainWindow();
                 mainWindow.Show();
                 this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Login ou mot de passe incorrect.");
+                //}
+                /*else
+                {
+                    MessageBox.Show("Login ou mot de passe incorrect.");
+                }*/
             }
         }
     }
