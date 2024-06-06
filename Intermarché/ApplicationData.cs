@@ -14,6 +14,7 @@ namespace Intermarché
 
         private ObservableCollection<Client> lesClients;
         private NpgsqlConnection connexion = null;   // futur lien à la BD
+        private DataAccess dataAccess;
         String strconnexion = "Server=srv-peda-new;" + "port=5433;" + "Database=Intermarchewpf;" + "Search Path=intermarche;" +
                     "uid=scarnatv;" + "password=Z9O5sQ";
         public NpgsqlConnection Connexion
@@ -31,22 +32,7 @@ namespace Intermarché
 
         public ApplicationData()
         {
-            ConnexionBD();
-            //this.ReadAll();
-        }
-        public void ConnexionBD()
-        {
-            try
-            {
-                Connexion = new NpgsqlConnection();
-                Connexion.ConnectionString = strconnexion;
-                Connexion.Open();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("pb de connexion : " + e);
-                // juste pour le debug : à transformer en MsgBox  
-            }
+            dataAccess = DataAccess.Instance;
         }
 
 
@@ -55,8 +41,7 @@ namespace Intermarché
             Employe employe;
             bool isValid = false;
             string connectionString = strconnexion;
-            DataAccess da = new DataAccess();
-            foreach (Employe e in da.LesEmployes)
+            foreach (Employe e in dataAccess.LesEmployes)
             {
                 if (loging == e.Login && mdp == e.Mdp)
                 {

@@ -18,7 +18,7 @@ namespace Intermarché
                     "uid=scarnatv;" + "password=Z9O5sQ";
 
 
-        public DataAccess()
+        private DataAccess()
         {
             this.ConnexionBD();
             //this.ReadAll();
