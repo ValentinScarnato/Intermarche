@@ -14,7 +14,8 @@ namespace Intermarché
 
         private ObservableCollection<Client> lesClients;
         private NpgsqlConnection connexion = null;   // futur lien à la BD
-
+        String strconnexion = "Server=localhost;" + "port=5433;" + "Database=Intermarchewpf;" + "Search Path=public;" +
+                    "uid=postgres;" + "password=postgres";
 
         public ObservableCollection<Client> LesClients
         {
@@ -164,22 +165,23 @@ namespace Intermarché
         public ApplicationData()
         {
             this.ConnexionBD();
-            this.ReadAll();
-            //this.VerifierLogin();
+            //this.ReadAll();
+            this.ReadMagasin();
+            this.ReadEmploye();
+            this.VerifierLogin();
+        }
+        public void ConnexionBD()
+        {
             try
             {
                 Connexion = new NpgsqlConnection();
-                Connexion.ConnectionString = "Server=srv-peda-new;" + "port=5433;" + "Database=Intermarchewpf;" + "Search Path = Intermarche;" +
-                    "uid=scarnatv;" + "password=Z9O5sQ";
-
-                // à compléter dans les "" 
-                // @ sert à enlever tout pb avec les caractères 
+                Connexion.ConnectionString = strconnexion;
                 Connexion.Open();
             }
             catch (Exception e)
             {
                 Console.WriteLine("pb de connexion : " + e);
-                // juste pour le debug : à transformer en MsgBox 
+                // juste pour le debug : à transformer en MsgBox  
             }
         }
         public void ReadAll()
@@ -195,25 +197,7 @@ namespace Intermarché
             ReadMagasin();
             ReadReservation();
         }
-        public void ConnexionBD()
-        {
-
-            try
-            {
-                Connexion = new NpgsqlConnection();
-                Connexion.ConnectionString = "Server=srv-peda-new;" + "port=5433;" + "Database=Intermarchewpf;" + "Search Path = Intermarche;" +
-                    "uid=scarnatv;" + "password=Z9O5sQ";
-                // à compléter dans les "" 
-                // @ sert à enlever tout pb avec les caractères 
-                Connexion.Open();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("pb de connexion : " + e);
-                // juste pour le debug : à transformer en MsgBox 
-            }
-
-        }
+        
 
         /*public bool VerifierLogin()
         {
@@ -222,9 +206,7 @@ namespace Intermarché
             string loging = connexion.txtboxIdentifiant.Text;
             string mdp = connexion.txtboxMdp.Password;
             bool isValid = false;
-            string connectionString = "Server=srv-peda-new;" + "port=5433;" +
-                "Database=Intermarchewpf;" + "Search Path = Intermarche;" + "uid=scarnatv;" +
-                "password=Z9O5sQ;";
+            string connectionString = strconnexion;
             foreach (Employe e in lesEmployes)
             {
                 if (loging == e.Login || mdp == e.Mdp)
@@ -315,7 +297,8 @@ namespace Intermarché
         }
         public int ReadEmploye()
         {
-            String sql = "SELECT num_employe, num_magasin,login,mdp FROM Employe";
+            this.LesEmployes = new ObservableCollection<Employe>();
+            String sql = "SELECT num_employe, num_magasin,login,mdp FROM EMPLOYE";
             try
             {
                 NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter(sql, Connexion);
@@ -429,7 +412,8 @@ namespace Intermarché
         }
         public int ReadMagasin()
         {
-            String sql = "SELECT num_magasin,nom_magasin,adresse_rue_magasin,adresse_cp_magasin, adresse_ville_magasin,horaire_magasin FROM Magasin";
+            this.LesMagasin = new ObservableCollection<Magasin>();
+            String sql = "SELECT num_magasin,nom_magasin,adresse_rue_magasin,adresse_cp_magasin, adresse_ville_magasin,horaire_magasin FROM MAGASIN";
             try
             {
                 NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter(sql, Connexion);
