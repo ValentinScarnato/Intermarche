@@ -10,13 +10,18 @@ namespace Intermarché
     {
 		private int numReservation;
 
-		public int NumReservation
+        public int NumReservation
         {
-			get { return numReservation; }
-			set { numReservation = value; }
-		}
+            get { return numReservation; }
+            set
+            {
+                if (value <= 0)
+                    throw new ArgumentException("Le numéro de réservation doit etre superieur ou egale a 0");
+                this.numReservation = value;
+            }
+        }
 
-		private int numAssurance;
+        private int numAssurance;
 
 		public int NumAssurance
         {
