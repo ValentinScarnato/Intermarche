@@ -28,5 +28,15 @@ namespace Intermarché
             InitializeComponent();
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ClientFormWindow clientFormWindow = new ClientFormWindow();
+            clientFormWindow.ShowDialog();
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }
