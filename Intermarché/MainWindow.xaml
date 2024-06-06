@@ -43,7 +43,7 @@
                     </StackPanel>
                     <StackPanel Height="439" HorizontalAlignment="Left" Orientation="Horizontal" Width="1270">
                         <Grid Width="1020" Height="319">
-                            <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="7,7,24,7" Grid.Column="1"/>
+                            <DataGrid x:Name="data" ItemsSource="{d:SampleData ItemCount=5}" Margin="7,7,24,7" Grid.Column="1"/>
                         </Grid>
                     </StackPanel>
                 </StackPanel>
