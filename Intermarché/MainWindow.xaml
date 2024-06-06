@@ -8,42 +8,106 @@
     Title="Acceuil"
     Width="1280"
     Height="800"
+    Closed="Window_Closed"
+    ResizeMode="NoResize"
     WindowStartupLocation="CenterScreen"
-    mc:Ignorable="d" ResizeMode="NoResize" Closed="Window_Closed">
+    mc:Ignorable="d">
     <Grid>
         <StackPanel Background="#FF4C4A4A">
             <Image
                 Width="292"
                 Height="71"
+                Margin="0,10,0,0"
                 Source="/img/intermarche-logo.png"
-                Stretch="Fill" Margin="0,10,0,0" />
+                Stretch="Fill" />
         </StackPanel>
         <TabControl Margin="0,74,0,0">
             <TabItem>
                 <TabItem.Header>
                     <StackPanel>
-                        <TextBlock TextWrapping="Wrap" Text="Effectuer Réservation"/>
+                        <TextBlock Text="Effectuer Réservation" TextWrapping="Wrap" />
                     </StackPanel>
                 </TabItem.Header>
                 <StackPanel Background="#FFC7C7C7">
-                    <Label Content="Réserver un véhicule" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontWeight="Bold" FontStyle="Italic"/>
-                    <Label Content="Veuillez renseigner les champs ci-dessous" HorizontalAlignment="Center" VerticalAlignment="Center" FontStyle="Italic" FontSize="14"/>
-                    <StackPanel Height="31" Width="1275" Orientation="Horizontal" Margin="0,5,0,0">
-                        <Label Content="Date de début de réservation" Margin="40,0,0,0" FontWeight="Bold" FontSize="14"/>
-                        <Label Content="Date de fin de réservation" Margin="40,0,0,0" FontWeight="Bold" FontSize="14"/>
+                    <Label
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Content="Réserver un véhicule"
+                        FontSize="20"
+                        FontStyle="Italic"
+                        FontWeight="Bold" />
+                    <Label
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Content="Veuillez renseigner les champs ci-dessous"
+                        FontSize="14"
+                        FontStyle="Italic" />
+                    <StackPanel
+                        Width="1275"
+                        Height="31"
+                        Margin="0,5,0,0"
+                        Orientation="Horizontal">
+                        <Label
+                            Margin="40,0,0,0"
+                            Content="Date de début de réservation"
+                            FontSize="14"
+                            FontWeight="Bold" />
+                        <Label
+                            Margin="40,0,0,0"
+                            Content="Date de fin de réservation"
+                            FontSize="14"
+                            FontWeight="Bold" />
                     </StackPanel>
-                    <StackPanel Height="64" Width="1275" Orientation="Horizontal" Margin="0,-5,0,0">
-                        <DatePicker HorizontalAlignment="Center" VerticalAlignment="Center" Margin="50,0,0,0" FontSize="14"/>
-                        <DatePicker HorizontalAlignment="Center" VerticalAlignment="Center" Margin="69,0,0,0" FontSize="14"/>
-                        <Button Content="Rechercher" Width="140" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="40,0,0,0" FontSize="14"/>
-                        <Button Content="Créer client" Width="140" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="50,0,0,0" FontSize="14" Click="Button_Click"/>
+                    <StackPanel
+                        Width="1275"
+                        Height="64"
+                        Margin="0,-5,0,0"
+                        Orientation="Horizontal">
+                        <DatePicker
+                            Margin="50,0,0,0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            FontSize="14" />
+                        <DatePicker
+                            Margin="69,0,0,0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            FontSize="14" />
+                        <Button
+                            Width="140"
+                            Height="30"
+                            Margin="40,0,0,0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Content="Rechercher"
+                            FontSize="14" />
+                        <Button
+                            Width="140"
+                            Height="30"
+                            Margin="50,0,0,0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Click="Button_Click"
+                            Content="Créer client"
+                            FontSize="14" />
                     </StackPanel>
                     <StackPanel>
-                        <Label Content="Véhicules" HorizontalAlignment="Center" FontWeight="Bold" FontSize="18"/>
+                        <Label
+                            HorizontalAlignment="Center"
+                            Content="Véhicules"
+                            FontSize="18"
+                            FontWeight="Bold" />
                     </StackPanel>
-                    <StackPanel Height="439" HorizontalAlignment="Left" Orientation="Horizontal" Width="1270">
+                    <StackPanel
+                        Width="1270"
+                        Height="439"
+                        HorizontalAlignment="Left"
+                        Orientation="Horizontal">
                         <Grid Width="1020" Height="319">
-                            <DataGrid x:Name="data" Margin="7,7,24,7" Grid.Column="1"/>
+                            <DataGrid
+                                x:Name="data"
+                                Grid.Column="1"
+                                Margin="7,7,24,7" />
                         </Grid>
                     </StackPanel>
                 </StackPanel>
@@ -51,11 +115,16 @@
             <TabItem>
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock TextWrapping="Wrap" Text="Visulaiser Réservation"/>
+                        <TextBlock Text="Visulaiser Réservation" TextWrapping="Wrap" />
                     </StackPanel>
                 </TabItem.Header>
                 <StackPanel>
-                    <StackPanel x:Name="spEffectuerResa" Height="142" Width="851" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <StackPanel
+                        x:Name="spEffectuerResa"
+                        Width="851"
+                        Height="142"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center">
                         <Label
                             Margin="50,20,0,0"
                             Content="Rechercher par N° Client / N° Réservation"
@@ -63,41 +132,78 @@
                             FontWeight="Bold" />
                         <StackPanel
                             x:Name="spRecherche"
+                            Width="793"
                             Height="36"
                             Margin="50,20,50,20"
-                            Orientation="Horizontal" Width="793">
+                            Orientation="Horizontal">
                             <TextBox
-                            x:Name="tbRecherche"
-                            Width="670"
-                            Text=""
-                            TextWrapping="Wrap" Background="#FFC8C8C8" />
+                                x:Name="tbRecherche"
+                                Width="670"
+                                Background="#FFC8C8C8"
+                                Text=""
+                                TextWrapping="Wrap" />
                             <Button
-                            x:Name="butRecherche"
-                            Width="42"
-                            Margin="20,0,0,0"
-                            BorderBrush="{x:Null}"
-                            Content=""
-                            FontSize="14">
+                                x:Name="butRecherche"
+                                Width="42"
+                                Margin="20,0,0,0"
+                                BorderBrush="{x:Null}"
+                                Click="butRecherche_Click"
+                                Content=""
+                                FontSize="14">
                                 <Button.Background>
-                                    <ImageBrush ImageSource="/rechercher.png"/>
+                                    <ImageBrush ImageSource="/rechercher.png" />
                                 </Button.Background>
                             </Button>
                         </StackPanel>
                     </StackPanel>
-                    <StackPanel Height="502" Width="1224" Background="#FFBBBBBB" HorizontalAlignment="Right" Orientation="Horizontal">
+                    <StackPanel
+                        Width="1224"
+                        Height="502"
+                        HorizontalAlignment="Right"
+                        Background="#FFBBBBBB"
+                        Orientation="Horizontal">
                         <Grid Width="909">
-                            <DataGrid x:Name="reservationsDataGrid" ItemsSource="{Binding LesReservations}" AutoGenerateColumns="True" Margin="7,7,24,7" Grid.Column="1"/>
+                            <DataGrid
+                                x:Name="reservationsDataGrid"
+                                Grid.Column="1"
+                                Margin="7,7,24,7"
+                                AutoGenerateColumns="True"
+                                ItemsSource="{Binding LesReservations}" />
                         </Grid>
                         <StackPanel Width="315">
-                            <Label Content="Filtrer la recherche par :" FontSize="16" Margin="0,15,0,0" FontWeight="Bold"/>
-                            <Label Content="Date de réservation" FontSize="16" Margin="0,25,0,0" HorizontalAlignment="Center"/>
-                            <DatePicker FontSize="14" Width="240" Height="30" Margin="0,10,0,0"/>
-                            <Label Content="Catégorie  de véhicule" FontSize="16" Margin="0,20,0,0" HorizontalAlignment="Center"/>
-                            <ComboBox Width="240" Margin="0,10,0,0"/>
-                            <Label Content="Disponibilité magasin" FontSize="16" Margin="0,20,0,0" HorizontalAlignment="Center"/>
-                            <ComboBox Width="240" Margin="0,10,0,0"/>
-                            <Label Content="Type de boîte" FontSize="16" Margin="0,20,0,0" HorizontalAlignment="Center"/>
-                            <ComboBox Width="240" Margin="0,10,0,0"/>
+                            <Label
+                                Margin="0,15,0,0"
+                                Content="Filtrer la recherche par :"
+                                FontSize="16"
+                                FontWeight="Bold" />
+                            <Label
+                                Margin="0,25,0,0"
+                                HorizontalAlignment="Center"
+                                Content="Date de réservation"
+                                FontSize="16" />
+                            <DatePicker
+                                Width="240"
+                                Height="30"
+                                Margin="0,10,0,0"
+                                FontSize="14" />
+                            <Label
+                                Margin="0,20,0,0"
+                                HorizontalAlignment="Center"
+                                Content="Catégorie  de véhicule"
+                                FontSize="16" />
+                            <ComboBox Width="240" Margin="0,10,0,0" />
+                            <Label
+                                Margin="0,20,0,0"
+                                HorizontalAlignment="Center"
+                                Content="Disponibilité magasin"
+                                FontSize="16" />
+                            <ComboBox Width="240" Margin="0,10,0,0" />
+                            <Label
+                                Margin="0,20,0,0"
+                                HorizontalAlignment="Center"
+                                Content="Type de boîte"
+                                FontSize="16" />
+                            <ComboBox Width="240" Margin="0,10,0,0" />
 
                         </StackPanel>
                     </StackPanel>
