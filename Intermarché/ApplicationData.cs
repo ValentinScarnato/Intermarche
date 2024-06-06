@@ -199,7 +199,7 @@ namespace Intermarché
         }
         
 
-        public bool VerifierLogin()
+        /*public bool VerifierLogin()
         {
             Employe employe;
             Connexion connexion = new Connexion();
@@ -216,7 +216,8 @@ namespace Intermarché
                 else isValid = false;
             }
             return isValid;
-        }
+        }*/
+
         public int ReadClient()
         {
             String sql = "SELECT num_client, nom_client,adresse_rue_client,adresse_cp_client,adresse_ville_client,telephone_client, mail_client FROM Client";

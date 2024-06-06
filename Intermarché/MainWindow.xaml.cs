@@ -22,11 +22,30 @@ namespace Intermarché
     /// </summary>
     public partial class MainWindow : Window
     {
-        
+
         public MainWindow()
         {
             InitializeComponent();
         }
 
+        private void butRecherche_Click(object sender, RoutedEventArgs e)
+        {
+            // Vérification de la saisie
+            if (!int.TryParse(tbRecherche.Text, out int valeurRecherche) || valeurRecherche <= 0)
+            {
+                MessageBox.Show("Veuillez saisir un numéro supérieur à zéro.", "Erreur de saisie");
+            }
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ClientFormWindow clientFormWindow = new ClientFormWindow();
+            clientFormWindow.ShowDialog();
+        }
     }
 }

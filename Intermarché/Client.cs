@@ -44,11 +44,11 @@ namespace Intermarché
 
         public string AdresseCpClient
         {
-            get { return AdresseCpClient; }
+            get { return adresseCpClient; }
             set {
                 if (value.Length > 5)
                     throw new ArgumentException("Le code postal de l'adresse du client est trop long.");
-                this.AdresseCpClient = value;
+                this.adresseCpClient = value;
             }
         }
 

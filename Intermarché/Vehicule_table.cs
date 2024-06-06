@@ -137,9 +137,5 @@ namespace Intermarché
                 this.lienPhotoUrl = value;
             }
         }
-
-
-
-
     }
 }

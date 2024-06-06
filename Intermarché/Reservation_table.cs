@@ -10,13 +10,18 @@ namespace Intermarché
     {
 		private int numReservation;
 
-		public int NumReservation
+        public int NumReservation
         {
-			get { return numReservation; }
-			set { numReservation = value; }
-		}
+            get { return numReservation; }
+            set
+            {
+                if (value <= 0)
+                    throw new ArgumentException("Le numéro de réservation doit etre superieur ou egale a 0");
+                this.numReservation = value;
+            }
+        }
 
-		private int numAssurance;
+        private int numAssurance;
 
 		public int NumAssurance
         {
@@ -64,8 +69,6 @@ namespace Intermarché
             set { montantReservation = value; }
         }
 
-        private string forfaitKm;
-
         public Reservation_table(int numReservation, int numAssurance, int numClient, DateTime dateReservation, DateTime dateDebutReservation, DateTime dateFinReservation, double montantReservation, string forfaitKm)
         {
             this.NumReservation = numReservation;
@@ -78,6 +81,7 @@ namespace Intermarché
             this.ForfaitKm = forfaitKm;
         }
 
+        private string forfaitKm;
         public string ForfaitKm
         {
             get { return forfaitKm; }

@@ -37,10 +37,11 @@ namespace Intermarché
                 MainWindow mainWindow = new MainWindow();
                 mainWindow.Show();
                 this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Login ou mot de passe incorrect.");
+                //}
+                /*else
+                {
+                    MessageBox.Show("Login ou mot de passe incorrect.");
+                }*/
             }
         }
     }
