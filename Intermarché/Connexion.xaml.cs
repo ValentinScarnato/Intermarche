@@ -21,8 +21,19 @@ namespace Intermarché
     /// </summary>
     public partial class Connexion : Window
     {
-        public Connexion()
+        private MainWindow mainWin;
+
+        public MainWindow MainWin
         {
+            get { return mainWin; }
+            set { mainWin = value; }
+        }
+
+        private bool ClosedByConnexion = false;
+
+        public Connexion(MainWindow mainWin)
+        {
+            MainWin = mainWin;
             InitializeComponent();
         }
         private void butValiderConnexion_Click(object sender, RoutedEventArgs e)
@@ -32,7 +43,10 @@ namespace Intermarché
             ApplicationData appData = new ApplicationData();
             if (appData.VerifierLogin(login,mdp))
             {
+                this.MainWin.Show();
+                this.ClosedByConnexion = true;
                 this.Close();
+                
             }
             else
             {
@@ -42,7 +56,11 @@ namespace Intermarché
 
         private void Window_Closed(object sender, EventArgs e)
         {
-            Application.Current.Shutdown();
+            if (!this.ClosedByConnexion)
+            {
+                Application.Current.Shutdown();
+            }
+            
         }
     }
 }

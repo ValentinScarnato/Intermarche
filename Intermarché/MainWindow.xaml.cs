@@ -26,8 +26,9 @@ namespace Intermarché
 
         public MainWindow()
         {
-            Connexion connect = new Connexion();
+            Connexion connect = new Connexion(this);
             connect.ShowDialog();
+    
             InitializeComponent();
         }
 
