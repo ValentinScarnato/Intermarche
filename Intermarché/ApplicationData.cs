@@ -32,7 +32,7 @@ namespace Intermarché
 
         public ApplicationData()
         {
-            dataAccess = DataAccess.Instance;
+
         }
 
 
@@ -41,7 +41,8 @@ namespace Intermarché
             Employe employe;
             bool isValid = false;
             string connectionString = strconnexion;
-            foreach (Employe e in dataAccess.LesEmployes)
+            DataAccess da = new DataAccess();
+            foreach (Employe e in da.LesEmployes)
             {
                 if (loging == e.Login && mdp == e.Mdp)
                 {
