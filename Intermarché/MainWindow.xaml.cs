@@ -26,6 +26,8 @@ namespace Intermarché
 
         public MainWindow()
         {
+            Connexion connect = new Connexion();
+            connect.ShowDialog();
             InitializeComponent();
         }
 
@@ -43,17 +45,18 @@ namespace Intermarché
             Application.Current.Shutdown();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            ClientFormWindow clientFormWindow = new ClientFormWindow();
-            clientFormWindow.ShowDialog();
-        }
 
         private void butReserver_Click(object sender, RoutedEventArgs e)
         {
             numeroReservationCourant++;
             int numeroReservation = numeroReservationCourant;
             MessageBox.Show($"Numéro de réservation créé : {numeroReservation}");
+        }
+
+        private void butCreateClent_Click(object sender, RoutedEventArgs e)
+        {
+            ClientFormWindow clientFormWindow = new ClientFormWindow();
+            clientFormWindow.ShowDialog();
         }
     }
 }

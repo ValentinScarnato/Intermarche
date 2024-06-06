@@ -54,8 +54,12 @@
     <Resource Include="intermarche-logo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="logo-Reservation_Intermarche.png" />
-    <Resource Include="rechercher.png" />
+    <Resource Include="logo-Reservation_Intermarche.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="rechercher.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

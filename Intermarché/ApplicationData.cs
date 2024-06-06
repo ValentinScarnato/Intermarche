@@ -164,12 +164,13 @@ namespace Intermarché
 
         public ApplicationData()
         {
-            this.ConnexionBD();
+            ConnexionBD();
             //this.ReadAll();
             this.ReadMagasin();
             this.ReadEmploye();
-            this.VerifierLogin();
+            
         }
+        
         public void ConnexionBD()
         {
             try
@@ -199,12 +200,11 @@ namespace Intermarché
         }
         
 
-        public bool VerifierLogin()
+        public bool VerifierLogin(string loging, string mdp)
         {
             Employe employe;
             Connexion connexion = new Connexion();
-            string loging = connexion.txtboxIdentifiant.Text;
-            string mdp = connexion.txtboxMdp.Password;
+            
             bool isValid = false;
             string connectionString = strconnexion;
             foreach (Employe e in lesEmployes)

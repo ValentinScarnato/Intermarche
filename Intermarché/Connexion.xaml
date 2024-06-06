@@ -22,9 +22,11 @@
                 Margin="0,50,0,0"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Top">
-                <StackPanel.Background>
-                    <ImageBrush ImageSource="/intermarche-logo.png" />
-                </StackPanel.Background>
+                <Label Content="" Height="131" Width="428">
+                    <Label.Background>
+                        <ImageBrush ImageSource="/intermarche-logo.png"/>
+                    </Label.Background>
+                </Label>
             </StackPanel>
             <StackPanel
                 Width="274"
@@ -71,7 +73,7 @@
                     Margin="0,15,0,0"
                     Click="butValiderConnexion_Click"
                     Content="Valider"
-                    FontSize="18" />
+                    FontSize="18" IsDefault="True" />
             </StackPanel>
         </StackPanel>
     </Grid>

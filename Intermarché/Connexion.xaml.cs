@@ -30,18 +30,13 @@ namespace Intermarché
             string login = txtboxIdentifiant.Text;
             string mdp = txtboxMdp.Password;
             ApplicationData appData = new ApplicationData();
-            if (appData.VerifierLogin()==true)
+            if (appData.VerifierLogin(login,mdp))
             {
-                MessageBox.Show("Connexion réussie!");
-
-                MainWindow mainWindow = new MainWindow();
-                mainWindow.Show();
                 this.Close();
-                //}
-                /*else
-                {
-                    MessageBox.Show("Login ou mot de passe incorrect.");
-                }*/
+            }
+            else
+            {
+                MessageBox.Show("Erreur login / password");
             }
         }
     }
