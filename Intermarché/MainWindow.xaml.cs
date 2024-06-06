@@ -22,6 +22,7 @@ namespace Intermarché
     /// </summary>
     public partial class MainWindow : Window
     {
+        private static int numeroReservationCourant = 0;
 
         public MainWindow()
         {
@@ -47,22 +48,9 @@ namespace Intermarché
 
         private void butReserver_Click(object sender, RoutedEventArgs e)
         {
-            // Générer un numéro de réservation
-            int numeroReservation = GenererNumeroReservation();
-
-            // Afficher le numéro de réservation dans un MessageBox (pour le test)
+            numeroReservationCourant++;
+            int numeroReservation = numeroReservationCourant;
             MessageBox.Show($"Numéro de réservation créé : {numeroReservation}");
-
-            // Vous pouvez maintenant utiliser ce numéro de réservation pour effectuer d'autres actions
-        }
-
-        private int GenererNumeroReservation()
-        {
-            // Implémentez votre logique de génération de numéro de réservation ici
-            // Pour cet exemple, je vais simplement utiliser un numéro aléatoire.
-
-            Random random = new Random();
-            return random.Next(1, 10); // Génère un numéro entre 1000 et 9999
         }
 
         private void butCreateClent_Click(object sender, RoutedEventArgs e)
