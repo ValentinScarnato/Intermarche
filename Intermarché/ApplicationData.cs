@@ -14,8 +14,8 @@ namespace Intermarché
 
         private ObservableCollection<Client> lesClients;
         private NpgsqlConnection connexion = null;   // futur lien à la BD
-        String strconnexion = "Server=localhost;" + "port=5433;" + "Database=Intermarchewpf;" + "Search Path=public;" +
-                    "uid=postgres;" + "password=postgres";
+        String strconnexion = "Server=srv-peda-new;" + "port=5433;" + "Database=Intermarchewpf;" + "Search Path=intermarche;" +
+                    "uid=scarnatv;" + "password=Z9O5sQ";
 
         public ObservableCollection<Client> LesClients
         {
@@ -199,7 +199,7 @@ namespace Intermarché
         }
         
 
-        /*public bool VerifierLogin()
+        public bool VerifierLogin()
         {
             Employe employe;
             Connexion connexion = new Connexion();
@@ -216,7 +216,7 @@ namespace Intermarché
                 else isValid = false;
             }
             return isValid;
-        }*/
+        }
 
         public int ReadClient()
         {
@@ -298,7 +298,7 @@ namespace Intermarché
         public int ReadEmploye()
         {
             this.LesEmployes = new ObservableCollection<Employe>();
-            String sql = "SELECT num_employe, num_magasin,login,mdp FROM EMPLOYE";
+            String sql = "SELECT num_employe, num_magasin,login,mdp FROM employe";
             try
             {
                 NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter(sql, Connexion);
@@ -413,7 +413,7 @@ namespace Intermarché
         public int ReadMagasin()
         {
             this.LesMagasin = new ObservableCollection<Magasin>();
-            String sql = "SELECT num_magasin,nom_magasin,adresse_rue_magasin,adresse_cp_magasin, adresse_ville_magasin,horaire_magasin FROM MAGASIN";
+            String sql = "SELECT num_magasin,nom_magasin,adresse_rue_magasin,adresse_cp_magasin, adresse_ville_magasin,horaire_magasin FROM Intermarche.magasin";
             try
             {
                 NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter(sql, Connexion);
