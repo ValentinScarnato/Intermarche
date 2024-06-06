@@ -8,20 +8,20 @@ namespace Intermarché
 {
     public class Employe
     {
-		private int num_employe;
+		private int numEmploye;
 
-		public int Num_employe
+		public int NumEmploye
         {
-			get { return num_employe; }
-			set { num_employe = value; }
+			get { return numEmploye; }
+			set { numEmploye = value; }
 		}
 
-        private int num_magasin;
+        private int numMagasin;
 
-        public int Num_magasin
+        public int NumMagasin
         {
-            get { return num_magasin; }
-            set { num_magasin = value; }
+            get { return numMagasin; }
+            set { numMagasin = value; }
         }
 
         private string login;
@@ -38,10 +38,10 @@ namespace Intermarché
 
         private string mdp;
 
-        public Employe(int num_employe, int num_magasin, string login, string mdp)
+        public Employe(int numEmploye, int numMagasin, string login, string mdp)
         {
-            Num_employe = num_employe;
-            Num_magasin = num_magasin;
+            NumEmploye = numEmploye;
+            NumMagasin = numMagasin;
             Login = login;
             Mdp = mdp;
         }

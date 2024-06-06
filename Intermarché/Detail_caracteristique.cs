@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Intermarché
 {
-    class Detail_caracteristique
+    public class Detail_caracteristique
     {
 		private string immatriculation;
 
@@ -22,23 +22,30 @@ namespace Intermarché
             }
 		}
 
-		private int num_caracteristique;
+		private int numCaracteristique;
 
-		public int Num_caracteristique
+		public int NumCaracteristique
         {
-			get { return num_caracteristique; }
-			set { num_caracteristique = value; }
+			get { return numCaracteristique; }
+			set { numCaracteristique = value; }
 		}
 
-		private string valeur_caracteristique;
+		private string valeurCaracteristique;
 
-		public string Valeur_caracteristique
+        public Detail_caracteristique(string immatriculation, int numCaracteristique, string valeurCaracteristique)
         {
-			get { return valeur_caracteristique; }
+            this.Immatriculation = immatriculation;
+            this.NumCaracteristique = numCaracteristique;
+            this.ValeurCaracteristique = valeurCaracteristique;
+        }
+
+        public string ValeurCaracteristique
+        {
+			get { return valeurCaracteristique; }
 			set {
                 if (value.Length > 20)
                     throw new ArgumentException("La valeur est trop longue.");
-				this.valeur_caracteristique = value;
+				this.valeurCaracteristique = value;
             }
 		}
 

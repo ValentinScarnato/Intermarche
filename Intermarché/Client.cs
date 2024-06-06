@@ -8,101 +8,101 @@ namespace Intermarché
 {
     public class Client
     {
-		private int num_client;
+		private int numClient;
 
-		public int Num_client
-		{
-			get { return num_client; }
-			set { num_client = value; }
+		public int NumClient
+        {
+			get { return numClient; }
+			set { numClient = value; }
 		}
 
-		private string nom_client;
+		private string nomClient;
 
-		public string Nom_client
+		public string NomClient
         {
-			get { return nom_client; }
+			get { return nomClient; }
 			set {
                 if (value.Length > 50)
                     throw new ArgumentException("Le nom de client est trop long.");
-                this.nom_client = value;
+                this.nomClient = value;
             }
 		}
 
-		private string adresse_rue_client;
+		private string adresseRueClient;
 
-		public string Adresse_rue_client
+		public string AdresseRueClient
         {
-			get { return adresse_rue_client; }
+			get { return adresseRueClient; }
 			set {
                 if (value.Length > 200)
                     throw new ArgumentException("La rue de l'adresse du client est trop longue.");
-                this.adresse_rue_client = value;
+                this.adresseRueClient = value;
             }
 		}
 
-        private string adresse_cp_client;
+        private string adresseCpClient;
 
-        public string Adresse_cp_client
+        public string AdresseCpClient
         {
-            get { return adresse_cp_client; }
+            get { return adresseCpClient; }
             set {
                 if (value.Length > 5)
                     throw new ArgumentException("Le code postal de l'adresse du client est trop long.");
-                this.adresse_cp_client  = value;
+                this.adresseCpClient = value;
             }
         }
 
-        private string adresse_ville_client;
+        private string adresseVilleClient;
 
-        public string Adresse_ville_client
+        public string AdresseVilleClient
         {
-            get { return adresse_ville_client; }
+            get { return adresseVilleClient; }
             set {
                 if (value.Length > 50)
                     throw new ArgumentException("La ville de l'adresse du client est trop longue.");
-                this.adresse_ville_client = value;
+                this.adresseVilleClient = value;
             }
         }
 
-        private string telephone_client;
+        private string telephoneClient;
 
-        public string Telephone_client
+        public string TelephoneClient
         {
-            get { return telephone_client; }
+            get { return telephoneClient; }
             set
             {
                 if (value.Length > 10)
                     throw new ArgumentException("Le téléphone du client est trop long.");
-                this.telephone_client = value;
+                this.telephoneClient = value;
             }
         }
 
-        private string mail_client;
+        private string mailClient;
 
-        public string Mail_client
+        public string MailClient
         {
-            get { return mail_client; }
+            get { return mailClient; }
             set {
                 if (value.Length > 150)
                     throw new ArgumentException("Le mail du client est trop long.");
-                this.mail_client = value;
+                this.mailClient = value;
             }
         }
-        public Client(int num_client)
+        public Client(int numClient)
         {
-            this.Num_client = num_client;
+            this.NumClient = numClient;
         }
-        public Client(int num_client,string nom_client,string mail_client,string telephone_client) : this(num_client)
+        public Client(int numClient,string nomClient,string mailClient,string telephoneClient) : this(numClient)
         {
-            this.Nom_client = nom_client;
-            this.Mail_client = mail_client;
-            this.Telephone_client = telephone_client;
+            this.NomClient = nomClient;
+            this.MailClient = mailClient;
+            this.TelephoneClient = telephoneClient;
         }
-        public Client(int num_client, string nom_client, string adresse_rue_client, string adresse_cp_client, string adresse_ville_client,string telephone_client, string mail_client) : this(num_client,nom_client,mail_client,telephone_client)
+        public Client(int numClient, string nomClient, string adresseRueClient, string adresseCpClient, string adresseVilleClient,string telephoneClient, string mailClient) : this(numClient,nomClient,mailClient,telephoneClient)
         {
-            this.Adresse_rue_client = adresse_rue_client;
-            this.Adresse_cp_client = adresse_cp_client;
-            this.Adresse_ville_client = adresse_ville_client;
+            this.AdresseRueClient = adresseRueClient;
+            this.AdresseCpClient = adresseCpClient;
+            this.AdresseVilleClient = adresseVilleClient;
         }
 
 

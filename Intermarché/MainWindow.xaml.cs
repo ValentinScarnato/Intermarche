@@ -22,28 +22,30 @@ namespace Intermarché
     /// </summary>
     public partial class MainWindow : Window
     {
-        
+
         public MainWindow()
         {
             InitializeComponent();
         }
 
-       
-        private bool VerifierLogin()
+        private void butRecherche_Click(object sender, RoutedEventArgs e)
         {
-            bool isValid = false;
-
-            // Remplacez par votre chaîne de connexion à la base de données
-            string connectionString = "Server=srv-peda-new;" + "port=5433;" +
-                "Database=votreBase;" + "Search Path = votreSchemaPostGresql;" + "uid=votreLogin;" +
-                "password=votrePassword;";
-
-            return isValid;
+            // Vérification de la saisie
+            if (!int.TryParse(tbRecherche.Text, out int valeurRecherche) || valeurRecherche <= 0)
+            {
+                MessageBox.Show("Veuillez saisir un numéro supérieur à zéro.", "Erreur de saisie");
+            }
         }
 
-        private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void Window_Closed(object sender, EventArgs e)
         {
+            Application.Current.Shutdown();
+        }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ClientFormWindow clientFormWindow = new ClientFormWindow();
+            clientFormWindow.ShowDialog();
         }
     }
 }

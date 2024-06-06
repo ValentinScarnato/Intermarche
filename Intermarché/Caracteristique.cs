@@ -8,25 +8,30 @@ namespace Intermarché
 {
     public class Caracteristique
     {
-		private int num_caracteristique;
+		private int numCaracteristique;
 
-		public int Num_caracteristique
+		public int NumCaracteristique
         {
-			get { return num_caracteristique; }
-			set { num_caracteristique = value; }
+			get { return numCaracteristique; }
+			set { numCaracteristique = value; }
 		}
 
-		private string nom_caracteristique;
+		private string nomCaracteristique;
 
-		public string Nom_caracteristique
+        public string NomCaracteristique
         {
-			get { return nom_caracteristique; }
+			get { return nomCaracteristique; }
 			set {
 				if (value.Length > 30)
 					throw new ArgumentException("Le caracteristique est trop long.");
-				this.nom_caracteristique = value;
+				this.nomCaracteristique = value;
 			}
 		}
+        public Caracteristique(int numCaracteristique, string nomCaracteristique)
+        {
+            NumCaracteristique = numCaracteristique;
+            NomCaracteristique = nomCaracteristique;
+        }
 
-	}
+    }
 }

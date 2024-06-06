@@ -8,70 +8,80 @@ namespace Intermarché
 {
     public class Magasin
     {
-		private int num_vehicule;
+		private int numVehicule;
 
-		public int Num_vehicule
+		public int NumVehicule
         {
-			get { return num_vehicule; }
-			set { num_vehicule = value; }
+			get { return numVehicule; }
+			set { numVehicule = value; }
 		}
 
-		private string nom_vehicule;
+		private string nomVehicule;
 
-		public string Nom_vehicule
+		public string NomVehicule
         {
-			get { return nom_vehicule; }
-			set { nom_vehicule = value; }
+			get { return nomVehicule; }
+			set { nomVehicule = value; }
 		}
 
-        private string adresse_rue_magasin;
+        private string adresseRueMagasin;
 
-        public string Adresse_rue_magasin
+        public string AdresseRueMagasin
         {
-            get { return adresse_rue_magasin; }
+            get { return adresseRueMagasin; }
             set
             {
                 if (value.Length > 200)
                     throw new ArgumentException("La rue de l'adresse du magasin est trop longue.");
-                this.adresse_rue_magasin = value;
+                this.adresseRueMagasin = value;
             }
         }
 
-        private string adresse_cp_magasin;
+        private string adresseCpMagasin;
 
-        public string Adresse_cp_magasin
+        public string AdresseCpMagasin
         {
-            get { return adresse_cp_magasin; }
+            get { return adresseCpMagasin; }
             set
             {
                 if (value.Length > 5)
                     throw new ArgumentException("Le code postal de l'adresse du magasin est trop long.");
-                this.adresse_cp_magasin = value;
+                this.adresseCpMagasin = value;
             }
         }
 
-        private string adresse_ville_magasin;
+        private string adresseVilleMagasin;
 
-        public string Adresse_ville_magasin
+        public string AdresseVilleMagasin
         {
-            get { return adresse_ville_magasin; }
+            get { return adresseVilleMagasin; }
             set
             {
                 if (value.Length > 50)
                     throw new ArgumentException("La ville de l'adresse du magasin est trop longue.");
-                this.adresse_ville_magasin = value;
+                this.adresseVilleMagasin = value;
             }
         }
 
-        private string horraire_magasin;
+        private string horraireMagasin;
 
-        public string Horraire_magasin
+        public Magasin(int numVehicule, string nomVehicule, string adresseRueMagasin, string adresseCpMagasin, string adresseVilleMagasin, string horraireMagasin)
         {
-            get { return horraire_magasin; }
+            this.NumVehicule = numVehicule;
+            this.NomVehicule = nomVehicule;
+            this.AdresseRueMagasin = adresseRueMagasin;
+            this.AdresseCpMagasin = adresseCpMagasin;
+            this.AdresseVilleMagasin = adresseVilleMagasin;
+            this.HorraireMagasin = horraireMagasin;
+        }
+
+        public string HorraireMagasin
+        {
+            get { return horraireMagasin; }
             set {
                 if (value.Length > 20)
                     throw new ArgumentException("L'horraire du magasin à une valeur trop longue.");
-                this.horraire_magasin = value;
+                this.horraireMagasin = value;
             }
         }
     }

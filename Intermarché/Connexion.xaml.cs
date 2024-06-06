@@ -21,8 +21,6 @@ namespace Intermarché
     /// </summary>
     public partial class Connexion : Window
     {
-
-        
         public Connexion()
         {
             InitializeComponent();
@@ -30,19 +28,20 @@ namespace Intermarché
         private void butValiderConnexion_Click(object sender, RoutedEventArgs e)
         {
             string login = txtboxIdentifiant.Text;
-            string mdp = txtboxMdp.Text;
+            string mdp = txtboxMdp.Password;
             ApplicationData appData = new ApplicationData();
-            if (appData.VerifierLogin() == true)
+            if (appData.VerifierLogin()==true)
             {
                 MessageBox.Show("Connexion réussie!");
 
                 MainWindow mainWindow = new MainWindow();
                 mainWindow.Show();
                 this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Login ou mot de passe incorrect.");
+                //}
+                /*else
+                {
+                    MessageBox.Show("Login ou mot de passe incorrect.");
+                }*/
             }
         }
     }
