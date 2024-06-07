@@ -14,12 +14,8 @@ using System.Windows.Shapes;
 
 namespace Intermarché
 {
-    /// <summary>
-    /// Logique d'interaction pour ClientFormWindow.xaml
-    /// </summary>
     public partial class ClientFormWindow : Window
     {
-        private DataAccess dataAccess = DataAccess.Instance;
         public ClientFormWindow()
         {
             InitializeComponent();
