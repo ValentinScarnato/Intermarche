@@ -202,50 +202,18 @@
                         HorizontalAlignment="Right"
                         Background="#FFBBBBBB"
                         Orientation="Horizontal">
-                        <Grid Width="909">
+                        <Grid Width="998">
                             <DataGrid
                                 x:Name="reservationsDataGrid"
                                 Grid.Column="1"
                                 Margin="7,7,24,7"
                                 AutoGenerateColumns="True"
-                                ItemsSource="{Binding LesReservations}" />
+                                ItemsSource="{Binding LesReservations}">
+                                <DataGrid.Columns >
+                                  
+                                </DataGrid.Columns>
+                            </DataGrid>
                         </Grid>
-                        <StackPanel Width="315">
-                            <Label
-                                Margin="0,15,0,0"
-                                Content="Filtrer la recherche par :"
-                                FontSize="16"
-                                FontWeight="Bold" />
-                            <Label
-                                Margin="0,25,0,0"
-                                HorizontalAlignment="Center"
-                                Content="Date de réservation"
-                                FontSize="16" />
-                            <DatePicker
-                                Width="240"
-                                Height="30"
-                                Margin="0,10,0,0"
-                                FontSize="14" />
-                            <Label
-                                Margin="0,20,0,0"
-                                HorizontalAlignment="Center"
-                                Content="Catégorie  de véhicule"
-                                FontSize="16" />
-                            <ComboBox Width="240" Margin="0,10,0,0" />
-                            <Label
-                                Margin="0,20,0,0"
-                                HorizontalAlignment="Center"
-                                Content="Disponibilité magasin"
-                                FontSize="16" />
-                            <ComboBox Width="240" Margin="0,10,0,0" />
-                            <Label
-                                Margin="0,20,0,0"
-                                HorizontalAlignment="Center"
-                                Content="Type de boîte"
-                                FontSize="16" />
-                            <ComboBox Width="240" Margin="0,10,0,0" />
-
-                        </StackPanel>
                     </StackPanel>
                 </StackPanel>
             </TabItem>
