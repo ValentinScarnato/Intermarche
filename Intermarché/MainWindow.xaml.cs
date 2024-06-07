@@ -44,18 +44,13 @@ namespace Intermarché
 
         private void butReserver_Click(object sender, RoutedEventArgs e)
         {
+            DataAccess da = DataAccess.Instance;
             DateTime dateDebut = dpDateDebut.SelectedDate ?? DateTime.Now;
             DateTime dateFin = dpDateFin.SelectedDate ?? DateTime.Now;
-            int numClient;
-            if (!int.TryParse(tbNumClient.Text, out numClient))
-            {
-                MessageBox.Show("Numéro de client invalide.", "Erreur de saisie");
-                return;
-            }
+            string numClient = tbNumClient.Text;
             string forfaitKm = tbForfaitKm.Text;
-
-            DataAccess da = new DataAccess();
-            int result = da.CreateReservation(dateDebut, dateFin, numClient, forfaitKm);
+            //Reservation_table reservation = new Reservation_table(dateDebut, dateFin, numClient, forfaitKm);
+            //int result = da.CreateReservation(dateDebut, dateFin, numClient, forfaitKm);
 
                 MessageBox.Show("Réservation créée avec succès.");
 

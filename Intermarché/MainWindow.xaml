@@ -12,9 +12,6 @@
     ResizeMode="NoResize"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
-    <Window.DataContext>
-        <local:ApplicationData x:Name="data" />
-    </Window.DataContext>
     <Grid>
         <StackPanel Background="#FF4C4A4A">
             <Image
@@ -84,7 +81,6 @@
                             Margin="40,0,0,0"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
-                            Click="butRechercher_Click"
                             Content="Rechercher"
                             FontSize="14" />
                         <Button
