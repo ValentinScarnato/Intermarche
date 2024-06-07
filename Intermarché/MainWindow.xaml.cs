@@ -17,16 +17,13 @@ using System.Windows.Shapes;
 
 namespace Intermarché
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
-        private static int numeroReservationCourant = 0;
         public MainWindow()
         {
             Connexion connect = new Connexion(this);
             connect.ShowDialog();
+
             InitializeComponent();
         }
 
@@ -39,23 +36,29 @@ namespace Intermarché
             }
         }
 
-        private void Window_Closed(object sender, EventArgs e)
-        {
-            Application.Current.Shutdown();
-        }
-
-
-        private void butReserver_Click(object sender, RoutedEventArgs e)
-        {
-            numeroReservationCourant++;
-            int numeroReservation = numeroReservationCourant;
-            MessageBox.Show($"Numéro de réservation créé : {numeroReservation}");
-        }
-
-        private void butCreateClent_Click(object sender, RoutedEventArgs e)
+        private void butCreateClient_Click(object sender, RoutedEventArgs e)
         {
             ClientFormWindow clientFormWindow = new ClientFormWindow();
             clientFormWindow.ShowDialog();
+        }
+
+        private void butReserver_Click(object sender, RoutedEventArgs e)
+        {
+            DataAccess da = DataAccess.Instance;
+            DateTime dateDebut = dpDateDebut.SelectedDate ?? DateTime.Now;
+            DateTime dateFin = dpDateFin.SelectedDate ?? DateTime.Now;
+            string numClient = tbNumClient.Text;
+            string forfaitKm = tbForfaitKm.Text;
+            //Reservation_table reservation = new Reservation_table(dateDebut, dateFin, numClient, forfaitKm);
+            //int result = da.CreateReservation(dateDebut, dateFin, numClient, forfaitKm);
+
+                MessageBox.Show("Réservation créée avec succès.");
+
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }
