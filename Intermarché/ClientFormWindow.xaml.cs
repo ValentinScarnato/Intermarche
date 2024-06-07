@@ -19,6 +19,7 @@ namespace Intermarché
     /// </summary>
     public partial class ClientFormWindow : Window
     {
+        private DataAccess dataAccess = DataAccess.Instance;
         public ClientFormWindow()
         {
             InitializeComponent();
@@ -26,17 +27,18 @@ namespace Intermarché
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            DataAccess da = DataAccess.Instance;
             string nomClient = txtNomClient.Text;
             string adresseRueClient = txtAdresseRueClient.Text;
             string adresseCpClient = txtAdresseCpClient.Text;
             string adresseVilleClient = txtAdresseVilleClient.Text;
             string telephoneClient = txtTelephoneClient.Text;
             string mailClient = txtMailClient.Text;
-
-            Client newClient = new Client(0, nomClient, adresseRueClient, adresseCpClient, adresseVilleClient, telephoneClient, mailClient);
-
-            MessageBox.Show($"Nom: {nomClient}\nAdresse: {adresseRueClient}, {adresseCpClient} {adresseVilleClient}\nTéléphone: {telephoneClient}\nEmail: {mailClient}", "Détails du client");
-
+            Client client = new Client(nomClient, adresseRueClient, adresseCpClient, adresseVilleClient, telephoneClient, mailClient);
+            da.LesClients.Add(client);
+            da.CreerClient(client);
+            MessageBox.Show($"Nom: {nomClient}\nAdresse: {adresseRueClient}, {adresseCpClient} {adresseVilleClient}" +
+                $"\nTéléphone: {telephoneClient}\nEmail: {mailClient}", "Détails du client");
             this.Close();   
         }
     }

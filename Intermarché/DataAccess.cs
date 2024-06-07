@@ -20,6 +20,7 @@ namespace Intermarché
 
         public DataAccess()
         {
+            this.LesClients = new ObservableCollection<Client>();
             this.ConnexionBD();
             //this.ReadAll();
             this.ReadMagasin();
@@ -255,7 +256,7 @@ namespace Intermarché
 
         public int ReadClient()
         {
-            String sql = "SELECT num_client, nom_client,adresse_rue_client,adresse_cp_client,adresse_ville_client,telephone_client, mail_client FROM Client";
+            String sql = "SELECT num_client, nom_client,adresse_rue_client,adrese_cp_client,adresse_ville_client,telephone_client, mail_client FROM Client";
             try
             {
                 NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter(sql, Connexion);
@@ -264,7 +265,7 @@ namespace Intermarché
                 foreach (DataRow res in dataTable.Rows)
                 {
                     Client nouveau = new Client(int.Parse(res["num_client"].ToString()),
-                    res["nom_client"].ToString(), res["adresse_rue_client"].ToString(),
+                    res["nom_client"].ToString(), res["adrese_rue_client"].ToString(),
                     res["adresse_cp_client"].ToString(), (res["adresse_ville_client"].ToString()),
                     res["telephone_client"].ToString(), res["mail_client"].ToString());
                     LesClients.Add(nouveau);
@@ -274,12 +275,13 @@ namespace Intermarché
             catch (NpgsqlException e)
             { Console.WriteLine("pb de requete : " + e); return 0; }
         }
-        public int Create(Client c)
+        public int CreerClient(Client c)
         {
-            String sql = $"insert into client (num_client, nom_client,adresse_rue_client,adresse_cp_client,adresse_ville_client,telephone_client, mail_client)"
-            + $" values ('{c.NumClient}','{c.NomClient}','{c.AdresseRueClient}'"
+            this.LesClients = new ObservableCollection<Client>();
+            String sql = $"insert into client (nom_client,adrese_rue_client,adresse_cp_client,adresse_ville_client,telephone_client, mail_client)"
+            + $" values ('{c.NomClient}','{c.AdresseRueClient}'"
             + $",'{c.AdresseCpClient}','{c.AdresseVilleClient}', "
-            + $"'{c.TelephoneClient}-{c.MailClient}'); ";
+            + $"'{c.TelephoneClient}','{c.MailClient}'); ";
             try
             {
                 NpgsqlCommand cmd = new NpgsqlCommand(sql, Connexion);
