@@ -69,11 +69,8 @@ namespace Intermarché
             set { montantReservation = value; }
         }
 
-        public Reservation_table(int numReservation, int numAssurance, int numClient, DateTime dateReservation, DateTime dateDebutReservation, DateTime dateFinReservation, double montantReservation, string forfaitKm)
+        public Reservation_table(DateTime dateReservation, DateTime dateDebutReservation, DateTime dateFinReservation, double montantReservation, string forfaitKm)
         {
-            this.NumReservation = numReservation;
-            this.NumAssurance = numAssurance;
-            this.NumClient = numClient;
             this.DateReservation = dateReservation;
             this.DateDebutReservation = dateDebutReservation;
             this.DateFinReservation = dateFinReservation;
@@ -90,6 +87,13 @@ namespace Intermarché
                     throw new ArgumentException("Le forfait kilométirque à une valeur trop longue");
                 this.forfaitKm = value;
             }
+        }
+        public Reservation_table(int numReservation, int numAssurance, int numClient, DateTime dateReservation, DateTime dateDebutReservation, DateTime dateFinReservation, double montantReservation, string forfaitKm)
+                    :this( dateReservation,  dateDebutReservation,  dateFinReservation,  montantReservation, forfaitKm)
+        {
+            this.NumReservation = numReservation;
+            this.NumAssurance = numAssurance;
+            this.NumClient = numClient;
         }
 
     }

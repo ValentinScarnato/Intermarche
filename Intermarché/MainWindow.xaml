@@ -12,6 +12,9 @@
     ResizeMode="NoResize"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
+    <Window.DataContext>
+        <local:DataAccess x:Name="data" />
+    </Window.DataContext>
     <Grid>
         <StackPanel Background="#FF4C4A4A">
             <Image
