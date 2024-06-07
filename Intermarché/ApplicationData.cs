@@ -15,7 +15,6 @@ namespace Intermarché
         public ObservableCollection<Reservation_table> LesReservations { get; set; }
         private ObservableCollection<Client> lesClients;
         private NpgsqlConnection connexion = null;   // futur lien à la BD
-        private DataAccess dataAccess;
         String strconnexion = "Server=srv-peda-new;" + "port=5433;" + "Database=Intermarchewpf;" + "Search Path=intermarche;" +
                     "uid=scarnatv;" + "password=Z9O5sQ";
         public NpgsqlConnection Connexion
