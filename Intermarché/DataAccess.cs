@@ -25,6 +25,7 @@ namespace Intermarché
             //this.ReadAll();
             this.ReadMagasin();
             this.ReadEmploye();
+            this.ReadVehicule();
         }
 
         public static DataAccess Instance
@@ -248,7 +249,7 @@ namespace Intermarché
             ReadDetailCaracteristiques();
             ReadDetailReservation();
             ReadEmploye();
-            ReadEVehicule();
+            ReadVehicule();
             ReadMagasin();
             ReadReservation();
         }
@@ -489,9 +490,10 @@ namespace Intermarché
             catch (NpgsqlException e)
             { Console.WriteLine("pb de requete : " + e); return 0; }
         }
-        public int ReadEVehicule()
+        public int ReadVehicule()
         {
             String sql = "SELECT immatriculation, type_boite,num_magasin,nom_categorie, nom_vehicule, description_vehicule, nombre_places, prix_location, climatisation, lien_photo_url FROM Vehicule";
+            
             try
             {
                 NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter(sql, Connexion);

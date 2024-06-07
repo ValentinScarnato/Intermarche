@@ -8,11 +8,12 @@
     Title="Connexion"
     Width="1280"
     Height="700"
+    Closed="Window_Closed"
     ResizeMode="NoResize"
     WindowStartupLocation="CenterScreen"
-    mc:Ignorable="d" Closed="Window_Closed">
+    mc:Ignorable="d">
     <Window.Resources>
-        <local:Connexion x:Key="connexion" />
+        <local:ApplicationData x:Key="connexion" />
     </Window.Resources>
     <Grid>
         <StackPanel>
@@ -22,9 +23,12 @@
                 Margin="0,50,0,0"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Top">
-                <Label Content="" Height="131" Width="428">
+                <Label
+                    Width="428"
+                    Height="131"
+                    Content="">
                     <Label.Background>
-                        <ImageBrush ImageSource="/intermarche-logo.png"/>
+                        <ImageBrush ImageSource="/intermarche-logo.png" />
                     </Label.Background>
                 </Label>
             </StackPanel>
@@ -64,8 +68,7 @@
                     Height="25"
                     Margin="0,15,0,15"
                     FontSize="18"
-                    MaxLength="10"
-                    />
+                    MaxLength="10" />
                 <Button
                     x:Name="butValiderConnexion"
                     Width="180"
@@ -73,7 +76,8 @@
                     Margin="0,15,0,0"
                     Click="butValiderConnexion_Click"
                     Content="Valider"
-                    FontSize="18" IsDefault="True" />
+                    FontSize="18"
+                    IsDefault="True" />
             </StackPanel>
         </StackPanel>
     </Grid>
