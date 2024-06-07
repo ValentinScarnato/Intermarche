@@ -61,9 +61,18 @@ namespace Intermarché
             Application.Current.Shutdown();
         }
 
-        private void reservationsDataGrid_SelectionChanged()
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            if (MessageBox.Show("Voulez-vous vous déconnecter ?",
+                "Confirmer",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                this.Hide();
+                Connexion connect = new Connexion(this);
+                connect.ShowDialog();
+            }
+         
         }
     }
 }

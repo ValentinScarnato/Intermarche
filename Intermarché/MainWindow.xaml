@@ -17,12 +17,16 @@
     </Window.DataContext>
     <Grid>
         <StackPanel Background="#FF4C4A4A">
-            <Image
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="1280">
+                <Image
                 Width="292"
                 Height="71"
-                Margin="0,10,0,0"
+                Margin="500,10,0,0"
                 Source="/img/intermarche-logo.png"
-                Stretch="Fill" />
+                Stretch="Fill" HorizontalAlignment="Center" />
+            <Button Content="Déconnexion" Margin="350,0,0,0" HorizontalAlignment="Right" Width="115" Height="35" FontWeight="Bold" FontSize="13" Click="Button_Click"/>
+            </StackPanel>
+
         </StackPanel>
         <TabControl Margin="0,74,0,0">
             <TabItem>
@@ -163,13 +167,13 @@
                         x:Name="spEffectuerResa"
                         Width="851"
                         Height="142"
-                        HorizontalAlignment="Left"
+                        HorizontalAlignment="Center"
                         VerticalAlignment="Center">
                         <Label
-                            Margin="50,20,0,0"
+                            Margin="0,20,0,0"
                             Content="Rechercher par N° Client / N° Réservation"
                             FontSize="16"
-                            FontWeight="Bold" />
+                            FontWeight="Bold" HorizontalAlignment="Center" />
                         <StackPanel
                             x:Name="spRecherche"
                             Width="793"
@@ -197,15 +201,15 @@
                         </StackPanel>
                     </StackPanel>
                     <StackPanel
-                        Width="1224"
-                        Height="502"
-                        HorizontalAlignment="Right"
+                        Width="1324"
+                        Height="550"
+                        HorizontalAlignment="Center"
                         Background="#FFBBBBBB"
                         Orientation="Horizontal">
                         <Grid Width="1182">
                             <DataGrid
                                 x:Name="reservationsDataGrid"
-                                Margin="7,7,127,7"
+                                Margin="120,7,17,7"
                                 ItemsSource="{Binding LesReservations}"
                                 AutoGenerateColumns="False"
                                 IsReadOnly="True">
