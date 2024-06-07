@@ -38,9 +38,9 @@ namespace Intermarché
 
         public Assurance(int numAssurance, string descriptionAssurance, int prixAssurance)
         {
-            NumAssurance = numAssurance;
-            DescriptionAssurance = descriptionAssurance;
-            PrixAssurance = prixAssurance;
+            this.NumAssurance = numAssurance;
+            this.DescriptionAssurance = descriptionAssurance;
+            this.PrixAssurance = prixAssurance;
         }
 
 
