@@ -23,6 +23,23 @@ namespace Intermarché
     {
         private MainWindow mainWin;
 
+        private string login;
+
+        public string Login
+        {
+            get { return login; }
+            set { login = value; }
+        }
+
+        private string mdp;
+
+        public string Mdp
+        {
+            get { return mdp; }
+            set { mdp = value; }
+        }
+
+
         public MainWindow MainWin
         {
             get { return mainWin; }
@@ -36,6 +53,13 @@ namespace Intermarché
             MainWin = mainWin;
             InitializeComponent();
         }
+
+        public Connexion(string login, string mdp)
+        {
+            this.Login = login;
+            this.Mdp = mdp;
+        }
+
         private void butValiderConnexion_Click(object sender, RoutedEventArgs e)
         {
             string login = txtboxIdentifiant.Text;

@@ -32,7 +32,6 @@ namespace Intermarché
 
         public ApplicationData()
         {
-
         }
 
 

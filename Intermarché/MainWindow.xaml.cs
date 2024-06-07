@@ -23,12 +23,10 @@ namespace Intermarché
     public partial class MainWindow : Window
     {
         private static int numeroReservationCourant = 0;
-
         public MainWindow()
         {
             Connexion connect = new Connexion(this);
             connect.ShowDialog();
-    
             InitializeComponent();
         }
 
