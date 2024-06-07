@@ -14,7 +14,7 @@ namespace Intermarché
         private static DataAccess instance;
         private ObservableCollection<Client> lesClients;
         private NpgsqlConnection connexion = null;   // futur lien à la BD
-        String strconnexion = "Server=srv-peda-new;" + "port=5433;" + "Database=Intermarchewpf;" + "Search Path=intermarche;" +
+        String strconnexion = "Server=srv-peda.iut-acy.local;" + "port=5433;" + "Database=Intermarchewpf;" + "Search Path=intermarche;" +
                     "uid=scarnatv;" + "password=Z9O5sQ";
 
 
@@ -468,7 +468,7 @@ namespace Intermarché
         public int ReadMagasin()
         {
             this.LesMagasin = new ObservableCollection<Magasin>();
-            String sql = "SELECT num_magasin,nom_magasin,adresse_rue_magasin,adresse_cp_magasin, adresse_ville_magasin,horaire_magasin FROM Intermarche.magasin";
+            String sql = "SELECT num_magasin,nom_magasin,adresse_rue_magasin,adresse_cp_magasin, adresse_ville_magasin,horaire_magasin FROM intermarche.magasin";
             try
             {
                 NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter(sql, Connexion);
