@@ -11,8 +11,6 @@ namespace Intermarché
 {
     public class ApplicationData
     {
-
-        private ObservableCollection<Client> lesClients;
         private NpgsqlConnection connexion = null;   // futur lien à la BD
         String strconnexion = "Server=srv-peda-new;" + "port=5433;" + "Database=Intermarchewpf;" + "Search Path=intermarche;" +
                     "uid=scarnatv;" + "password=Z9O5sQ";
