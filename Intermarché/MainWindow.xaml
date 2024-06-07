@@ -113,7 +113,7 @@
                                 Grid.Column="1"
                                 Margin="7,7,24,7"
                                 AutoGenerateColumns="True"
-                                ItemsSource="{Binding LesVehicules}"/>
+                                ItemsSource="{Binding LesVehicules}" />
                         </Grid>
                     </StackPanel>
                     <StackPanel Height="49">

@@ -21,10 +21,12 @@ namespace Intermarché
         public DataAccess()
         {
             this.LesClients = new ObservableCollection<Client>();
+            this.LesReservations = new ObservableCollection<Reservation_table>();
             this.ConnexionBD();
             //this.ReadAll();
             this.ReadMagasin();
             this.ReadEmploye();
+            this.ReadReservation();
             //this.ReadVehicule();
         }
 
@@ -471,6 +473,7 @@ namespace Intermarché
         }
         public int ReadReservation()
         {
+            this.lesReservations = new ObservableCollection<Reservation_table>();
             String sql = "SELECT num_reservation, num_assurance,num_client,date_reservation,date_debut_reservation, date_fin_reservation, montant_reservation, forfait_km FROM Reservation";
             try
             {
