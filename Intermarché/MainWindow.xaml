@@ -134,13 +134,26 @@
                         Height="326"
                         HorizontalAlignment="Left"
                         Orientation="Horizontal">
-                        <Grid Width="1020" Height="319">
+                        <Grid Width="1248" Height="318">
                             <DataGrid
                                 x:Name="datagridVehicule"
-                                Grid.Column="1"
-                                Margin="7,7,24,7"
-                                AutoGenerateColumns="True"
-                                ItemsSource="{Binding LesVehicules}" />
+                                Margin="7,7,0,7"
+                                AutoGenerateColumns="False"
+                                IsReadOnly="True"
+                                ItemsSource="{Binding LesVehicules}" >
+                                <DataGrid.Columns >
+                                    <DataGridTextColumn Header="Immatriculation" Binding="{Binding Immatriculation}" Width="100" />
+                                    <DataGridTextColumn Header="Type de Boite" Binding="{Binding TypeBoite}" Width="90" />
+                                    <DataGridTextColumn Header="N° de Magasin" Binding="{Binding NumMagasin}" Width="90" />
+                                    <DataGridTextColumn Header="Nom de Categorie" Binding="{Binding NomCategorie}" Width="110" />
+                                    <DataGridTextColumn Header="Nom de Vehicule" Binding="{Binding NomVehicule}" Width="110" />
+                                    <DataGridTextColumn Header="Description du Vehicule" Binding="{Binding DescriptionVehicule}" Width="140" />
+                                    <DataGridTextColumn Header="NombrePlaces" Binding="{Binding NombrePlaces}" Width="90" />
+                                    <DataGridTextColumn Header="Prix de Location" Binding="{Binding PrixLocation}" Width="100" />
+                                    <DataGridTextColumn Header="Climatisation" Binding="{Binding Climatisation}" Width="80" />
+                                    <DataGridTextColumn Header="Lien Photo Url" Binding="{Binding LienPhotoUrl}" Width="1100" />
+                                </DataGrid.Columns>
+                            </DataGrid>
                         </Grid>
                     </StackPanel>
                     <StackPanel Height="49" Margin="0,1,0,0">
