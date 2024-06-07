@@ -197,7 +197,7 @@
                                 Width="503"
                                 Background="#FFC8C8C8"
                                 Text=""
-                                TextWrapping="Wrap" TextChanged="tbRecherche_TextChanged" TextAlignment="Center" FontWeight="Bold" HorizontalAlignment="Center" />
+                                TextWrapping="Wrap" TextChanged="tbRecherche_TextChanged" TextAlignment="Center" FontWeight="Bold" HorizontalAlignment="Center" Height="24" />
                             <Label Content="" Width="30" Height="30" Margin="20,0,0,0">
                                 <Label.Background>
                                     <ImageBrush ImageSource="/rechercher.png"/>
