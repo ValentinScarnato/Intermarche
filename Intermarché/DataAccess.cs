@@ -26,8 +26,8 @@ namespace Intermarché
             //this.ReadAll();
             this.ReadMagasin();
             this.ReadEmploye();
-            //this.ReadReservation();
-            //this.ReadVehicule();
+            this.ReadReservation();
+            this.ReadVehicule();
         }
 
         public static DataAccess Instance
@@ -521,7 +521,7 @@ namespace Intermarché
                 {
                     Vehicule_table nouveau = new Vehicule_table(res["immatriculation"].ToString(), res["type_boite"].ToString(), int.Parse(res["num_magasin"].ToString()),
                     res["nom_categorie"].ToString(), res["nom_vehicule"].ToString(), res["description_vehicule"].ToString(), int.Parse(res["nombre_places"].ToString()),
-                    int.Parse(res["prix_location"].ToString()), bool.Parse(res["climatisation"].ToString()), res["lien_photo_url"].ToString());
+                    double.Parse(res["prix_location"].ToString()), bool.Parse(res["climatisation"].ToString()), res["lien_photo_url"].ToString());
                     LesVehicules.Add(nouveau);
                 }
                 return dataTable.Rows.Count;

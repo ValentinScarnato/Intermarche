@@ -152,7 +152,7 @@
                         Orientation="Horizontal">
                         <Grid Width="1248" Height="318">
                             <DataGrid
-                                x:Name="datagridVehicule"
+                                x:Name="dgVehicule"
                                 Margin="7,7,0,7"
                                 AutoGenerateColumns="False"
                                 IsReadOnly="True"
