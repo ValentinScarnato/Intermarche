@@ -25,6 +25,7 @@ namespace Intermarché
             connect.ShowDialog();
 
             InitializeComponent();
+            dgReservationConsulter.Items.Filter = ContientMotClef;
         }
 
         private void butRecherche_Click(object sender, RoutedEventArgs e)
@@ -58,6 +59,7 @@ namespace Intermarché
 
         private void Window_Closed(object sender, EventArgs e)
         {
+            DataAccess.Instance.DeconnexionBD();
             Application.Current.Shutdown();
         }
 
@@ -73,6 +75,29 @@ namespace Intermarché
                 connect.ShowDialog();
             }
          
+        }
+
+        private void reservationsDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(dgReservationConsulter.SelectedItem != null)
+            {
+                Reservation_table reservation = (Reservation_table)dgReservationConsulter.SelectedItems;
+            }
+        }
+
+
+        private bool ContientMotClef(object obj)
+        {
+            Reservation_table uneReservation = obj as Reservation_table;
+            if (String.IsNullOrEmpty(tbRecherche.Text))
+                return true;
+            else
+                return (uneReservation.NumClient.ToString().StartsWith(tbRecherche.Text, StringComparison.OrdinalIgnoreCase) || uneReservation.NumReservation.ToString().StartsWith(tbRecherche.Text, StringComparison.OrdinalIgnoreCase));
+        }
+
+        private void tbRecherche_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            CollectionViewSource.GetDefaultView(dgReservationConsulter.ItemsSource).Refresh();
         }
     }
 }

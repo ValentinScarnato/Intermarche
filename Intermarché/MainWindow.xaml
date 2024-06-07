@@ -5,7 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:Intermarché"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="Acceuil"
+    Title="Intermaché-Réservation"
     Width="1280"
     Height="800"
     Closed="Window_Closed"
@@ -17,14 +17,26 @@
     </Window.DataContext>
     <Grid>
         <StackPanel Background="#FF4C4A4A">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="1280">
+            <StackPanel
+                Width="1280"
+                HorizontalAlignment="Center"
+                Orientation="Horizontal">
                 <Image
-                Width="292"
-                Height="71"
-                Margin="500,10,0,0"
-                Source="/img/intermarche-logo.png"
-                Stretch="Fill" HorizontalAlignment="Center" />
-            <Button Content="Déconnexion" Margin="350,0,0,0" HorizontalAlignment="Right" Width="115" Height="35" FontWeight="Bold" FontSize="13" Click="Button_Click"/>
+                    Width="292"
+                    Height="71"
+                    Margin="500,10,0,0"
+                    HorizontalAlignment="Center"
+                    Source="/img/intermarche-logo.png"
+                    Stretch="Fill" />
+                <Button
+                    Width="115"
+                    Height="35"
+                    Margin="350,0,0,0"
+                    HorizontalAlignment="Right"
+                    Click="Button_Click"
+                    Content="Déconnexion"
+                    FontSize="13"
+                    FontWeight="Bold" />
             </StackPanel>
 
         </StackPanel>
@@ -171,33 +183,27 @@
                         VerticalAlignment="Center">
                         <Label
                             Margin="0,20,0,0"
+                            HorizontalAlignment="Center"
                             Content="Rechercher par N° Client / N° Réservation"
                             FontSize="16"
-                            FontWeight="Bold" HorizontalAlignment="Center" />
+                            FontWeight="Bold" />
                         <StackPanel
                             x:Name="spRecherche"
-                            Width="793"
+                            Width="577"
                             Height="36"
-                            Margin="50,20,50,20"
-                            Orientation="Horizontal">
+                            Orientation="Horizontal" HorizontalAlignment="Center" Margin="40,20,0,0">
                             <TextBox
                                 x:Name="tbRecherche"
-                                Width="670"
+                                Width="503"
                                 Background="#FFC8C8C8"
                                 Text=""
-                                TextWrapping="Wrap" />
-                            <Button
-                                x:Name="butRecherche"
-                                Width="42"
-                                Margin="20,0,0,0"
-                                BorderBrush="{x:Null}"
-                                Click="butRecherche_Click"
-                                Content=""
-                                FontSize="14">
-                                <Button.Background>
-                                    <ImageBrush ImageSource="/rechercher.png" />
-                                </Button.Background>
-                            </Button>
+                                TextWrapping="Wrap" TextChanged="tbRecherche_TextChanged" TextAlignment="Center" FontWeight="Bold" HorizontalAlignment="Center" />
+                            <Label Content="" Width="30" Height="30" Margin="20,0,0,0">
+                                <Label.Background>
+                                    <ImageBrush ImageSource="/rechercher.png"/>
+                                </Label.Background>
+                            </Label>
+
                         </StackPanel>
                     </StackPanel>
                     <StackPanel
@@ -208,20 +214,45 @@
                         Orientation="Horizontal">
                         <Grid Width="1182">
                             <DataGrid
-                                x:Name="reservationsDataGrid"
+                                x:Name="dgReservationConsulter"
                                 Margin="120,7,17,7"
-                                ItemsSource="{Binding LesReservations}"
                                 AutoGenerateColumns="False"
-                                IsReadOnly="True">
-                                <DataGrid.Columns >
-                                    <DataGridTextColumn Header="N° Réservation" Binding="{Binding NumReservation}" Width="90" />
-                                    <DataGridTextColumn Header="N° Assurance" Binding="{Binding NumAssurance}" Width="90" />
-                                    <DataGridTextColumn Header="N° Client" Binding="{Binding NumClient}" Width="90" />
-                                    <DataGridTextColumn Header="Date de réservation" Binding="{Binding DateReservation}" Width="170" />
-                                    <DataGridTextColumn Header="Date de début de réservation" Binding="{Binding DateDebutReservation}" Width="170" />
-                                    <DataGridTextColumn Header="Date de fin de réservation" Binding="{Binding DateFinReservation}" Width="170" />
-                                    <DataGridTextColumn Header="Montant de Reservation" Binding="{Binding MontantReservation}" Width="150" />
-                                    <DataGridTextColumn Header="Numero Assurance" Binding="{Binding NumAssurance}" Width="110" />
+                                IsReadOnly="True"
+                                ItemsSource="{Binding LesReservations}"
+                                SelectionChanged="reservationsDataGrid_SelectionChanged">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn
+                                        Width="90"
+                                        Binding="{Binding NumReservation}"
+                                        Header="N° Réservation" />
+                                    <DataGridTextColumn
+                                        Width="90"
+                                        Binding="{Binding NumAssurance}"
+                                        Header="N° Assurance" />
+                                    <DataGridTextColumn
+                                        Width="90"
+                                        Binding="{Binding NumClient}"
+                                        Header="N° Client" />
+                                    <DataGridTextColumn
+                                        Width="170"
+                                        Binding="{Binding DateReservation}"
+                                        Header="Date de réservation" />
+                                    <DataGridTextColumn
+                                        Width="170"
+                                        Binding="{Binding DateDebutReservation}"
+                                        Header="Date de début de réservation" />
+                                    <DataGridTextColumn
+                                        Width="170"
+                                        Binding="{Binding DateFinReservation}"
+                                        Header="Date de fin de réservation" />
+                                    <DataGridTextColumn
+                                        Width="150"
+                                        Binding="{Binding MontantReservation}"
+                                        Header="Montant de Reservation" />
+                                    <DataGridTextColumn
+                                        Width="110"
+                                        Binding="{Binding NumAssurance}"
+                                        Header="Numero Assurance" />
                                 </DataGrid.Columns>
                             </DataGrid>
                         </Grid>
