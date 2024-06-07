@@ -39,7 +39,6 @@ namespace Intermarché
 
         public bool VerifierLogin(string loging, string mdp)
         {
-            Employe employe;
             bool isValid = false;
             string connectionString = strconnexion;
             DataAccess da = new DataAccess();

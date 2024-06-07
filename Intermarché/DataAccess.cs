@@ -26,7 +26,7 @@ namespace Intermarché
             //this.ReadAll();
             this.ReadMagasin();
             this.ReadEmploye();
-            this.ReadReservation();
+            //this.ReadReservation();
             //this.ReadVehicule();
         }
 
@@ -256,7 +256,6 @@ namespace Intermarché
             ReadReservation();
         }
 
-
         public int ReadClient()
         {
             String sql = "SELECT num_client, nom_client,adresse_rue_client,adrese_cp_client,adresse_ville_client,telephone_client, mail_client FROM Client";
@@ -335,10 +334,10 @@ namespace Intermarché
                 return 0;
             }
         }
-        public int CreateReservation(DateTime dateDebut, DateTime dateFin, int numClient, string forfaitKm)
+        public int CreateReservation(Reservation_table r)
         {
             String sql = $"INSERT INTO reservation (num_assurance, num_client, date_reservation, date_debut_reservation, date_fin_reservation, montant_reservation, forfait_km)"
-            + $" VALUES (1, {numClient}, '{DateTime.Now}', '{dateDebut}', '{dateFin}', 0, '{forfaitKm}');";
+            + $" VALUES (1, {r.NumClient}, '{DateTime.Now}', '{r.DateDebutReservation}', '{r.DateFinReservation}', 0, '{r.ForfaitKm}');";
             try
             {
                 NpgsqlCommand cmd = new NpgsqlCommand(sql, Connexion);

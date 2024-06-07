@@ -88,6 +88,13 @@ namespace Intermarché
                 this.forfaitKm = value;
             }
         }
+        public Reservation_table(DateTime dateDebutReservation, DateTime dateFinReservation, int numClient, string forfaitKm)
+        {
+            this.DateDebutReservation = dateDebutReservation;
+            this.DateFinReservation = dateFinReservation;
+            this.ForfaitKm = forfaitKm;
+            this.NumClient = numClient;
+        }
         public Reservation_table(int numReservation, int numAssurance, int numClient, DateTime dateReservation, DateTime dateDebutReservation, DateTime dateFinReservation, double montantReservation, string forfaitKm)
                     :this( dateReservation,  dateDebutReservation,  dateFinReservation,  montantReservation, forfaitKm)
         {
@@ -95,6 +102,5 @@ namespace Intermarché
             this.NumAssurance = numAssurance;
             this.NumClient = numClient;
         }
-
     }
 }
