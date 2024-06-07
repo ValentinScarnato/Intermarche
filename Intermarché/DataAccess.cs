@@ -330,6 +330,22 @@ namespace Intermarché
                 return 0;
             }
         }
+        public int CreateReservation(DateTime dateDebut, DateTime dateFin, int numClient, string forfaitKm)
+        {
+            String sql = $"INSERT INTO reservation (num_assurance, num_client, date_reservation, date_debut_reservation, date_fin_reservation, montant_reservation, forfait_km)"
+            + $" VALUES (1, {numClient}, '{DateTime.Now}', '{dateDebut}', '{dateFin}', 0, '{forfaitKm}');";
+            try
+            {
+                NpgsqlCommand cmd = new NpgsqlCommand(sql, Connexion);
+                int nb = cmd.ExecuteNonQuery();
+                return nb;
+            }
+            catch (Exception sqlE)
+            {
+                Console.WriteLine("Erreur de requête : " + sql + " " + sqlE);
+                return 0;
+            }
+        }
         public int ReadEmploye()
         {
             this.LesEmployes = new ObservableCollection<Employe>();

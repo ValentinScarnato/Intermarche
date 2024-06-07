@@ -13,7 +13,7 @@
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Window.DataContext>
-        <local:ApplicationData x:Name="data"/>
+        <local:ApplicationData x:Name="data" />
     </Window.DataContext>
     <Grid>
         <StackPanel Background="#FF4C4A4A">
@@ -67,11 +67,13 @@
                         Margin="0,-5,0,0"
                         Orientation="Horizontal">
                         <DatePicker
+                            x:Name="dpDateDebut"
                             Margin="50,0,0,0"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
                             FontSize="14" />
                         <DatePicker
+                            x:Name="dpDateFin"
                             Margin="69,0,0,0"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
@@ -82,50 +84,79 @@
                             Margin="40,0,0,0"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
+                            Click="butRechercher_Click"
                             Content="Rechercher"
                             FontSize="14" />
-                        <Button x:Name="butCreateClent"
+                        <Button
+                            x:Name="butCreateClient"
                             Width="140"
                             Height="30"
                             Margin="50,0,0,0"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
+                            Click="butCreateClient_Click"
                             Content="Créer client"
-                            FontSize="14" Click="butCreateClent_Click" />
+                            FontSize="14" />
                     </StackPanel>
-                    <StackPanel>
+                    <StackPanel Orientation="Horizontal">
                         <Label
-                            HorizontalAlignment="Center"
-                            Content="Véhicules"
-                            FontSize="18"
+                            Margin="40,0,0,0"
+                            Content="Numéro Client"
+                            FontSize="14"
+                            FontWeight="Bold" />
+                        <Label
+                            Margin="40,0,0,0"
+                            Content="Forfait Kilométrique"
+                            FontSize="14"
                             FontWeight="Bold" />
                     </StackPanel>
                     <StackPanel
+                        Width="1275"
+                        Height="64"
+                        Margin="0,-5,0,0"
+                        Orientation="Horizontal">
+                        <TextBox
+                            x:Name="tbNumClient"
+                            Width="88"
+                            Height="24"
+                            Margin="50,0,0,0"
+                            Text=""
+                            TextWrapping="Wrap" />
+                        <TextBox
+                            x:Name="tbForfaitKm"
+                            Width="133"
+                            Height="24"
+                            Margin="50,0,0,0"
+                            Text=""
+                            TextWrapping="Wrap" />
+                    </StackPanel>
+                    <StackPanel
                         Width="1270"
-                        Height="439"
+                        Height="326"
                         HorizontalAlignment="Left"
                         Orientation="Horizontal">
                         <Grid Width="1020" Height="319">
                             <DataGrid
                                 x:Name="datagridVehicule"
                                 Grid.Column="1"
-                                Margin="7,7,24,7" 
-                                ItemsSource="{Binding LesVehicules}" 
-                                AutoGenerateColumns="True"/>
+                                Margin="7,7,24,7"
+                                AutoGenerateColumns="True"
+                                ItemsSource="{Binding LesVehicules}" />
                         </Grid>
                     </StackPanel>
-                    <StackPanel Height="49">
-                        <Button 
+                    <StackPanel Height="49" Margin="0,1,0,0">
+                        <Button
                             x:Name="butReserver"
-                            Content="Reserver" Width="152"
-                            Click="butReserver_Click"/>
+                            Width="152"
+                            Click="butReserver_Click"
+                            Content="Reserver" />
                     </StackPanel>
                 </StackPanel>
             </TabItem>
             <TabItem>
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Visulaiser Réservation" TextWrapping="Wrap" />
+                        <TextBlock Text="Visualiser Réservation" TextWrapping="Wrap" />
                     </StackPanel>
                 </TabItem.Header>
                 <StackPanel>

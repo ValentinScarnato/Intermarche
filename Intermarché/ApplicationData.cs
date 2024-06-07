@@ -11,7 +11,8 @@ namespace Intermarché
 {
     public class ApplicationData
     {
-
+        public ObservableCollection<Vehicule_table> LesVehicules { get; set; }
+        public ObservableCollection<Reservation_table> LesReservations { get; set; }
         private ObservableCollection<Client> lesClients;
         private NpgsqlConnection connexion = null;   // futur lien à la BD
         private DataAccess dataAccess;
@@ -32,7 +33,8 @@ namespace Intermarché
 
         public ApplicationData()
         {
-
+            LesVehicules = new ObservableCollection<Vehicule_table>();
+            LesReservations = new ObservableCollection<Reservation_table>();
         }
 
 
