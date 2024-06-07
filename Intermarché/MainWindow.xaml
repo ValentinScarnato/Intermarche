@@ -13,7 +13,7 @@
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Window.DataContext>
-        <local:ApplicationData x:Name="data" />
+        <local:DataAccess x:Name="data" />
     </Window.DataContext>
     <Grid>
         <StackPanel Background="#FF4C4A4A">
