@@ -202,15 +202,22 @@
                         HorizontalAlignment="Right"
                         Background="#FFBBBBBB"
                         Orientation="Horizontal">
-                        <Grid Width="998">
+                        <Grid Width="1182">
                             <DataGrid
                                 x:Name="reservationsDataGrid"
-                                Grid.Column="1"
-                                Margin="7,7,24,7"
-                                AutoGenerateColumns="True"
-                                ItemsSource="{Binding LesReservations}">
+                                Margin="7,7,127,7"
+                                ItemsSource="{Binding LesReservations}"
+                                AutoGenerateColumns="False"
+                                IsReadOnly="True">
                                 <DataGrid.Columns >
-                                  
+                                    <DataGridTextColumn Header="N° Réservation" Binding="{Binding NumReservation}" Width="90" />
+                                    <DataGridTextColumn Header="N° Assurance" Binding="{Binding NumAssurance}" Width="90" />
+                                    <DataGridTextColumn Header="N° Client" Binding="{Binding NumClient}" Width="90" />
+                                    <DataGridTextColumn Header="Date de réservation" Binding="{Binding DateReservation}" Width="170" />
+                                    <DataGridTextColumn Header="Date de début de réservation" Binding="{Binding DateDebutReservation}" Width="170" />
+                                    <DataGridTextColumn Header="Date de fin de réservation" Binding="{Binding DateFinReservation}" Width="170" />
+                                    <DataGridTextColumn Header="Montant de Reservation" Binding="{Binding MontantReservation}" Width="150" />
+                                    <DataGridTextColumn Header="Numero Assurance" Binding="{Binding NumAssurance}" Width="110" />
                                 </DataGrid.Columns>
                             </DataGrid>
                         </Grid>

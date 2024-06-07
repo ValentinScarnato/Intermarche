@@ -60,5 +60,10 @@ namespace Intermarché
         {
             Application.Current.Shutdown();
         }
+
+        private void reservationsDataGrid_SelectionChanged()
+        {
+
+        }
     }
 }

@@ -500,7 +500,7 @@ namespace Intermarché
                 {
                     Reservation_table nouveau = new Reservation_table(int.Parse(res["num_reservation"].ToString()),
                     int.Parse(res["num_assurance"].ToString()), int.Parse(res["num_client"].ToString()), DateTime.Parse(res["date_reservation"].ToString()),
-                    DateTime.Parse(res["date_debut_reservation"].ToString()), DateTime.Parse(res["date_fin_reservation"].ToString()), int.Parse(res["montant_reservation"].ToString()),
+                    DateTime.Parse(res["date_debut_reservation"].ToString()), DateTime.Parse(res["date_fin_reservation"].ToString()), double.Parse(res["montant_reservation"].ToString()),
                     res["forfait_km"].ToString());
                     LesReservations.Add(nouveau);
                 }
