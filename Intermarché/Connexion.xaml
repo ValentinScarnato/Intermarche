@@ -12,7 +12,7 @@
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d" Closed="Window_Closed">
     <Window.Resources>
-        <local:Connexion x:Key="connexion" />
+        <local:Connexion x:Key="connexion"/>
     </Window.Resources>
     <Grid>
         <StackPanel>

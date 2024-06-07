@@ -10,6 +10,8 @@
 
   <ItemGroup>
     <None Remove="Image1.png" />
+    <None Remove="imgVehicule\Camion.jpg" />
+    <None Remove="imgVehicule\Nissan_Juke.jpg" />
     <None Remove="img\camion_benne_Intermarche.jpg" />
     <None Remove="img\intermaché-black-logo-removebg-preview.png" />
     <None Remove="img\logo-compte-removebg-preview.png" />
@@ -27,6 +29,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="imgVehicule\Camion.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="imgVehicule\Nissan_Juke.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="img\camion_benne_Intermarche.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>

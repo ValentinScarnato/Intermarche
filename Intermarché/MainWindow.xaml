@@ -13,7 +13,7 @@
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Window.DataContext>
-        <local:ApplicationData x:Name="lesReservations"/>
+        <local:ApplicationData x:Name="data"/>
     </Window.DataContext>
     <Grid>
         <StackPanel Background="#FF4C4A4A">
@@ -107,9 +107,11 @@
                         Orientation="Horizontal">
                         <Grid Width="1020" Height="319">
                             <DataGrid
-                                x:Name="data"
+                                x:Name="datagridVehicule"
                                 Grid.Column="1"
-                                Margin="7,7,24,7" />
+                                Margin="7,7,24,7" 
+                                ItemsSource="{Binding LesVehicules}" 
+                                AutoGenerateColumns="True"/>
                         </Grid>
                     </StackPanel>
                     <StackPanel Height="49">
