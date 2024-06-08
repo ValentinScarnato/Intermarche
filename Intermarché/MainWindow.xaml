@@ -264,8 +264,8 @@
                                         Header="Montant de Reservation" />
                                     <DataGridTextColumn
                                         Width="110"
-                                        Binding="{Binding NumAssurance}"
-                                        Header="Numero Assurance" />
+                                        Binding="{Binding ForfaitKm}"
+                                        Header="Forfait KM" />
                                 </DataGrid.Columns>
                             </DataGrid>
                         </Grid>
