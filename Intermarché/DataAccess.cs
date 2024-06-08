@@ -468,7 +468,7 @@ namespace Intermarché
         public int ReadMagasin()
         {
             this.LesMagasin = new ObservableCollection<Magasin>();
-            String sql = "SELECT num_magasin,nom_magasin,adresse_rue_magasin,adresse_cp_magasin, adresse_ville_magasin,horaire_magasin FROM intermarche.magasin";
+            String sql = "SELECT num_magasin,nom_magasin,adresse_rue_magasin,adresse_cp_magasin, adresse_ville_magasin,horaire_magasin FROM magasin";
             try
             {
                 NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter(sql, Connexion);
