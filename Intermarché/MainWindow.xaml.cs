@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -19,14 +20,35 @@ using System.Windows.Shapes;
 
 namespace Intermarché
 {
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
+        {
+            if (PropertyChanged != null)
+            {
+                this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+
+        public ObservableCollection<Magasin> LesMagasin
+        {
+            get { return DataAccess.Instance.LesMagasin; }
+            set { LesMagasin = value;
+                  NotifyPropertyChanged();
+            }
+        }
+
         public MainWindow()
         {
+            DataAccess da = DataAccess.Instance;
+            da.LesMagasin = LesMagasin;
             Connexion connect = new Connexion(this);
             connect.ShowDialog();
             InitializeComponent();
             dgReservationConsulter.Items.Filter = ContientMotClef;
+            LesMagasin.Add(LesMagasin[0]);
         }
 
         private void butRecherche_Click(object sender, RoutedEventArgs e)
