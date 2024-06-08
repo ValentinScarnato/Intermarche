@@ -141,5 +141,9 @@ namespace Intermarché
         {
             CollectionViewSource.GetDefaultView(dgReservationConsulter.ItemsSource).Refresh();
         }
+        private void FiltrerRecherche()
+        {
+
+        }
     }
 }
