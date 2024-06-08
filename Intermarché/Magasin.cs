@@ -8,20 +8,20 @@ namespace Intermarché
 {
     public class Magasin
     {
-		private int numVehicule;
+		private int numMagasin;
 
-		public int NumVehicule
+		public int NumMagasin
         {
-			get { return numVehicule; }
-			set { numVehicule = value; }
+			get { return numMagasin; }
+			set { numMagasin = value; }
 		}
 
-		private string nomVehicule;
+		private string nomMagasin;
 
-		public string NomVehicule
+		public string NomMagasin
         {
-			get { return nomVehicule; }
-			set { nomVehicule = value; }
+			get { return nomMagasin; }
+			set { nomMagasin = value; }
 		}
 
         private string adresseRueMagasin;
@@ -65,10 +65,10 @@ namespace Intermarché
 
         private string horraireMagasin;
 
-        public Magasin(int numVehicule, string nomVehicule, string adresseRueMagasin, string adresseCpMagasin, string adresseVilleMagasin, string horraireMagasin)
+        public Magasin(int numMagasin, string nomMagasin, string adresseRueMagasin, string adresseCpMagasin, string adresseVilleMagasin, string horraireMagasin)
         {
-            this.NumVehicule = numVehicule;
-            this.NomVehicule = nomVehicule;
+            this.NumMagasin = numMagasin;
+            this.NomMagasin = nomMagasin;
             this.AdresseRueMagasin = adresseRueMagasin;
             this.AdresseCpMagasin = adresseCpMagasin;
             this.AdresseVilleMagasin = adresseVilleMagasin;

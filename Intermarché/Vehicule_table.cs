@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Intermarché
 {
-    public class Vehicule_table
+    public class Vehicule_table  
     {
 		private string immatriculation;
 

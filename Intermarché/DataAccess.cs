@@ -489,7 +489,7 @@ namespace Intermarché
         public int ReadReservation()
         {
             this.lesReservations = new ObservableCollection<Reservation_table>();
-            String sql = "SELECT num_reservation, num_assurance,num_client,date_reservation,date_debut_reservation, date_fin_reservation, montant_reservation, forfait_km FROM Reservation";
+            String sql = "SELECT r.num_reservation, r.num_assurance, r.num_client, d.immatriculation , c.nom_client, r.date_reservation, r.date_debut_reservation, r.date_fin_reservation, r.montant_reservation, r.forfait_km FROM Reservation r JOIN Client c on r. NUM_CLIENT = c.NUM_CLIENT JOIN DETAIL_RESERVATION d on r.NUM_RESERVATION = d.NUM_RESERVATION";
             try
             {
                 NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter(sql, Connexion);
