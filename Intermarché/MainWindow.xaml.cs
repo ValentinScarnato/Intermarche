@@ -86,9 +86,11 @@ namespace Intermarché
 
         private void reservationsDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if(dgReservationConsulter.SelectedItem != null)
+            var selectedReservation = new List<Reservation_table>();
+
+            foreach (Reservation_table uneReservation in dgReservationConsulter.SelectedItems)
             {
-                Reservation_table reservation = (Reservation_table)dgReservationConsulter.SelectedItems;
+                selectedReservation.Add(uneReservation);
             }
         }
 
@@ -156,6 +158,38 @@ namespace Intermarché
         {
             if (!this.IsInitialized) return;
             ((ICollectionView)this.dgLesVehicules.ItemsSource).Refresh();
+        }
+
+        private void butDelete_Click(object sender, RoutedEventArgs e)
+        {
+            Reservation_table reservation = (Reservation_table)dgReservationConsulter.SelectedItem;
+            if (reservation == null)
+            {
+                MessageBox.Show("No selected reservation!");
+                return;
+            }
+
+            if (MessageBox.Show("Are you sure you want to delete this reservation?", "Confirm deletion?", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                reservation.Delete();
+                this.data.LesReservations.Remove(reservation);
+            }
+        }
+
+        private void butEdit_Click(object sender, RoutedEventArgs e)
+        {
+            Reservation_table reservation = (Reservation_table)dgReservationConsulter.SelectedItem;
+            if (reservation == null)
+            {
+                MessageBox.Show("No selected reservation!");
+                return;
+            }
+
+            if (MessageBox.Show("Are you sure you want to edit this reservation?", "Confirm edit?", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                reservation.Update();
+
+            }
         }
     }
 }

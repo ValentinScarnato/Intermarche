@@ -18,8 +18,7 @@ namespace Intermarché.Classes
             get { return numReservation; }
             set
             {
-                if (value <= 0)
-                    throw new ArgumentException("Le numéro de réservation doit etre superieur ou egale a 0");
+                
                 numReservation = value;
             }
         }
