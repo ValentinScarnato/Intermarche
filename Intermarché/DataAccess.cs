@@ -27,6 +27,7 @@ namespace Intermarché
             this.ReadMagasin();
             this.ReadEmploye();
             this.ReadReservation();
+            //this.ReadDetailReservation();
             //this.ReadVehicule();
         }
 
@@ -456,8 +457,8 @@ namespace Intermarché
                 dataAdapter.Fill(dataTable);
                 foreach (DataRow res in dataTable.Rows)
                 {
-                    Detail_reservation nouveau = new Detail_reservation(res["num_employe"].ToString(),
-                    int.Parse(res["num_magasin"].ToString()));
+                    Detail_reservation nouveau = new Detail_reservation(res["immatriculation"].ToString(),
+                    int.Parse(res["num_reservation"].ToString()));
                     LesDetailReservation.Add(nouveau);
                 }
                 return dataTable.Rows.Count;
