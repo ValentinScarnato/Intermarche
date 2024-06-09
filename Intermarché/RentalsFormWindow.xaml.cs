@@ -45,7 +45,7 @@ namespace Intermarché
 
             if (dateDebutResa.HasValue && dateFinResa.HasValue && (rbMoins100km.IsChecked == true || rb_100_250km.IsChecked == true || rbPlus250km.IsChecked == true))
             {
-                
+
 
                 Reservation_table resa = new Reservation_table(
                     numAssurance,
@@ -64,10 +64,9 @@ namespace Intermarché
             {
                 System.Windows.MessageBox.Show("Veuillez remplir tous les champs.");
             }
-            if(mw.dgLesVehicules)
-            System.Windows.MessageBox.Show($"Le montant total de la réservation est de {montant} euros");
-
             
+
+
         }
 
     }

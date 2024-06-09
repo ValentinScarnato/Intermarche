@@ -100,7 +100,7 @@
                                     </Style>
                                 </DataGrid.Resources>
                                 <DataGrid.Columns>
-                                    <DataGridCheckBoxColumn Header="Choix" IsReadOnly="False" Binding="{Binding EstSelectionné, Mode=TwoWay}"/>
+                                    <DataGridCheckBoxColumn Header="Choix" IsReadOnly="True" Binding="{Binding EstSelectionné, Mode=TwoWay}"/>
                                     <DataGridTextColumn Header="Immatriculation" Binding="{Binding Immatriculation}" Width="100" ElementStyle="{StaticResource CenteredTextBlockStyle}" />
                                     <DataGridTextColumn Header="Type de Boite" Binding="{Binding TypeBoite}" Width="90" ElementStyle="{StaticResource CenteredTextBlockStyle}" />
                                     <DataGridTextColumn Header="N° de Magasin" Binding="{Binding NumMagasin}" Width="90" ElementStyle="{StaticResource CenteredTextBlockStyle}" />
@@ -176,16 +176,17 @@
                         HorizontalAlignment="Center"
                         Background="#FFBBBBBB"
                         Orientation="Horizontal">
-                        <Grid Width="1344">
+                        <Grid Width="1196" Height="534">
                             <DataGrid
                                 x:Name="dgReservationConsulter"
-                                Margin="48,7,44,0"
+                                Margin="48,7,0,0"
                                 AutoGenerateColumns="False"
                                 IsReadOnly="True"
                                 CanUserReorderColumns="False"
                                 CanUserResizeColumns="False"
                                 ItemsSource="{Binding LesReservations}"
-                                SelectionChanged="reservationsDataGrid_SelectionChanged">
+                                SelectionChanged="reservationsDataGrid_SelectionChanged"
+                                SelectionMode="Single">
                                 <DataGrid.Resources>
                                     <Style x:Key="CenteredTextBlockStyle2" TargetType="TextBlock">
                                         <Setter Property="HorizontalAlignment" Value="Center" />
@@ -220,16 +221,16 @@
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
-                                    <DataGridTemplateColumn Header="Date de réservation" Width="200">
+                                    <DataGridTemplateColumn Header="Date de réservation" Width="180">
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
-                                                <Border Width="200" Height="100">
+                                                <Border Width="150" Height="100">
                                                     <TextBlock Text="{Binding DateReservation}" Style="{StaticResource CenteredTextBlockStyle2}" />
                                                 </Border>
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
-                                    <DataGridTemplateColumn Header="Date de début de réservation" Width="200">
+                                    <DataGridTemplateColumn Header="Date de début de réservation" Width="180">
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
                                                 <Border Width="200" Height="100">
@@ -238,7 +239,7 @@
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
-                                    <DataGridTemplateColumn Header="Date de fin de réservation" Width="200">
+                                    <DataGridTemplateColumn Header="Date de fin de réservation" Width="180">
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
                                                 <Border Width="200" Height="100">
@@ -256,7 +257,7 @@
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
-                                    <DataGridTemplateColumn Header="Forfait KM" Width="180">
+                                    <DataGridTemplateColumn Header="Forfait KM" Width="120">
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
                                                 <Border Width="100" Height="100">
@@ -268,6 +269,11 @@
                                 </DataGrid.Columns>
                             </DataGrid>
                         </Grid>
+                        <StackPanel Height="198" Width="105">
+                            <Button x:Name="butEdit" Content="Edit" Height="80" Margin="15,0,0,0" Width="80" Click="butEdit_Click" HorizontalAlignment="Left"/>
+                            <Button x:Name="butDelete" Content="Delete" Height="80" Margin="15,30,0,0" Width="80" Click="butDelete_Click" HorizontalAlignment="Left"/>
+                        </StackPanel>
+
                     </StackPanel>
                 </StackPanel>
             </TabItem>
