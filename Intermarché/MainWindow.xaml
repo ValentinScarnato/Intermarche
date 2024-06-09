@@ -176,6 +176,8 @@
                             Click="butReserver_Click"
                             Content="Reserver" />
                     </StackPanel>
+                    <Label Content="Vous etes connectés sur la session " HorizontalAlignment="Center"/>
+                    <Label x:Name="labelMagasin" Content="Annecy" HorizontalAlignment="Center" FontWeight="Bold"/>
                 </StackPanel>
             </TabItem>
             <TabItem>

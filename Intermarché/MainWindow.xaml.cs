@@ -1,4 +1,5 @@
-﻿using Npgsql;
+﻿using Intermarché.Classes;
+using Npgsql;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -32,23 +33,13 @@ namespace Intermarché
             }
         }
 
-        public ObservableCollection<Magasin> LesMagasin
-        {
-            get { return DataAccess.Instance.LesMagasin; }
-            set { LesMagasin = value;
-                  NotifyPropertyChanged();
-            }
-        }
-
         public MainWindow()
         {
-            DataAccess da = DataAccess.Instance;
-            da.LesMagasin = LesMagasin;
+            ApplicationData da = new ApplicationData();
             Connexion connect = new Connexion(this);
             connect.ShowDialog();
             InitializeComponent();
             dgReservationConsulter.Items.Filter = ContientMotClef;
-            LesMagasin.Add(LesMagasin[0]);
         }
 
         private void butRecherche_Click(object sender, RoutedEventArgs e)
@@ -76,7 +67,7 @@ namespace Intermarché
         private void butReserver_Click(object sender, RoutedEventArgs e)
         {
             //Penser à uniformiser les noms de famille des clients ex: full MAJ full BOOOOOOx
-            DataAccess da = DataAccess.Instance;
+            ApplicationData da = new ApplicationData();
             da.LesClients = new ObservableCollection<Client>();
             DateTime dateDebut = dpDateDebut.SelectedDate ?? DateTime.Now;
             DateTime dateFin = dpDateFin.SelectedDate ?? DateTime.Now;
@@ -93,7 +84,7 @@ namespace Intermarché
                 Reservation_table reservation = new Reservation_table(dateDebut, dateFin, numClient, forfaitKm);
 
                 // Insérer cette réservation dans la base de données
-                int result = da.CreateReservation(reservation);
+                int result = reservation.Create();
 
                 if (result > 0)
                 {

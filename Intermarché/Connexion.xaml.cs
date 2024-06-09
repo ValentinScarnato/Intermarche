@@ -64,8 +64,8 @@ namespace Intermarché
         {
             string login = txtboxIdentifiant.Text;
             string mdp = txtboxMdp.Password;
-            ApplicationData appData = new ApplicationData();
-            if (appData.VerifierLogin(login,mdp))
+            DataAccess da = DataAccess.Instance;
+            if (da.VerifierLogin(login,mdp))
             {
                 this.MainWin.Show();
                 this.ClosedByConnexion = true;

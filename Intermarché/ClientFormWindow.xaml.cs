@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Intermarché.Classes;
 
 namespace Intermarché
 {
@@ -23,7 +24,7 @@ namespace Intermarché
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            DataAccess da = DataAccess.Instance;
+            ApplicationData da = new ApplicationData();
             string nomClient = txtNomClient.Text;
             string adresseRueClient = txtAdresseRueClient.Text;
             string adresseCpClient = txtAdresseCpClient.Text;
@@ -32,7 +33,7 @@ namespace Intermarché
             string mailClient = txtMailClient.Text;
             Client client = new Client(nomClient, adresseRueClient, adresseCpClient, adresseVilleClient, telephoneClient, mailClient);
             da.LesClients.Add(client);
-            da.CreerClient(client);
+            client.Create();
             MessageBox.Show($"Nom: {nomClient}\nAdresse: {adresseRueClient}, {adresseCpClient} {adresseVilleClient}" +
                 $"\nTéléphone: {telephoneClient}\nEmail: {mailClient}", "Détails du client");
             this.Close();   
