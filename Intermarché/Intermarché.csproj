@@ -11,13 +11,13 @@
   <ItemGroup>
     <None Remove="Image1.png" />
     <None Remove="imgVehicule\Camion.jpg" />
-    <None Remove="imgVehicule\Ford Grand C-Max.jpg" />
-    <None Remove="imgVehicule\Ford Kuga.jpg" />
+    <None Remove="imgVehicule\Ford_Grand_C-Max.jpg" />
+    <None Remove="imgVehicule\Ford_Kuga.jpg" />
     <None Remove="imgVehicule\Nissan_Juke.jpg" />
-    <None Remove="imgVehicule\Peugot 2008.jpg" />
-    <None Remove="imgVehicule\Peugot Traveler.jpg" />
-    <None Remove="imgVehicule\Reanualt Master.jpg" />
-    <None Remove="imgVehicule\Toyota Corolla.jpg" />
+    <None Remove="imgVehicule\Peugeot_2008.jpg" />
+    <None Remove="imgVehicule\Peugeot_Traveler.jpg" />
+    <None Remove="imgVehicule\Renault_Master.jpg" />
+    <None Remove="imgVehicule\Toyota_Corolla.jpg" />
     <None Remove="img\camion_benne_Intermarche.jpg" />
     <None Remove="img\intermaché-black-logo-removebg-preview.png" />
     <None Remove="img\logo-compte-removebg-preview.png" />
@@ -38,25 +38,25 @@
     <Resource Include="imgVehicule\Camion.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="imgVehicule\Ford Grand C-Max.jpg">
+    <Resource Include="imgVehicule\Ford_Grand_C-Max.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="imgVehicule\Ford Kuga.jpg">
+    <Resource Include="imgVehicule\Ford_Kuga.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="imgVehicule\Nissan_Juke.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="imgVehicule\Peugot 2008.jpg">
+    <Resource Include="imgVehicule\Peugeot_2008.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="imgVehicule\Peugot Traveler.jpg">
+    <Resource Include="imgVehicule\Peugeot_Traveler.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="imgVehicule\Reanualt Master.jpg">
+    <Resource Include="imgVehicule\Renault_Master.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="imgVehicule\Toyota Corolla.jpg">
+    <Resource Include="imgVehicule\Toyota_Corolla.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="img\camion_benne_Intermarche.jpg">
