@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -17,8 +18,8 @@ namespace Intermarché
         private NpgsqlConnection connexion = null;   // futur lien à la BD
         String strconnexion = "Server=localhost;" + "port=5433;" + "Database=Intermarchewpf;" + "Search Path=public;" +
                     "uid=postgres;" + "password=postgres";
-
-
+        //$@"Host=localhost;Database=Intermarchewpf;Username={login};Password={mdp}";
+        
         public DataAccess()
         {
             this.ConnexionBD();
@@ -63,13 +64,14 @@ namespace Intermarché
             }
         }
 
-
         public bool VerifierLogin(string loging, string mdp)
         {
             ApplicationData appData = new ApplicationData();
             bool isValid = false;
             string connectionString = strconnexion;
             DataAccess da = new DataAccess();
+
+
             foreach (Employe e in appData.LesEmployes)
             {
                 if (loging == e.Login && mdp == e.Mdp)

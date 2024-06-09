@@ -62,6 +62,7 @@ namespace Intermarché
 
         private void butValiderConnexion_Click(object sender, RoutedEventArgs e)
         {
+            
             string login = txtboxIdentifiant.Text;
             string mdp = txtboxMdp.Password;
             DataAccess da = DataAccess.Instance;

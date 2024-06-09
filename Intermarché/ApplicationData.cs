@@ -47,7 +47,7 @@ namespace Intermarché
             this.LesMagasin = Magasin.ReadMagasin();
             this.LesReservations = Reservation_table.ReadReservation();
             this.LesVehicules = Vehicule_table.ReadVehicule();
-            
+            this.LesCategorieVehicule = new ObservableCollection<Categorie_vehicule>() { new Categorie_vehicule("Any") };
         }
 
     }
