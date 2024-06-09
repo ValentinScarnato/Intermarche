@@ -23,12 +23,7 @@ namespace Intermarché
             this.LesClients = new ObservableCollection<Client>();
             this.LesReservations = new ObservableCollection<Reservation_table>();
             this.ConnexionBD();
-            //this.ReadAll();
-            this.ReadMagasin();
-            this.ReadEmploye();
-            this.ReadReservation();
-            //this.ReadDetailReservation();
-            //this.ReadVehicule();
+            this.ReadAll();
         }
 
         public static DataAccess Instance
@@ -259,7 +254,7 @@ namespace Intermarché
 
         public int ReadClient()
         {
-            String sql = "SELECT num_client, nom_client,adresse_rue_client,adrese_cp_client,adresse_ville_client,telephone_client, mail_client FROM Client";
+            String sql = "SELECT num_client, nom_client,adrese_rue_client,adresse_cp_client,adresse_ville_client,telephone_client, mail_client FROM Client";
             try
             {
                 NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter(sql, Connexion);
@@ -374,6 +369,7 @@ namespace Intermarché
         }
         public int ReadAssurance()
         {
+            this.LesAssurances = new ObservableCollection<Assurance>();
             String sql = "SELECT num_assurance, description_assurance,prix_assurance FROM Assurance";
             try
             {
@@ -393,7 +389,8 @@ namespace Intermarché
         }
         public int ReadCaracteristiques()
         {
-            String sql = "SELECT num_caracteristique, nom_caracteristiques FROM Caracteristique";
+            this.LesCaracteristiques = new ObservableCollection<Caracteristique>();
+            String sql = "SELECT num_caracteristique, nom_caracteristique FROM Caracteristique";
             try
             {
                 NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter(sql, Connexion);
@@ -401,7 +398,7 @@ namespace Intermarché
                 dataAdapter.Fill(dataTable);
                 foreach (DataRow res in dataTable.Rows)
                 {
-                    Caracteristique nouveau = new Caracteristique(int.Parse(res["num_caracteriqtique"].ToString()),
+                    Caracteristique nouveau = new Caracteristique(int.Parse(res["num_caracteristique"].ToString()),
                     res["nom_caracteristique"].ToString());
                     LesCaracteristiques.Add(nouveau);
                 }
@@ -412,6 +409,7 @@ namespace Intermarché
         }
         public int ReadCategorieVehicules()
         {
+            this.LesCategorieVehicule = new ObservableCollection<Categorie_vehicule>();
             String sql = "SELECT nom_categorie FROM Categorie_vehicule";
             try
             {
@@ -430,6 +428,7 @@ namespace Intermarché
         }
         public int ReadDetailCaracteristiques()
         {
+            this.LesDetailCaracteristique = new ObservableCollection<Detail_caracteristique>();
             String sql = "SELECT immatriculation, num_caracteristique,valeur_caracteristique FROM Detail_caracteristique";
             try
             {
@@ -438,8 +437,8 @@ namespace Intermarché
                 dataAdapter.Fill(dataTable);
                 foreach (DataRow res in dataTable.Rows)
                 {
-                    Detail_caracteristique nouveau = new Detail_caracteristique(res["num_employe"].ToString(),
-                    int.Parse(res["num_magasin"].ToString()), res["valeur_caracteristique"].ToString());
+                    Detail_caracteristique nouveau = new Detail_caracteristique(res["immatriculation"].ToString(),
+                    int.Parse(res["num_caracteristique"].ToString()), res["valeur_caracteristique"].ToString());
                     LesDetailCaracteristique.Add(nouveau);
                 }
                 return dataTable.Rows.Count;
@@ -449,6 +448,7 @@ namespace Intermarché
         }
         public int ReadDetailReservation()
         {
+            this.LesDetailReservation = new ObservableCollection<Detail_reservation>();
             String sql = "SELECT immatriculation, num_reservation FROM Detail_reservation";
             try
             {
@@ -490,7 +490,7 @@ namespace Intermarché
         public int ReadReservation()
         {
             this.lesReservations = new ObservableCollection<Reservation_table>();
-            String sql = "SELECT r.num_reservation, r.num_assurance, r.num_client, d.immatriculation , c.nom_client, r.date_reservation, r.date_debut_reservation, r.date_fin_reservation, r.montant_reservation, r.forfait_km FROM Reservation r JOIN Client c on r. NUM_CLIENT = c.NUM_CLIENT JOIN DETAIL_RESERVATION d on r.NUM_RESERVATION = d.NUM_RESERVATION";
+            String sql = "SELECT * FROM Reservation";
             try
             {
                 NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter(sql, Connexion);
@@ -511,8 +511,8 @@ namespace Intermarché
         }
         public int ReadVehicule()
         {
-            String sql = "SELECT immatriculation, type_boite,num_magasin,nom_categorie, nom_vehicule, description_vehicule, nombre_places, prix_location, climatisation, lien_photo_url FROM Vehicule";
-            
+            this.LesVehicules = new ObservableCollection<Vehicule_table>();
+            String sql = "SELECT * FROM Vehicule";
             try
             {
                 NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter(sql, Connexion);
