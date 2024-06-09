@@ -45,7 +45,7 @@ namespace Intermarché.Classes
         public DateTime DateReservation
         {
             get { return dateReservation; }
-            set { dateReservation = value; }
+            set { dateReservation = DateTime.Today; }
         }
 
         private DateTime dateDebutReservation;
@@ -118,7 +118,7 @@ namespace Intermarché.Classes
         public int Create()
         {
             String sql = $"insert into Reservation (num_reservation, num_assurance, num_client, date_reservation, date_debut_reservation, date_fin_reservation, montant_reservation, forfait_km )"
-            + $" values ({NumReservation},'{NumAssurance},{NumClient},'{DateTime.Today}','{DateDebutReservation}','{DateFinReservation}',{MontantReservation},'{ForfaitKm}');";
+            + $" values ({NumReservation},{NumAssurance},{NumClient},'{DateTime.Today}','{DateDebutReservation}','{DateFinReservation}',{MontantReservation},'{ForfaitKm}');";
             return DataAccess.Instance.SetData(sql);
         }
         public int Delete()

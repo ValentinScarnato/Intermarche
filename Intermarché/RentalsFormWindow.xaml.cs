@@ -21,61 +21,54 @@ namespace Intermarché
     /// </summary>
     public partial class RentalsFormWindow : Window
     {
-        public RentalsFormWindow()
-        {
-            InitializeComponent();
-        }
 
         private void butValiderResa_Click(object sender, RoutedEventArgs e)
         {
+            MainWindow mw = new MainWindow();
             ApplicationData da = new ApplicationData();
-
-            // Convertir les entrées de texte en entiers
             int numAssurance;
             int numClient;
+            string forfaitKm = "0";
             if (!int.TryParse(tbNumAssurance.Text, out numAssurance) || !int.TryParse(tbNumCLient.Text, out numClient))
             {
                 System.Windows.MessageBox.Show("Veuillez entrer des numéros valides pour l'assurance et le client.");
                 return;
             }
-
-            DateTime? dateResa = dpDateReservation.SelectedDate;
+            if (rbMoins100km.IsChecked == true) forfaitKm = "-100km";
+            else if (rb_100_250km.IsChecked == true) forfaitKm = "100km - 250km";
+            else if (rb_100_250km.IsChecked == true) forfaitKm = "+250km";
+            DateTime dateResa = DateTime.Today;
             DateTime? dateDebutResa = dpDateDebutReservation.SelectedDate;
             DateTime? dateFinResa = dpDateFinReservation.SelectedDate;
-            string montantResa = tbMontantReservation.Text;
-            string forfaitKm = tbForfaitKm.Text;
+            string montantResa;
+            double montant = 0;
 
-            if (dateResa.HasValue && dateDebutResa.HasValue && dateFinResa.HasValue)
+            if (dateDebutResa.HasValue && dateFinResa.HasValue && (rbMoins100km.IsChecked == true || rb_100_250km.IsChecked == true || rbPlus250km.IsChecked == true))
             {
-                double montant;
-                if (!double.TryParse(montantResa, out montant))
-                {
-                    System.Windows.MessageBox.Show("Le montant de la réservation n'est pas valide.");
-                    return;
-                }
+                
 
                 Reservation_table resa = new Reservation_table(
                     numAssurance,
                     numClient,
-                    dateResa.Value,
+                    dateResa,
                     dateDebutResa.Value,
                     dateFinResa.Value,
                     montant,
                     forfaitKm
                 );
-
-                // Ajouter la réservation à votre collection de réservations
                 da.LesReservations.Add(resa);
-
-                // Enregistrer la réservation dans la base de données
                 resa.Create();
-
                 System.Windows.MessageBox.Show("Réservation ajoutée avec succès !");
             }
             else
             {
                 System.Windows.MessageBox.Show("Veuillez remplir tous les champs.");
             }
+            if(mw.dgLesVehicules)
+            System.Windows.MessageBox.Show($"Le montant total de la réservation est de {montant} euros");
+
+            
         }
+
     }
 }

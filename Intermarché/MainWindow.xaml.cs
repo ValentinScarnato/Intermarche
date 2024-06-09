@@ -21,18 +21,8 @@ using System.Windows.Shapes;
 
 namespace Intermarché
 {
-    public partial class MainWindow : Window, INotifyPropertyChanged
+    public partial class MainWindow : Window
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
-        {
-            if (PropertyChanged != null)
-            {
-                this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-
         public MainWindow()
         {
             ApplicationData da = new ApplicationData();
@@ -42,6 +32,7 @@ namespace Intermarché
             dgReservationConsulter.Items.Filter = ContientMotClef;
             dgLesVehicules.Items.Filter = ContientMotClef2;
         }
+
 
         private void butRecherche_Click(object sender, RoutedEventArgs e)
         {
@@ -126,20 +117,33 @@ namespace Intermarché
         {
             CollectionViewSource.GetDefaultView(dgLesVehicules.ItemsSource).Refresh();
         }
-
+        
         private void dgLesVehicules_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (dgLesVehicules.SelectedItem != null)
+            var selectedVehicles = new List<Vehicule_table>();
+
+            foreach (Vehicule_table vehicule in dgLesVehicules.SelectedItems)
             {
-                Vehicule_table vehicule = (Vehicule_table)dgLesVehicules.SelectedItems;
+                selectedVehicles.Add(vehicule);
             }
         }
+
 
         private void butReserver_Click(object sender, RoutedEventArgs e)
         {
             RentalsFormWindow rentalsForm = new RentalsFormWindow();
             rentalsForm.ShowDialog();
+            var selectedVehicles = new List<Vehicule_table>();
+
+            foreach (Vehicule_table vehicule in dgLesVehicules.SelectedItems)
+            {
+                selectedVehicles.Add(vehicule);
+            }
         }
-    
+        private void dgLesVehicules_CellEditEnding(object sender, DataGridCellEditEndingEventArgs e)
+        {
+
+        }
+
     }
 }

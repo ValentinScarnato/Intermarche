@@ -103,12 +103,14 @@ namespace Intermarché
                 DataTable dataTable = new DataTable();
                 dataAdapter.Fill(dataTable);
                 return dataTable;
+
             }
             catch (Exception e)
             {
                 Console.WriteLine("pb avec : " + selectSQL + e.ToString());
                 return null;
             }
+
         }
 
         public int SetData(string setSQL)
