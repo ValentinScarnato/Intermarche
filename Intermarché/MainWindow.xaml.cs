@@ -25,6 +25,8 @@ namespace Intermarché
     {
         public MainWindow()
         {
+            Refresh();
+            this.DataContext = new ApplicationData();
             ApplicationData da = new ApplicationData();
             Connexion connect = new Connexion(this);
             connect.ShowDialog();
@@ -131,19 +133,29 @@ namespace Intermarché
 
         private void butReserver_Click(object sender, RoutedEventArgs e)
         {
-            RentalsFormWindow rentalsForm = new RentalsFormWindow();
-            rentalsForm.ShowDialog();
-            var selectedVehicles = new List<Vehicule_table>();
+            var vehiculesSelect = new List<Vehicule_table>();
 
             foreach (Vehicule_table vehicule in dgLesVehicules.SelectedItems)
             {
-                selectedVehicles.Add(vehicule);
+                vehiculesSelect.Add(vehicule);
             }
+
+            RentalsFormWindow rentalsForm = new RentalsFormWindow
+            {
+                VehiculesSelectionnés = vehiculesSelect,
+                DataContext = this.DataContext
+            };
+
+            rentalsForm.ShowDialog();
         }
         private void dgLesVehicules_CellEditEnding(object sender, DataGridCellEditEndingEventArgs e)
         {
 
         }
-
+        private void Refresh()
+        {
+            if (!this.IsInitialized) return;
+            ((ICollectionView)this.dgLesVehicules.ItemsSource).Refresh();
+        }
     }
 }

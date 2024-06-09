@@ -100,7 +100,6 @@
                                     </Style>
                                 </DataGrid.Resources>
                                 <DataGrid.Columns>
-                                    <DataGridCheckBoxColumn Header="Choix" IsReadOnly="False" Binding="{Binding EstSelectionné, Mode=TwoWay}"/>
                                     <DataGridTextColumn Header="Immatriculation" Binding="{Binding Immatriculation}" Width="100" ElementStyle="{StaticResource CenteredTextBlockStyle}" />
                                     <DataGridTextColumn Header="Type de Boite" Binding="{Binding TypeBoite}" Width="90" ElementStyle="{StaticResource CenteredTextBlockStyle}" />
                                     <DataGridTextColumn Header="N° de Magasin" Binding="{Binding NumMagasin}" Width="90" ElementStyle="{StaticResource CenteredTextBlockStyle}" />

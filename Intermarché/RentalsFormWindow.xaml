@@ -12,6 +12,8 @@
         WindowStartupLocation="CenterScreen">
     <Grid>
         <StackPanel Margin="0,10,0,10" HorizontalAlignment="Center" Width="484">
+            <Label Content="Numero Reservation :" Target="{Binding ElementName=NumReservation, Mode=OneWay}" />
+            <TextBox x:Name="tbNumResa" TextWrapping="Wrap" />
             <Label Content="Numero Assurance :" Target="{Binding ElementName=NumAssurance, Mode=OneWay}" />
             <TextBox x:Name="tbNumAssurance" TextWrapping="Wrap" />
             <Label Content="Numero Client :" Target="{Binding ElementName=NumCLient, Mode=OneWay}" />

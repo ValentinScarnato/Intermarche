@@ -89,7 +89,7 @@ namespace Intermarché.Classes
             get { return forfaitKm; }
             set
             {
-                if (value.Length > 10)
+                if (value.Length > 15)
                     throw new ArgumentException("Le forfait kilométirque à une valeur trop longue");
                 forfaitKm = value;
             }
