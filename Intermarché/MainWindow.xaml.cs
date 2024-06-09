@@ -40,6 +40,7 @@ namespace Intermarché
             connect.ShowDialog();
             InitializeComponent();
             dgReservationConsulter.Items.Filter = ContientMotClef;
+            dgLesVehicules.Items.Filter = ContientMotClef2;
         }
 
         private void butRecherche_Click(object sender, RoutedEventArgs e)
@@ -64,48 +65,6 @@ namespace Intermarché
             set { unClient = value; }
         }
 
-        private void butReserver_Click(object sender, RoutedEventArgs e)
-        {
-            //Penser à uniformiser les noms de famille des clients ex: full MAJ full BOOOOOOx
-            ApplicationData da = new ApplicationData();
-            da.LesClients = new ObservableCollection<Client>();
-            DateTime dateDebut = dpDateDebut.SelectedDate ?? DateTime.Now;
-            DateTime dateFin = dpDateFin.SelectedDate ?? DateTime.Now;
-            string nomClient = this.UnClient.NomClient;
-            string forfaitKm = tbForfaitKm.Text;
-            Client client = da.LesClients.FirstOrDefault(c => c.NomClient.Trim().ToUpper() == nomClient);
-
-            if (client != null)
-            {
-                // Si le client existe, récupérer son numéro
-                int numClient = client.NumClient;
-
-                // Créer une nouvelle réservation avec les détails appropriés
-                Reservation_table reservation = new Reservation_table(dateDebut, dateFin, numClient, forfaitKm);
-
-                // Insérer cette réservation dans la base de données
-                int result = reservation.Create();
-
-                if (result > 0)
-                {
-                    MessageBox.Show("Réservation créée avec succès.");
-                }
-                else
-                {
-                    MessageBox.Show("Erreur lors de la création de la réservation.");
-                }
-            }
-            else
-            {
-                // Si le client n'existe pas, afficher un message d'erreur
-                MessageBox.Show("Client non trouvé. Veuillez vérifier le nom du client.");
-            }
-
-            //Reservation_table reservation = new Reservation_table(dateDebut, dateFin,int.Parse(numClient), forfaitKm);
-            //da.CreateReservation(reservation);
-            MessageBox.Show("Réservation créée avec succès.");
-
-        }
 
         private void Window_Closed(object sender, EventArgs e)
         {
@@ -154,9 +113,26 @@ namespace Intermarché
         {
             CollectionViewSource.GetDefaultView(dgReservationConsulter.ItemsSource).Refresh();
         }
-        private void FiltrerRecherche()
+        private bool ContientMotClef2(object obj)
         {
+            Vehicule_table vehicule = obj as Vehicule_table;
+            if (String.IsNullOrEmpty(tbRechercheNumType.Text))
+                return true;
+            else
+                return (vehicule.NumMagasin.ToString().StartsWith(tbRechercheNumType.Text, StringComparison.OrdinalIgnoreCase) || vehicule.TypeBoite.ToString().StartsWith(tbRechercheNumType.Text, StringComparison.OrdinalIgnoreCase));
+        }
 
+        private void tbRechercheNumType_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            CollectionViewSource.GetDefaultView(dgLesVehicules.ItemsSource).Refresh();
+        }
+
+        private void dgLesVehicules_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (dgLesVehicules.SelectedItem != null)
+            {
+                Vehicule_table vehicule = (Vehicule_table)dgLesVehicules.SelectedItems;
+            }
         }
     }
 }

@@ -55,99 +55,31 @@
                     </StackPanel>
                 </TabItem.Header>
                 <StackPanel Background="#FFC7C7C7">
-                    <Label
+                    <StackPanel>
+                        <Label
+                        Margin="0,20,0,0"
                         HorizontalAlignment="Center"
-                        VerticalAlignment="Center"
-                        Content="Réserver un véhicule"
-                        FontSize="20"
-                        FontStyle="Italic"
+                        Content="Rechercher par N° Magasin / Type de boite"
+                        FontSize="16"
                         FontWeight="Bold" />
-                    <Label
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Center"
-                        Content="Veuillez renseigner les champs ci-dessous"
-                        FontSize="14"
-                        FontStyle="Italic" />
-                    <StackPanel
-                        Width="1275"
-                        Height="31"
-                        Margin="0,5,0,0"
-                        Orientation="Horizontal">
-                        <Label
-                            Margin="40,0,0,0"
-                            Content="Date de début de réservation"
-                            FontSize="14"
-                            FontWeight="Bold" />
-                        <Label
-                            Margin="40,0,0,0"
-                            Content="Date de fin de réservation"
-                            FontSize="14"
-                            FontWeight="Bold" />
                     </StackPanel>
-                    <StackPanel
-                        Width="1275"
-                        Height="64"
-                        Margin="0,-5,0,0"
-                        Orientation="Horizontal">
-                        <DatePicker
-                            x:Name="dpDateDebut"
-                            Margin="50,0,0,0"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"
-                            FontSize="14" />
-                        <DatePicker
-                            x:Name="dpDateFin"
-                            Margin="69,0,0,0"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"
-                            FontSize="14" />
-                        <Button
-                            Width="140"
-                            Height="30"
-                            Margin="40,0,0,0"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"
-                            Content="Rechercher"
-                            FontSize="14" />
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <Label
-                            Margin="40,0,0,0"
-                            Content="Magasin"
-                            FontSize="14"
-                            FontWeight="Bold" />
-                        <Label
-                            Margin="40,0,0,0"
-                            Content="Forfait Kilométrique"
-                            FontSize="14"
-                            FontWeight="Bold" />
-                        <Label
-                            Margin="40,0,0,0"
-                            Content="Type de boite"
-                            FontSize="14"
-                            FontWeight="Bold" />
-                    </StackPanel>
-                    <StackPanel
-                        Width="1275"
-                        Height="64"
-                        Margin="0,-5,0,0"
-                        Orientation="Horizontal">
-                        <ComboBox x:Name="cbMagasin" Width="123" Height="24" Margin="20,0,0,0" ItemsSource="{Binding LesMagasin, RelativeSource={RelativeSource AncestorType=Window, Mode=FindAncestor},Mode=OneWay}"/>
+                    <StackPanel>
                         <TextBox
-                            x:Name="tbForfaitKm"
-                            Width="133"
-                            Height="24"
-                            Margin="50,0,0,0"
-                            Text=""
-                            TextWrapping="Wrap" />
-                        <ComboBox Width="123" Height="24" Margin="50,0,0,0"/>
+                        x:Name="tbRechercheNumType"
+                        Width="503"
+                        Background="#FFFD7070"
+                        Text=""
+                        TextWrapping="Wrap" 
+                        TextAlignment="Center" 
+                        FontWeight="Bold" 
+                        HorizontalAlignment="Center" Height="24" TextChanged="tbRechercheNumType_TextChanged" />
                     </StackPanel>
                     <StackPanel
-                        Width="1270"
-                        Height="326"
+                        Width="1268"
+                        Height="443"
                         HorizontalAlignment="Left"
                         Orientation="Horizontal">
-                        <Grid Width="1280" Height="318">
+                        <Grid Width="1258" Height="476">
                             <DataGrid
                                 x:Name="dgLesVehicules"
                                 Margin="7,7,0,7"
@@ -155,7 +87,7 @@
                                 AutoGenerateColumns="False"
                                 IsReadOnly="True"
                                 CanUserReorderColumns="False"
-                                CanUserResizeColumns="False">
+                                CanUserResizeColumns="False" SelectionChanged="dgLesVehicules_SelectionChanged">
                                 <DataGrid.Resources>
                                     <Style x:Key="CenteredTextBlockStyle" TargetType="TextBlock">
                                         <Setter Property="HorizontalAlignment" Value="Center" />
@@ -187,7 +119,6 @@
                         <Button
                             x:Name="butReserver"
                             Width="152"
-                            Click="butReserver_Click"
                             Content="Reserver" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
