@@ -72,8 +72,10 @@ namespace Intermarché.Classes
             set { montantReservation = value; }
         }
 
-        public Reservation_table(DateTime dateReservation, DateTime dateDebutReservation, DateTime dateFinReservation, double montantReservation, string forfaitKm)
+        public Reservation_table(int numAssurance, int numClient, DateTime dateReservation, DateTime dateDebutReservation, DateTime dateFinReservation, double montantReservation, string forfaitKm)
         {
+            NumAssurance = numAssurance;
+            NumClient = numClient;
             DateReservation = dateReservation;
             DateDebutReservation = dateDebutReservation;
             DateFinReservation = dateFinReservation;
@@ -99,12 +101,17 @@ namespace Intermarché.Classes
             ForfaitKm = forfaitKm;
             NumClient = numClient;
         }
+
         public Reservation_table(int numReservation, int numAssurance, int numClient, DateTime dateReservation, DateTime dateDebutReservation, DateTime dateFinReservation, double montantReservation, string forfaitKm)
-                    : this(dateReservation, dateDebutReservation, dateFinReservation, montantReservation, forfaitKm)
         {
-            NumReservation = numReservation;
-            NumAssurance = numAssurance;
-            NumClient = numClient;
+            this.NumReservation = numReservation;
+            this.NumAssurance = numAssurance;
+            this.NumClient = numClient;
+            this.DateReservation = dateReservation;
+            this.DateDebutReservation = dateDebutReservation;
+            this.DateFinReservation = dateFinReservation;
+            this.MontantReservation = montantReservation;
+            this.ForfaitKm = forfaitKm;
         }
 
 
