@@ -134,5 +134,12 @@ namespace Intermarché
                 Vehicule_table vehicule = (Vehicule_table)dgLesVehicules.SelectedItems;
             }
         }
+
+        private void butReserver_Click(object sender, RoutedEventArgs e)
+        {
+            RentalsFormWindow rentalsForm = new RentalsFormWindow();
+            rentalsForm.ShowDialog();
+        }
+    
     }
 }
