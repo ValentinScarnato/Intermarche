@@ -21,15 +21,7 @@ namespace Intermarché
 
         public DataAccess()
         {
-            //this.LesClients = new ObservableCollection<Client>();
-            //this.LesReservations = new ObservableCollection<Reservation_table>();
             this.ConnexionBD();
-            //this.ReadAll();
-            //this.ReadMagasin();
-            //this.ReadEmploye();
-            //this.ReadReservation();
-            //this.ReadDetailReservation();
-            //this.ReadVehicule();
         }
 
         public static DataAccess Instance
@@ -133,19 +125,5 @@ namespace Intermarché
             }
         }
 
-        /*
-        public void ReadAll()
-        {
-            ReadAssurance();
-            ReadCaracteristiques();
-            ReadCategorieVehicules();
-            ReadClient();
-            ReadDetailCaracteristiques();
-            ReadDetailReservation();
-            ReadEmploye();
-            ReadVehicule();
-            ReadMagasin();
-            ReadReservation();
-        }*/
     }
 }

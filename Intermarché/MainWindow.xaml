@@ -13,7 +13,7 @@
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Window.DataContext>
-        <local:DataAccess x:Name="data" />
+        <local:ApplicationData x:Name="data" />
     </Window.DataContext>
     <Grid>
         <StackPanel Background="#FF4C4A4A">
@@ -190,8 +190,11 @@
                             Click="butReserver_Click"
                             Content="Reserver" />
                     </StackPanel>
-                    <Label Content="Vous etes connectés sur la session " HorizontalAlignment="Center"/>
-                    <Label x:Name="labelMagasin" Content="Annecy" HorizontalAlignment="Center" FontWeight="Bold"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Vous etes connectés sur la session : " HorizontalAlignment="Center" VerticalAlignment="Center" Margin="500,0,0,0"/>
+                        <Label x:Name="labelMagasin" Content="Annecy" HorizontalAlignment="Center" FontWeight="Bold"/>
+                    </StackPanel>
+                    
                 </StackPanel>
             </TabItem>
             <TabItem>
