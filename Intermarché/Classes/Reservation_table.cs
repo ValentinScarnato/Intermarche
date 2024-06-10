@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Intermarché.Classes
 {
-    public class Reservation_table
+    public class Reservation_table : Icrud
     {
         private int numReservation;
 
