@@ -20,11 +20,14 @@ namespace Intermarché
             int numAssurance;
             int numClient;
             string forfaitKm = "0";
+            int nbJours;
             DateTime dateResa = DateTime.Today;
             DateTime? dateDebutResa = dpDateDebutReservation.SelectedDate;
             DateTime? dateFinResa = dpDateFinReservation.SelectedDate;
             string numReservation = tbNumResa.Text; 
-
+            DateTime dateDebut = (DateTime)dateDebutResa.Value;
+            DateTime dateFin = (DateTime)dateFinResa.Value;
+            nbJours = (dateFin - dateDebut).Days;
             if (!int.TryParse(tbNumAssurance.Text, out numAssurance) || !int.TryParse(tbNumCLient.Text, out numClient))
             {
                 MessageBox.Show("Veuillez entrer des numéros valides pour l'assurance et le client.");
@@ -39,7 +42,7 @@ namespace Intermarché
             {
                 if (VehiculesSelectionnés != null && VehiculesSelectionnés.Any())
                 {
-                    double montant = VehiculesSelectionnés.Sum(v => v.PrixLocation);
+                    double montant = (nbJours+1) * (VehiculesSelectionnés.Sum(v => v.PrixLocation));
 
                     Reservation_table resa = new Reservation_table(
                         int.Parse(numReservation),
@@ -53,7 +56,7 @@ namespace Intermarché
                     );
 
                     ((ApplicationData)this.DataContext).LesReservations.Add(resa);
-                    resa.Update();
+                    resa.Create();
                     MessageBox.Show("Réservation ajoutée avec succès !");
                     MessageBox.Show($"Le montant total de la réservation est de {montant} euros");
                     

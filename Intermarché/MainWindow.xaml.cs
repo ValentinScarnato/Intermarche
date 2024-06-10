@@ -179,19 +179,19 @@ namespace Intermarché
 
         private void butEdit_Click(object sender, RoutedEventArgs e)
         {
-            RentalsFormWindow rent = new RentalsFormWindow();
-            rent.DataContext = dgReservationConsulter.SelectedItem;
+            RentalsFormWindow resa = new RentalsFormWindow();
+            resa.DataContext = dgReservationConsulter.SelectedItem;
 
-            if (rent.ShowDialog() == true)
+            if (resa.ShowDialog() == true)
             {
-                ((Reservation_table)rent.DataContext).Update();
+                ((Reservation_table)resa.DataContext).Update();
             }
 
             Reservation_table reservation = (Reservation_table)dgReservationConsulter.SelectedItem;
-            var resaSelect = new List<Reservation_table>();
-            foreach (Reservation_table resa in dgReservationConsulter.SelectedItems)
+            var resaSelect = new List<Vehicule_table>();
+            foreach (Vehicule_table r in dgReservationConsulter.SelectedItems)
             {
-                resaSelect.Add(resa);
+                resaSelect.Add(r);
             }
 
             RentalsFormWindow rentalsForm = new RentalsFormWindow
