@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace Intermarché.Classes
 {
 
-    public class Vehicule_table 
+    public class Vehicule_table : Icrud
     {
         public bool EstSelectionné { get; set; }
 

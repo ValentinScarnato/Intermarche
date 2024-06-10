@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Intermarché.Classes
 {
-    public class Magasin
+    public class Magasin : Icrud
     {
         private int numMagasin;
 

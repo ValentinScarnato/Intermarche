@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Intermarché.Classes
 {
-    public class Categorie_vehicule
+    public class Categorie_vehicule : Icrud
     {
         private string nomCategorie;
 
