@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Intermarché.Classes
 {
-    public class Detail_caracteristique
+    public class Detail_caracteristique : Icrud
     {
         private string immatriculation;
 

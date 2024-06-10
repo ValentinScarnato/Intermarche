@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Intermarché.Classes
 {
-    public class Detail_reservation
+    public class Detail_reservation : Icrud
     {
         private string immatriculation;
 
