@@ -1,0 +1,32 @@
+﻿<Window x:Class="Intermarché.EditResaWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Intermarché"
+        mc:Ignorable="d"
+        Title="EditResaWindow" Height="450" Width="800"    ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel Margin="0,10,0,10" HorizontalAlignment="Center" Width="484">
+            <Label Content="Numero Reservation :" Target="{Binding ElementName=NumReservation, Mode=OneWay}" />
+            <TextBox x:Name="tbNumResa" TextWrapping="Wrap" />
+            <Label Content="Numero Assurance :" Target="{Binding ElementName=NumAssurance, Mode=OneWay}" />
+            <TextBox x:Name="tbNumAssurance" TextWrapping="Wrap" />
+            <Label Content="Numero Client :" Target="{Binding ElementName=NumCLient, Mode=OneWay}" />
+            <TextBox x:Name="tbNumCLient" TextWrapping="Wrap" />
+            <Label Content="Date Debut Reservation :" Target="{Binding ElementName=DateDebutReservation, Mode=OneWay}" />
+            <DatePicker x:Name="dpDateDebutReservation" />
+            <Label Content="Date Fin Reservation :" Target="{Binding ElementName=DateFinReservation, Mode=OneWay}" />
+            <DatePicker x:Name="dpDateFinReservation" />
+            <Label Content="Forfait KM :" Target="{Binding ElementName=ForfaitKm, Mode=OneWay}" />
+            <StackPanel Orientation="Horizontal">
+                <RadioButton x:Name="rbMoins100km" Content="-100km" Margin="10,0,0,0"/>
+                <RadioButton x:Name="rb_100_250km" Content="Entre 100km et 250km" Margin="20,0,0,0"/>
+                <RadioButton x:Name="rbPlus250km" Content="+250km" Margin="20,0,0,0"/>
+            </StackPanel>
+            <Button x:Name="butValiderResa" Content="Valider" Width="180" Margin="0,20,0,0" Click="butValiderResa_Click1"/>
+
+        </StackPanel>
+    </Grid>
+</Window>

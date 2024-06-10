@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -178,17 +179,34 @@ namespace Intermarché
 
         private void butEdit_Click(object sender, RoutedEventArgs e)
         {
-            Reservation_table reservation = (Reservation_table)dgReservationConsulter.SelectedItem;
-            if (reservation == null)
+            RentalsFormWindow rent = new RentalsFormWindow();
+            rent.DataContext = dgReservationConsulter.SelectedItem;
+
+            if (rent.ShowDialog() == true)
             {
-                MessageBox.Show("No selected reservation!");
-                return;
+                ((Reservation_table)rent.DataContext).Update();
             }
+
+            Reservation_table reservation = (Reservation_table)dgReservationConsulter.SelectedItem;
+            var resaSelect = new List<Reservation_table>();
+            foreach (Reservation_table resa in dgReservationConsulter.SelectedItems)
+            {
+                resaSelect.Add(resa);
+            }
+
+            RentalsFormWindow rentalsForm = new RentalsFormWindow
+            {
+                VehiculesSelectionnés = resaSelect,
+                DataContext = this.DataContext
+            };
+            rentalsForm.ShowDialog();
 
             if (MessageBox.Show("Are you sure you want to edit this reservation?", "Confirm edit?", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
-                reservation.Update();
-
+                EditResaWindow edit = new EditResaWindow();
+                edit.ShowDialog();
+                this.data.LesReservations.Add(reservation);
+    
             }
         }
     }
