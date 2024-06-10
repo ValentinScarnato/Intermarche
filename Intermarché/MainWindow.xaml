@@ -49,32 +49,45 @@
                 <StackPanel Background="#FFBBBBBB">
                     <StackPanel Orientation="Horizontal">
                         <Label
-                        Margin="470,20,0,0"
-                        HorizontalAlignment="Center"
-                        Content="Rechercher par N° Magasin / Type de boite"
-                        FontSize="16"
-                        FontWeight="Bold" />
+                            Margin="470,20,0,0"
+                            HorizontalAlignment="Center"
+                            Content="Rechercher par N° Magasin / Type de boite"
+                            FontSize="16"
+                            FontWeight="Bold" />
                         <Button
-                        x:Name="butCreateClient"
-                        Width="140"
-                        Height="30"
-                        Click="butCreateClient_Click"
-                        Content="Créer client"
-                        FontSize="14" Margin="270,20,0,0" FontWeight="Bold" />
+                            x:Name="butCreateClient"
+                            Width="140"
+                            Height="30"
+                            Margin="270,20,0,0"
+                            Click="butCreateClient_Click"
+                            Content="Créer client"
+                            FontSize="14"
+                            FontWeight="Bold" />
                     </StackPanel>
-                    <StackPanel Margin="0,10,0,13" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <StackPanel
+                        Margin="0,10,0,13"
+                        HorizontalAlignment="Center"
+                        Orientation="Horizontal">
                         <TextBox
-                        x:Name="tbRechercheNumType"
-                        Width="503"
-                        Background="White"
-                        Text=""
-                        TextWrapping="Wrap" 
-                        TextAlignment="Center" 
-                        FontWeight="Bold" 
-                        HorizontalAlignment="Center" Height="24" TextChanged="tbRechercheNumType_TextChanged" BorderBrush="Black" Margin="0,10,0,0" />
-                        <Label Content="" Width="30" Height="30" Margin="10,10,0,0">
+                            x:Name="tbRechercheNumType"
+                            Width="503"
+                            Height="24"
+                            Margin="0,10,0,0"
+                            HorizontalAlignment="Center"
+                            Background="White"
+                            BorderBrush="Black"
+                            FontWeight="Bold"
+                            Text=""
+                            TextAlignment="Center"
+                            TextChanged="tbRechercheNumType_TextChanged"
+                            TextWrapping="Wrap" />
+                        <Label
+                            Width="30"
+                            Height="30"
+                            Margin="10,10,0,0"
+                            Content="">
                             <Label.Background>
-                                <ImageBrush ImageSource="/rechercher.png"/>
+                                <ImageBrush ImageSource="/rechercher.png" />
                             </Label.Background>
                         </Label>
                     </StackPanel>
@@ -87,12 +100,14 @@
                             <DataGrid
                                 x:Name="dgLesVehicules"
                                 Margin="7,7,0,7"
-                                ItemsSource="{Binding LesVehicules}"
                                 AutoGenerateColumns="False"
-                                IsReadOnly="False"
+                                Background="White"
                                 CanUserReorderColumns="False"
+                                CanUserResizeColumns="False"
                                 CellEditEnding="dgLesVehicules_CellEditEnding"
-                                CanUserResizeColumns="False" SelectionChanged="dgLesVehicules_SelectionChanged" Background="White">
+                                IsReadOnly="False"
+                                ItemsSource="{Binding LesVehicules}"
+                                SelectionChanged="dgLesVehicules_SelectionChanged">
                                 <DataGrid.Resources>
                                     <Style x:Key="CenteredTextBlockStyle" TargetType="TextBlock">
                                         <Setter Property="HorizontalAlignment" Value="Center" />
@@ -100,19 +115,58 @@
                                     </Style>
                                 </DataGrid.Resources>
                                 <DataGrid.Columns>
-                                    <DataGridTextColumn Header="Immatriculation" Binding="{Binding Immatriculation}" Width="100" ElementStyle="{StaticResource CenteredTextBlockStyle}" />
-                                    <DataGridTextColumn Header="Type de Boite" Binding="{Binding TypeBoite}" Width="90" ElementStyle="{StaticResource CenteredTextBlockStyle}" />
-                                    <DataGridTextColumn Header="N° de Magasin" Binding="{Binding NumMagasin}" Width="90" ElementStyle="{StaticResource CenteredTextBlockStyle}" />
-                                    <DataGridTextColumn Header="Nom de Categorie" Binding="{Binding NomCategorie}" Width="110" ElementStyle="{StaticResource CenteredTextBlockStyle}" />
-                                    <DataGridTextColumn Header="Nom de Vehicule" Binding="{Binding NomVehicule}" Width="110" ElementStyle="{StaticResource CenteredTextBlockStyle}" />
-                                    <DataGridTextColumn Header="Description du Vehicule" Binding="{Binding DescriptionVehicule}" Width="300" ElementStyle="{StaticResource CenteredTextBlockStyle}" />
-                                    <DataGridTextColumn Header="Nombre Places" Binding="{Binding NombrePlaces}" Width="90" ElementStyle="{StaticResource CenteredTextBlockStyle}" />
-                                    <DataGridTextColumn Header="Prix de Location" Binding="{Binding PrixLocation}" Width="100" ElementStyle="{StaticResource CenteredTextBlockStyle}" />
-                                    <DataGridTextColumn Header="Climatisation" Binding="{Binding Climatisation}" Width="80" ElementStyle="{StaticResource CenteredTextBlockStyle}" />
-                                    <DataGridTemplateColumn Header="Lien Photo Url" Width="180">
+                                    <DataGridTextColumn
+                                        Width="100"
+                                        Binding="{Binding Immatriculation}"
+                                        ElementStyle="{StaticResource CenteredTextBlockStyle}"
+                                        Header="Immatriculation" />
+                                    <DataGridTextColumn
+                                        Width="90"
+                                        Binding="{Binding TypeBoite}"
+                                        ElementStyle="{StaticResource CenteredTextBlockStyle}"
+                                        Header="Type de Boite" />
+                                    <DataGridTextColumn
+                                        Width="90"
+                                        Binding="{Binding NumMagasin}"
+                                        ElementStyle="{StaticResource CenteredTextBlockStyle}"
+                                        Header="N° de Magasin" />
+                                    <DataGridTextColumn
+                                        Width="110"
+                                        Binding="{Binding NomCategorie}"
+                                        ElementStyle="{StaticResource CenteredTextBlockStyle}"
+                                        Header="Nom de Categorie" />
+                                    <DataGridTextColumn
+                                        Width="110"
+                                        Binding="{Binding NomVehicule}"
+                                        ElementStyle="{StaticResource CenteredTextBlockStyle}"
+                                        Header="Nom de Vehicule" />
+                                    <DataGridTextColumn
+                                        Width="300"
+                                        Binding="{Binding DescriptionVehicule}"
+                                        ElementStyle="{StaticResource CenteredTextBlockStyle}"
+                                        Header="Description du Vehicule" />
+                                    <DataGridTextColumn
+                                        Width="90"
+                                        Binding="{Binding NombrePlaces}"
+                                        ElementStyle="{StaticResource CenteredTextBlockStyle}"
+                                        Header="Nombre Places" />
+                                    <DataGridTextColumn
+                                        Width="100"
+                                        Binding="{Binding PrixLocation}"
+                                        ElementStyle="{StaticResource CenteredTextBlockStyle}"
+                                        Header="Prix de Location" />
+                                    <DataGridTextColumn
+                                        Width="80"
+                                        Binding="{Binding Climatisation}"
+                                        ElementStyle="{StaticResource CenteredTextBlockStyle}"
+                                        Header="Climatisation" />
+                                    <DataGridTemplateColumn Width="180" Header="Lien Photo Url">
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
-                                                <Image Source="{Binding LienPhotoUrl}" Width="100" Height="100" />
+                                                <Image
+                                                    Width="100"
+                                                    Height="100"
+                                                    Source="{Binding LienPhotoUrl}" />
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
@@ -125,11 +179,23 @@
                         <Button
                             x:Name="butReserver"
                             Width="176"
-                            Content="Reserver" Margin="0,20,0,0" Height="30" FontWeight="Bold" Click="butReserver_Click" />
+                            Height="30"
+                            Margin="0,20,0,0"
+                            Click="butReserver_Click"
+                            Content="Reserver"
+                            FontWeight="Bold" />
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                        <Label Content="Vous etes connectés sur la session : " HorizontalAlignment="Center" VerticalAlignment="Center" Margin="500,0,0,0"/>
-                        <Label x:Name="labelMagasin" Content="Annecy" HorizontalAlignment="Center" FontWeight="Bold"/>
+                    <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
+                        <Label
+                            Margin="500,0,0,0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Content="Vous etes connectés sur la session : " />
+                        <Label
+                            x:Name="labelMagasin"
+                            HorizontalAlignment="Center"
+                            Content="Annecy"
+                            FontWeight="Bold" />
                     </StackPanel>
                 </StackPanel>
             </TabItem>
@@ -155,16 +221,28 @@
                             x:Name="spRecherche"
                             Width="577"
                             Height="36"
-                            Orientation="Horizontal" HorizontalAlignment="Center" Margin="40,20,0,0">
+                            Margin="40,20,0,0"
+                            HorizontalAlignment="Center"
+                            Orientation="Horizontal">
                             <TextBox
                                 x:Name="tbRecherche"
                                 Width="503"
+                                Height="24"
+                                HorizontalAlignment="Center"
                                 Background="White"
+                                BorderBrush="Black"
+                                FontWeight="Bold"
                                 Text=""
-                                TextWrapping="Wrap" TextChanged="tbRecherche_TextChanged" TextAlignment="Center" FontWeight="Bold" HorizontalAlignment="Center" Height="24" BorderBrush="Black" />
-                            <Label Content="" Width="30" Height="30" Margin="20,0,0,0">
+                                TextAlignment="Center"
+                                TextChanged="tbRecherche_TextChanged"
+                                TextWrapping="Wrap" />
+                            <Label
+                                Width="30"
+                                Height="30"
+                                Margin="20,0,0,0"
+                                Content="">
                                 <Label.Background>
-                                    <ImageBrush ImageSource="/rechercher.png"/>
+                                    <ImageBrush ImageSource="/rechercher.png" />
                                 </Label.Background>
                             </Label>
                         </StackPanel>
@@ -180,9 +258,9 @@
                                 x:Name="dgReservationConsulter"
                                 Margin="48,7,0,0"
                                 AutoGenerateColumns="False"
-                                IsReadOnly="True"
                                 CanUserReorderColumns="False"
                                 CanUserResizeColumns="False"
+                                IsReadOnly="True"
                                 ItemsSource="{Binding LesReservations}"
                                 SelectionChanged="reservationsDataGrid_SelectionChanged"
                                 SelectionMode="Single">
@@ -193,74 +271,74 @@
                                     </Style>
                                 </DataGrid.Resources>
                                 <DataGrid.Columns>
-                                    <DataGridTemplateColumn Header="N° Réservation" Width="100">
+                                    <DataGridTemplateColumn Width="100" Header="N° Réservation">
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
                                                 <Border Width="100" Height="100">
-                                                    <TextBlock Text="{Binding NumReservation}" Style="{StaticResource CenteredTextBlockStyle2}" />
+                                                    <TextBlock Style="{StaticResource CenteredTextBlockStyle2}" Text="{Binding NumReservation}" />
                                                 </Border>
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
-                                    <DataGridTemplateColumn Header="N° Assurance" Width="100">
+                                    <DataGridTemplateColumn Width="100" Header="N° Assurance">
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
                                                 <Border Width="100" Height="100">
-                                                    <TextBlock Text="{Binding NumAssurance}" Style="{StaticResource CenteredTextBlockStyle2}" />
+                                                    <TextBlock Style="{StaticResource CenteredTextBlockStyle2}" Text="{Binding NumAssurance}" />
                                                 </Border>
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
-                                    <DataGridTemplateColumn Header="N° Client" Width="100">
+                                    <DataGridTemplateColumn Width="100" Header="N° Client">
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
                                                 <Border Width="100" Height="100">
-                                                    <TextBlock Text="{Binding NumClient}" Style="{StaticResource CenteredTextBlockStyle2}" />
+                                                    <TextBlock Style="{StaticResource CenteredTextBlockStyle2}" Text="{Binding NumClient}" />
                                                 </Border>
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
-                                    <DataGridTemplateColumn Header="Date de réservation" Width="180">
+                                    <DataGridTemplateColumn Width="180" Header="Date de réservation">
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
                                                 <Border Width="150" Height="100">
-                                                    <TextBlock Text="{Binding DateReservation}" Style="{StaticResource CenteredTextBlockStyle2}" />
+                                                    <TextBlock Style="{StaticResource CenteredTextBlockStyle2}" Text="{Binding DateReservation}" />
                                                 </Border>
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
-                                    <DataGridTemplateColumn Header="Date de début de réservation" Width="180">
+                                    <DataGridTemplateColumn Width="180" Header="Date de début de réservation">
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
                                                 <Border Width="200" Height="100">
-                                                    <TextBlock Text="{Binding DateDebutReservation}" Style="{StaticResource CenteredTextBlockStyle2}" />
+                                                    <TextBlock Style="{StaticResource CenteredTextBlockStyle2}" Text="{Binding DateDebutReservation}" />
                                                 </Border>
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
-                                    <DataGridTemplateColumn Header="Date de fin de réservation" Width="180">
+                                    <DataGridTemplateColumn Width="180" Header="Date de fin de réservation">
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
                                                 <Border Width="200" Height="100">
-                                                    <TextBlock Text="{Binding DateFinReservation}" Style="{StaticResource CenteredTextBlockStyle2}" />
+                                                    <TextBlock Style="{StaticResource CenteredTextBlockStyle2}" Text="{Binding DateFinReservation}" />
                                                 </Border>
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
-                                    <DataGridTemplateColumn Header="Montant de Reservation" Width="180">
+                                    <DataGridTemplateColumn Width="180" Header="Montant de Reservation">
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
                                                 <Border Width="100" Height="100">
-                                                    <TextBlock Text="{Binding MontantReservation}" Style="{StaticResource CenteredTextBlockStyle2}" />
+                                                    <TextBlock Style="{StaticResource CenteredTextBlockStyle2}" Text="{Binding MontantReservation}" />
                                                 </Border>
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
-                                    <DataGridTemplateColumn Header="Forfait KM" Width="120">
+                                    <DataGridTemplateColumn Width="120" Header="Forfait KM">
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
                                                 <Border Width="100" Height="100">
-                                                    <TextBlock Text="{Binding ForfaitKm}" Style="{StaticResource CenteredTextBlockStyle2}" />
+                                                    <TextBlock Style="{StaticResource CenteredTextBlockStyle2}" Text="{Binding ForfaitKm}" />
                                                 </Border>
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
@@ -268,9 +346,23 @@
                                 </DataGrid.Columns>
                             </DataGrid>
                         </Grid>
-                        <StackPanel Height="198" Width="105">
-                            <Button x:Name="butEdit" Content="Edit" Height="80" Margin="15,0,0,0" Width="80" Click="butEdit_Click" HorizontalAlignment="Left"/>
-                            <Button x:Name="butDelete" Content="Delete" Height="80" Margin="15,30,0,0" Width="80" Click="butDelete_Click" HorizontalAlignment="Left"/>
+                        <StackPanel Width="105" Height="198">
+                            <Button
+                                x:Name="butEdit"
+                                Width="80"
+                                Height="80"
+                                Margin="15,0,0,0"
+                                HorizontalAlignment="Left"
+                                Click="butEdit_Click"
+                                Content="Edit" />
+                            <Button
+                                x:Name="butDelete"
+                                Width="80"
+                                Height="80"
+                                Margin="15,30,0,0"
+                                HorizontalAlignment="Left"
+                                Click="butDelete_Click"
+                                Content="Delete" />
                         </StackPanel>
 
                     </StackPanel>
